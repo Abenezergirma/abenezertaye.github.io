@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<!--
+    Dopetrope by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Ready, Set, Plan! CoRL 2023</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/project.css" />
+        <link rel="shortcut icon" type="image/png" href="/images/jp.png"/>
+
+      <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL27GHY056"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FL27GHY056');
+    </script>
+
+    </head>
+    <body class="homepage is-preload">
+        <div id="page-wrapper">
+
+            <!-- <section id="header-project">
+                <h1><a href="https://progress.eecs.umich.edu/">Laboratory for Progress</a></h1>
+                <p>Perceptive Robotics and Grounded Reasoning Systems</a></p>
+            </section> -->
+
+            <section id="main">
+                <div class="container">
+
+                    <!-- Content -->
+                    <article class="box post project">
+                        <!-- TITLE -->
+                        <header>
+                            <h2>Ready, Set, Plan! Planning to Goal Sets Using Generalized Bayesian Inference</h2>
+                        </header>
+
+                        <!-- AUTHORS -->
+                        <div class="row aln-center project-authors">
+                            <div class="col-4 col-4-large col-4-medium col-6-small project-author">
+                                <h3><a href="http://janapavlasek.com/">Jana Pavlasek</a></h3>
+                                <p>University of Michigan</p>
+                            </div>
+                            <div class="col-4 col-4-large col-4-medium col-6-small project-author">
+                                <h3>Stanley Lewis</h3>
+                                <p>University of Michigan</p>
+                            </div>
+                            <div class="col-4 col-4-large col-4-medium col-6-small project-author">
+                                <h3><a href="https://balakumar-s.github.io/">Balakumar Sundaralingam</a></h3>
+                                <p>NVIDIA</p>
+                            </div>
+                            <div class="col-4 col-4-large col-4-medium col-6-small project-author">
+                                <h3><a href="https://fabioramos.github.io/">Fabio Ramos</a></h3>
+                                <p>NVIDIA<br/>University of Sydney</p>
+                            </div>
+                            <div class="col-4 col-4-large col-4-medium col-6-small project-author">
+                                <h3><a href="https://robot-learning.cs.utah.edu/thermans">Tucker Hermans</a></h3>
+                                <p>NVIDIA<br/>University of Utah</p>
+                            </div>
+                        </div>
+
+                        <!-- Path to a pitch image. -->
+                        <div class="image pitch centered"><img src="images/goal-sets-pitch.jpg" alt="" /></div>
+
+                        <p>
+                            Many robotic tasks can have multiple and diverse solutions and, as such, are naturally expressed as goal sets. Examples include navigating to a room, finding a feasible placement location for an object, or opening a drawer enough to reach inside.
+Using a goal set as a planning objective requires that a model for the objective be explicitly given by the user. However, some goals are intractable to model, leading to uncertainty over the goal (e.g. stable grasping of an object).
+In this work, we propose a technique for planning directly to a set of sampled goal configurations. We formulate a planning as inference problem with a novel goal likelihood evaluated against the goal samples.
+To handle the intractable goal likelihood, we employ generalized Bayesian inference to approximate the trajectory distribution.
+The result is a fully differentiable cost which generalizes across a diverse range of goal set objectives for which samples can be obtained.
+We show that by considering all goal samples throughout the planning process, our method reliably finds plans for manipulation and navigation problems where heuristic approaches fail.
+                        </p>
+
+                        <!-- Link to PDF. -->
+                        <p>
+                            <a href="https://proceedings.mlr.press/v229/pavlasek23a.html" class="paperlinks"><i class="far fa-file-pdf"></i> Paper</a> &nbsp;&nbsp;
+                            <a href="https://youtu.be/0fYLgBCSw9U"><i class="fab fa-youtube"></i>&nbsp;&nbsp;Video</a> &nbsp;&nbsp;
+                            <a href="corl_2023_poster.pdf"><i class="fas fa-chalkboard-teacher"></i>&nbsp;&nbsp;Poster</a> &nbsp;&nbsp;
+                            <a href="#cite"><i class="fas fa-quote-right"></i>&nbsp;&nbsp;BibTeX</a>
+                        </p>
+
+
+                    </article>
+
+                    <article class="box post">
+                        <header>
+                            <h2>Planar Navigation</h2>
+                        </header>
+
+                        <p>The goal set planner considers a set of goal samples as the planning objective. Our planner is better than heuristic baselines at maintaining modes of the trajectory distribution, leading to a higher likelihood that at least one feasible path to the goal region will be found.</p>
+
+                        <p>In the examples below, the purple lines represent the trajectory distribution at each timestep. The red X's represent goal samples, and the orange contours represent the true user-defined goal distribution. Note that only the "Cross Entropy" oracle baseline has access to the true underlying distribution.</p>
+
+                        <div class="row aln-center">
+                          <div class="col-4 col-4-large col-5-medium col-8-small project-author">
+                            <figure>
+                              <img src="images/exp/planar/closest_point_get_in_box_uni_0.gif" alt="" style="width:100%">
+                              <figcaption><b>Closest Point (Baseline)</b>:
+                                Selecting one single goal from the set of goal points can lead to a goal that is difficult or impossible to reach. (The selected goal is a red "x" in the bottom left corner of the box.)
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="col-4 col-4-large col-5-medium col-8-small project-author">
+                            <figure>
+                              <img src="images/exp/planar/cross_entropy_true_get_in_box_uni_0.gif" alt="" style="width:100%">
+                              <figcaption><b>Cross Entropy (Oracle Baseline)</b>:
+                                Using the true goal distribution density as a likelihood can lead to local minima in the trajectory estimate. Note that in some more complicated examples, the true distribution is not always available.
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="col-4 col-4-large col-5-medium col-8-small project-author">
+                            <figure>
+                              <img src="images/exp/planar/mmd_prior_get_in_box_uni_0.gif" alt="" style="width:100%">
+                              <figcaption><b>Goal Set Planner (Ours)</b>:
+                                The nature of the goal set planner encourages the terminal points in the trajectory to match the goal samples. This increases the chance that a successful path to the goal region is found.
+                              </figcaption>
+                            </figure>
+                          </div>
+                        </div>
+
+                        <h3 style="margin: 1em 0;">Terminal Losses</h3>
+
+                        <p>Multiple terminal losses can be used within the goal set planner formulation. We implement and analyse four different options, all of which consists of two-sample tests where both the trajectories and goal are represented implicitly in terms of samples. All losses examined are fully differentiable with respect to the trajectory.</p>
+
+                        <div class="row aln-center">
+                          <div class="col-5 col-5-large col-5-medium col-8-small project-author">
+                            <div class="slideshow-container">
+                              <div class="image-slideshow-container">
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_circles_gaussian_0.gif" alt="" /></div>
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_get_in_box_uni_0.gif" alt="" /></div>
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_obstacles_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_squares_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-mmd"><img src="images/exp/planar/mmd_prior_squares_uni_0.gif" alt="" /></div>
+
+                                  <a class="prev" onclick="carousel_mmd.plusSlides(-1)">&#10094;</a>
+                                  <a class="next" onclick="carousel_mmd.plusSlides(1)">&#10095;</a>
+                              </div>
+
+                              <!-- The dots/circles -->
+                              <div style="text-align:center">
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(1)"></span>
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(2)"></span>
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(3)"></span>
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(4)"></span>
+                                <span class="dot dot-mmd" onclick="carousel_mmd.currentSlide(5)"></span>
+                              </div>
+                            </div>
+                            <h3>Kernelized Maximum Mean Discrepancy (MMD)</h3>
+                            <p>A two-sample approximation of the Maximum Mean Discrepancy, from Gretton et al. (JMLR, 2012). </p>
+                          </div>
+                          <div class="col-5 col-5-large col-5-medium col-8-small project-author">
+                            <div class="slideshow-container">
+                              <div class="image-slideshow-container">
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_circles_gaussian_0.gif" alt="" /></div>
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_get_in_box_uni_0.gif" alt="" /></div>
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_obstacles_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_squares_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-kl"><img src="images/exp/planar/kl_cls_squares_uni_0.gif" alt="" /></div>
+
+                                  <a class="prev" onclick="carousel_kl.plusSlides(-1)">&#10094;</a>
+                                  <a class="next" onclick="carousel_kl.plusSlides(1)">&#10095;</a>
+                              </div>
+
+                              <!-- The dots/circles -->
+                              <div style="text-align:center">
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(1)"></span>
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(2)"></span>
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(3)"></span>
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(4)"></span>
+                                <span class="dot dot-kl" onclick="carousel_kl.currentSlide(5)"></span>
+                              </div>
+                            </div>
+                            <h3>KL Divergence via. Density Ratio Estimation</h3>
+                            <p>A two-sample approximation of the KL divergence, where the density ratio is approximated by training a classifier on the sample points (Menon and Ong, ICML, 2016).</p>
+                          </div>
+                          <div class="col-5 col-5-large col-5-medium col-8-small project-author">
+                            <div class="slideshow-container">
+                              <div class="image-slideshow-container">
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_circles_gaussian_0.gif" alt="" /></div>
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_get_in_box_uni_0.gif" alt="" /></div>
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_obstacles_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_squares_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-knn"><img src="images/exp/planar/smooth_knn_squares_uni_0.gif" alt="" /></div>
+
+                                  <a class="prev" onclick="carousel_knn.plusSlides(-1)">&#10094;</a>
+                                  <a class="next" onclick="carousel_knn.plusSlides(1)">&#10095;</a>
+                              </div>
+
+                              <!-- The dots/circles -->
+                              <div style="text-align:center">
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(1)"></span>
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(2)"></span>
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(3)"></span>
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(4)"></span>
+                                <span class="dot dot-knn" onclick="carousel_knn.currentSlide(5)"></span>
+                              </div>
+                            </div>
+                            <h3>Smooth k-Nearest Neighbor</h3>
+                            <p>A smooth approximation to the k-Nearest Neighbor divergence, from Djolonga and Krause (2017).</p>
+                          </div>
+                          <div class="col-5 col-5-large col-5-medium col-8-small project-author">
+                            <div class="slideshow-container">
+                              <div class="image-slideshow-container">
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_circles_gaussian_0.gif" alt="" /></div>
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_get_in_box_uni_0.gif" alt="" /></div>
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_obstacles_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_squares_mix_0.gif" alt="" /></div>
+                                  <div class="image slideshow-energy"><img src="images/exp/planar/energy_squares_uni_0.gif" alt="" /></div>
+
+                                  <a class="prev" onclick="carousel_energy.plusSlides(-1)">&#10094;</a>
+                                  <a class="next" onclick="carousel_energy.plusSlides(1)">&#10095;</a>
+                              </div>
+
+                              <!-- The dots/circles -->
+                              <div style="text-align:center">
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(1)"></span>
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(2)"></span>
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(3)"></span>
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(4)"></span>
+                                <span class="dot dot-energy" onclick="carousel_energy.currentSlide(5)"></span>
+                              </div>
+                            </div>
+                            <h3>Energy Statistic</h3>
+                            <p>The energy statistic defined by Székely and Rizzo (JSPI 2013).</p>
+                          </div>
+                        </div>
+
+                    </article>
+
+                    <article class="box post">
+                      <header>
+                          <h2>Robotic Grasping</h2>
+                      </header>
+
+                      <p>Stable grasping is an example of a task for which the goal distribution is difficult to describe explicitly. Many popular approaches instead use data-driven techniques, in which grasp candidates are evaluated through simulation. We use valid goal samples from the Acronym dataset as a goal set and perform trajectory planning to the samples directly. In practice, we plan to offset pre-grasp poses, then switch to a point goal solver for the grasping action.</p>
+
+                      <div class="row aln-center">
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/mmd_grasp.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <h3>Goal Set Planning for Robotic Plan-to-Grasp (Ours)</h3>
+                          <p>Our planner considers a set of provided valid grasp points (green) as a goal. In this example, only a subset of the grasps are reachable. The goal set planner seeks to find a path to the goal samples while jointly optimizing for cost and collision avoidance. As such, the planner determines good goal regions on the fly.</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/fail_pt_grasp.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <h3>Single Point Planner (Baseline)</h3>
+                          <p>
+                            The baseline selects the nearest goal point and performs performs point-based planning. In this case, the nearest point (blue) is not reachable in the environment, and results in a planning failure. Checking for reachability and collisions in the goal set is possible, but involves applying expensive heuristics prior to planning.</p>
+                        </div>
+                      </div>
+
+                      <h3 style="margin: 1em 0;">Qualitative Results</h3>
+
+                      <p>Below are qualitative results of successful grasps from our experiments on various objects. The grasp samples considered are shown in green. Only a portion (N=20) are shown for better visualization. A total of 100 valid grasps are considered as part of the goal set in practice. The goal set planner in these examples uses the Kernel MMD loss.</p>
+
+                      <div class="row aln-center">
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/grasp_box_mug.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Mug</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/grasp_fail_side_cereal.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Cereal Box</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/grasp_hard_nalgene.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Water Bottle</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/grasping/grasp_reach_bowl.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Bowl</p>
+                        </div>
+                      </div>
+
+                      <h3 style="margin: 1em 0;">Real Robot Demonstration</h3>
+
+                      <p>We execute our planner on a Franka Panda robot to demonstrate that our trajectories are transferable to a real platform. The trajectories are planned offline in Isaac Gym.</p>
+
+                      <div class="row aln-center">
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/robot/robot_sim_no_coll.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Trajectory generated in Isaac Gym.</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/robot/robot_no_coll.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Execution on the Franka Panda.</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/robot/robot_sim_wall.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Trajectory generated in Isaac Gym.</p>
+                        </div>
+                        <div class="col-6 col-6-large col-6-medium col-10-small project-author">
+                          <div class="image centered">
+                            <video controls>
+                              <source src="images/exp/robot/robot_wall.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p style="text-align: center;">Execution on the Franka Panda.</p>
+                        </div>
+                      </div>
+
+                    </article>
+
+                    <article class="box post">
+                      <header>
+                          <h2>Placement</h2>
+                      </header>
+
+                      <p>The goal set planner can handle multi-modal goal regions and adapt to changing environments where a portion of the goal region becomes unavailable. We demonstrate this behavior through a table setting task, where the robot must sequentially place mugs on a table using demonstrated goal locations.</p>
+
+                      <p>The goal samples are sampled from three uniform distributions (green). We use the MMD terminal cost. As mugs are added, certain goal points are no longer reachable. The trajectory distribution (red lines) converges to modes which terminate in reachable portions of the table, without recomputing the goal set during execution.</p>
+
+                      <div class="image centered" style="max-width: 500px;">
+                        <video controls>
+                          <source src="images/exp/placement/placement_1.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </article>
+
+                    <article class="box post">
+                        <header id="cite">
+                            <h2>Citation</h2>
+                        </header>
+
+                        <div class="citation">
+
+<pre><code>@inproceedings{pavlasek2023sets,
+  author = {Pavlasek, Jana and Lewis, Stanley and Sundaralingam, Balakumar and Ramos, Fabio and Hermans, Tucker},
+  title = {Ready, Set, Plan! Planning to Goal Sets Using Generalized Bayesian Inference},
+  booktitle = {Conference on Robot Learning (CoRL)},
+  pages = {3672--3686},
+  volume = {229},
+  series = {Proceedings of Machine Learning Research},
+  month = {06--09 Nov},
+  publisher = {PMLR},
+  year = {2023}
+}</code></pre>
+                        </div>
+                    </article>
+
+
+
+
+                </div>
+            </section>
+
+            <section id="footer">
+
+                <!-- Copyright -->
+                <div id="copyright">
+                    <ul class="links">
+                        <li>&copy; 2023. All rights reserved.</li><li>Design: Dopetrope by
+                    <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</li>
+                    </ul>
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="assets/js/carousel.js"></script>
+        <script>
+          var carousel_mmd = new Carousel("slideshow-mmd", "dot-mmd", 12000);
+          var carousel_kl = new Carousel("slideshow-kl", "dot-kl", 12000);
+          var carousel_knn = new Carousel("slideshow-knn", "dot-knn", 12000);
+          var carousel_energy = new Carousel("slideshow-energy", "dot-energy", 12000);
+
+            (function($) {
+
+                carousel_mmd.carousel(1);
+                carousel_kl.carousel(1);
+                carousel_knn.carousel(1);
+                carousel_energy.carousel(1);
+            })(jQuery);
+        </script>
+
+    </body>
+</html>

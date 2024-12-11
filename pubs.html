@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<!--
+  Read Only by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Jana Pavlasek</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/academicons.min.css"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="shortcut icon" type="image/png" href="images/at.png"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FL27GHY056');
+    </script>
+  </head>
+
+  <body class="is-preload">
+
+    <!-- Header -->
+      <section id="header">
+        <header>
+          <span class="logo"><a href="/"><img src="/images/at.png" alt="" /></a></span>
+          <!-- <h1 id="logo"><a href="#">Jana Pavlasek</a></h1> -->
+        </header>
+        <!-- <header>
+          <span class="image avatar"><img src="images/headshot_square.jpg" alt="" /></span>
+          <h1 id="logo"><a href="#">Jana Pavlasek</a></h1>
+          <p>
+            Robotics PhD Candidate
+            @ University of Michigan
+          </p>
+          <p style="font-size: 85%;">
+            <i>she / her</i><br/>
+            <i>(Pronounced: Yana Pav-LA-sek)</i><br/>
+            <i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;pavlasek [at] umich [dot] edu
+          </p>
+        </header> -->
+        <nav id="nav">
+          <ul>
+            <!-- <li><a href="#bio" class="active">Bio</a></li> -->
+            <!-- <li><a href="#research">Research</a></li> -->
+            <!-- <li><a href="#teaching">Teaching</a></li> -->
+            <li><a href="/">Home</a></li>
+            <li><a href="/pubs.html" class="active">Publications</a></li>
+            <li><a href="/files/cv.pdf">CV</a></li>
+          </ul>
+        </nav>
+        <!-- <footer>
+          <ul class="icons">
+            <li><a href="https://scholar.google.ca/citations?user=yJS-u7IAAAAJ&hl=en"><i class="fa-brands fa-google-scholar"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/janapavlasek/"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/janapavlasek"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://twitter.com/janapavlasek"><i class="fa-brands fa-twitter"></i></a></li>
+          </ul>
+        </footer> -->
+      </section>
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Main -->
+          <div id="main">
+
+            <!-- Bio -->
+
+
+              <section id="research">
+                <div class="popout">
+                  <header>
+                    <span class="image avatar"><img src="images/headshot_square.jpg" alt="" /></span>
+                    <h1><a href="#">Abenezer Taye</a></h1>
+                    <p>
+                      PhD, Aerospace Engineering
+                    </p>
+                    <p style="font-size: 80%;">
+                      <i>he / him</i><br/>
+                      <i>(Pronounced: A-buh-NE-zer TA-yee)</i><br/>
+					<i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;abenezertaye [at] gwu [dot] edu
+                    </p>
+                    <ul class="icons">
+                       <li><a href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en"><i class="fa-brands fa-google-scholar"></i></a></li>
+                      <li><a href="https://www.linkedin.com/in/abenezer-taye/"><i class="fa-brands fa-linkedin"></i></a></li>
+                      <li><a href="https://github.com/Abenezergirma"><i class="fa-brands fa-github"></i></a></li>
+                      <li><a href="https://twitter.com/abenezertaye"><i class="fa-brands fa-twitter"></i></a></li>
+                    </ul>
+                  </header>
+                </div>
+
+                <div class="container">
+
+                  <header id="pubs">
+                    <h3>Publications</h3>
+                    <p><a href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" style="border-bottom: none;"><i class="fa-brands fa-google-scholar"></i>&nbsp;&nbsp;Google Scholar</a></p>
+                  </header>
+
+                  <div id="includeBib" class="pub"></div>
+                </div>
+              </section>
+
+          </div>
+
+        <!-- Footer -->
+          <section id="footer">
+            <div class="container">
+              <ul class="copyright">
+                <li>&copy; Abenezer Taye. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              </ul>
+            </div>
+          </section>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.scrollex.min.js"></script>
+      <script src="assets/js/jquery.scrolly.min.js"></script>
+      <script src="assets/js/browser.min.js"></script>
+      <script src="assets/js/breakpoints.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
+
+      <script>
+        $(function(){
+          $("#includeBib").load("pubs_list.html", function() {
+            // Get all buttons
+            var buttons = document.querySelectorAll('a[data-target]');
+
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Get the target selector from data attribute
+                    var targetSelector = this.getAttribute('data-target');
+                    // Find the associated div using the targetSelector
+                    var targetDiv = document.querySelector(targetSelector);
+                    console.log("CLICK", targetSelector)
+
+                    // Toggle the visibility of the associated div
+                    targetDiv.classList.toggle('hidden');
+
+                    // If the div is currently expanded, collapse it when the button is clicked to hide
+                    if (!targetDiv.classList.contains('hidden') && targetDiv.classList.contains('expanded')) {
+                        targetDiv.classList.remove('expanded');
+                    }
+                });
+            });
+
+            // // Get all expandable divs
+            // var expandableDivs = document.querySelectorAll('.bibtex');
+            // console.log("DIVS", expandableDivs)
+
+            // expandableDivs.forEach(function(expandableDiv) {
+            //     expandableDiv.addEventListener('click', function(event) {
+            //         // Prevent triggering when clicking the button
+            //         if (event.target.tagName !== 'BUTTON') {
+            //             // Only allow div to expand if it's not hidden
+            //             if (!this.classList.contains('hidden')) {
+            //                 this.classList.toggle('expanded');
+            //             }
+            //         }
+            //     });
+            // });
+          });
+        });
+      </script>
+
+      <!-- <script src="assets/js/citations.js"></script> -->
+
+  </body>
+</html>
