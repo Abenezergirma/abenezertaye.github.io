@@ -29,7 +29,7 @@ const nextConfig = {
           // Permissions policy
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
           }
         ],
       },
@@ -38,7 +38,7 @@ const nextConfig = {
   // Image optimization and security
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: [], // No external domains for now - more secure
+    domains: [], 
     dangerouslyAllowSVG: false, // Prevent SVG XSS attacks
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
