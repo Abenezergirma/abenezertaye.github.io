@@ -1,4 +1,4 @@
-import { Rocket, Battery, Cpu, Zap } from 'lucide-react';
+import { Rocket, Battery, Cpu, Zap, ExternalLink } from 'lucide-react';
 
 export default function Research() {
   const projects = [
@@ -14,7 +14,17 @@ export default function Research() {
       ],
       technologies: ["Python", "TensorFlow", "Reinforcement Learning", "MDP"],
       icon: Rocket,
-      status: "Active"
+      status: "Active",
+      links: [
+        {
+          name: "NASA Project Details",
+          url: "https://www.nasa.gov/aeroresearch/system-wide-safety"
+        },
+        {
+          name: "Related Publication",
+          url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:u5HHmVD_uO8C"
+        }
+      ]
     },
     {
       title: "Learning-based Li-ion Battery Modeling for Online Decision Making",
@@ -28,7 +38,13 @@ export default function Research() {
       ],
       technologies: ["PyTorch", "Neural ODEs", "Physics-Informed Neural Networks", "Python"],
       icon: Battery,
-      status: "Active"
+      status: "Active",
+      links: [
+        {
+          name: "Publication",
+          url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:2osOgNQ5qMEC"
+        }
+      ]
     },
     {
       title: "Safe, Scalable, and Energy-Efficient Trajectory Planner for AAM Operations",
@@ -42,7 +58,17 @@ export default function Research() {
       ],
       technologies: ["Python", "OpenAI Gym", "Reachability Analysis", "Multi-Agent Systems"],
       icon: Cpu,
-      status: "Completed"
+      status: "Completed",
+      links: [
+        {
+          name: "Journal Paper",
+          url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:qjMakFHDy7sC"
+        },
+        {
+          name: "Conference Paper",
+          url: "https://arxiv.org/pdf/2306.11647"
+        }
+      ]
     },
     {
       title: "Energy Demand Analysis for eVTOL Aircraft in Urban Air Mobility",
@@ -56,15 +82,61 @@ export default function Research() {
       ],
       technologies: ["Python", "Data Analysis", "Energy Modeling", "Forecasting"],
       icon: Zap,
-      status: "Completed"
+      status: "Completed",
+      links: [
+        {
+          name: "Publication",
+          url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:Tyk-4Ss8FVUC"
+        },
+        {
+          name:"coference paper",
+          url:" https://www.researchgate.net/profile/Abenezer-Taye-2/publication/384222839_Energy_Demand_Analysis_for_eVTOL_Charging_Stations_in_Urban_Air_Mobility/links/6707286affe5b728123dfb8b/Energy-Demand-Analysis-for-eVTOL-Charging-Stations-in-Urban-Air-Mobility.pdf"
+        }
+      ]
+    },
+    {
+      title: "Flight Mission Feasibility Assessment for UAM Operations",
+      role: "Technical Lead",
+      period: "2022 - 2023",
+      description: "Developed real-time flight mission feasibility assessment framework integrating battery constraints and environmental factors.",
+      achievements: [
+        "Integrated battery state-of-charge predictions with weather impact analysis",
+        "Enabled real-time go/no-go decisions for drone operations",
+        "Validated framework using real-world package delivery scenarios"
+      ],
+      technologies: ["Python", "Battery Prognostics", "Uncertainty Quantification", "Real-time Systems"],
+      icon: Rocket,
+      status: "Completed",
+      links: [
+        {
+          name: "Journal Paper",
+          url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:d1gkVwhDpl0C"
+        },
+        {
+          name: "Conference Paper",
+          url: "https://arxiv.org/pdf/2211.02147"
+        }
+      ]
     }
   ];
 
   const testingPlatforms = [
-    "eVTOL simulators",
-    "sUAS hardware flight testing", 
-    "Battery digital twins",
-    "UAM/UAS transportation networks"
+    {
+      name: "eVTOL simulators",
+      description: "High-fidelity simulation environments for electric vertical takeoff and landing aircraft"
+    },
+    {
+      name: "sUAS hardware flight testing", 
+      description: "Real-world testing with small unmanned aerial systems"
+    },
+    {
+      name: "Battery digital twins",
+      description: "Virtual replicas of battery systems for predictive maintenance and optimization"
+    },
+    {
+      name: "UAM/UAS transportation networks",
+      description: "Network simulation and optimization for urban air mobility systems"
+    }
   ];
 
   return (
@@ -75,6 +147,16 @@ export default function Research() {
           <h1 className="text-4xl font-bold text-primary-700 mb-4">Research & Projects</h1>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             Cutting-edge research in Advanced Air Mobility, autonomous systems, and energy-efficient aviation solutions.
+            <br />
+            <a 
+              href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center gap-1 mt-2"
+            >
+              View Google Scholar Profile
+              <ExternalLink className="h-4 w-4" />
+            </a>
           </p>
         </div>
 
@@ -118,13 +200,31 @@ export default function Research() {
                     </ul>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, idx) => (
                       <span key={idx} className="px-3 py-1 bg-white text-secondary-700 rounded-md text-sm border border-secondary-200">
                         {tech}
                       </span>
                     ))}
                   </div>
+
+                  {/* Project Links */}
+                  {project.links && project.links.length > 0 && (
+                    <div className="flex flex-wrap gap-3">
+                      {project.links.map((link, idx) => (
+                        <a
+                          key={idx}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
+                        >
+                          {link.name}
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -139,12 +239,32 @@ export default function Research() {
               State-of-the-art platforms used for validating and testing novel AAM concepts and technologies.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testingPlatforms.map((platform, index) => (
-              <div key={index} className="bg-white border border-secondary-200 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
-                <div className="text-primary-600 font-semibold">{platform}</div>
+              <div key={index} className="bg-white border border-secondary-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                <h3 className="text-primary-600 font-semibold text-lg mb-2">{platform.name}</h3>
+                <p className="text-secondary-600">{platform.description}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Research Impact Section */}
+        <section className="mt-20 text-center">
+          <div className="bg-primary-50 rounded-2xl p-12">
+            <h2 className="text-3xl font-bold text-secondary-900 mb-4">Research Impact</h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
+              My research contributes to safer, more efficient, and sustainable aviation through advanced autonomous systems and energy optimization.
+            </p>
+            <a
+              href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              Explore All Publications
+              <ExternalLink className="h-5 w-5" />
+            </a>
           </div>
         </section>
       </div>
