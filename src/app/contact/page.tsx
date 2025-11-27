@@ -50,14 +50,13 @@ export default function Contact() {
 };
 
   return (
- -   <div className="py-16 bg-white">
+    <div className="py-16 bg-white">
       <div className="container-custom">
         {/* Page Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-primary-700 mb-4">Get In Touch</h1>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-            Interested in collaboration, research opportunities, or have questions about my work? 
-            I'd love to hear from you.
+            Interested in collaboration, research opportunities, or have questions about my work? I&apos;d love to hear from you.
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
