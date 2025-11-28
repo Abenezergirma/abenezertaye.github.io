@@ -19,7 +19,6 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm border-b border-secondary-200 sticky top-0 z-50">
       <nav className="container-custom" aria-label="Global">
-        {/* Desktop Navigation */}
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex lg:flex-1">
