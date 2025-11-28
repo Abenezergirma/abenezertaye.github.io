@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Send, Navigation } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -20,34 +21,39 @@ export default function Contact() {
     });
   };
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json', 
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      // Send email using EmailJS browser SDK
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          to_email: 'abenezertaye@gwu.edu',
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          timestamp: new Date().toLocaleString(),
+          client_name: 'Abenezer Girma Taye'
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
 
-    const result = await response.json();
-
-    if (response.ok) {
-      alert('Thank you for your message! I will get back to you soon.');
+      console.log('✅ Email sent successfully:', result);
+      
+      alert('Thank you! Your message has been sent successfully.');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    } else {
-      alert(result.error || 'Failed to send message. Please try again.');
+      
+    } catch (error) {
+      console.error('❌ EmailJS error:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error('Contact form error:', error);
-    alert('Failed to send message. Please try again.');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <div className="py-16 bg-white">
@@ -103,6 +109,27 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-secondary-900">Office</h3>
                     <p className="text-secondary-600">{siteConfig.contact.office}</p>
+                  </div>
+                </div>
+
+                {/* NEW: Google Maps Location Link */}
+                <div className="flex items-center gap-4 p-4 bg-secondary-50 rounded-lg hover:bg-primary-50 transition-colors group">
+                  <div className="p-2 bg-green-100 rounded-lg group-hover:bg-green-200 transition-colors">
+                    <Navigation className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-secondary-900">Location</h3>
+                    <a 
+                      href="https://maps.app.goo.gl/gpQ6hqok2t2Fg2wc9?g_st=ipc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-secondary-600 hover:text-green-600 transition-colors flex items-center gap-2 group"
+                    >
+                      <span>View on Google Maps</span>
+                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -199,7 +226,7 @@ export default function Contact() {
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-secondary-700 mb-2">
                   Message *
-                </label>
+                  </label>
                 <textarea
                   id="message"
                   name="message"
