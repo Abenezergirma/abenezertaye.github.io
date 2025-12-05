@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import {  ExternalLink, Download, Calendar, Users } from 'lucide-react';
+import { ExternalLink, Download, Calendar, Users, FileText, BookOpen, Award } from 'lucide-react';
 
 export default function Publications() {
   const [filter, setFilter] = useState('all');
@@ -17,8 +17,6 @@ export default function Publications() {
       status: "accepted",
       doi: "https://doi.org/10.2514/1.I011345",
       pdf: "#",
-      abstract: "Framework for energy-efficient trajectory planning and real-time mission feasibility assessment for drone delivery operations.",
-      citation: "Taye, A., & Wei, P. (2024). Energy-Efficient Trajectory Planning and Mission Feasibility Assessment Framework for Drone Package Delivery Operations. AIAA Journal of Aerospace Information Systems.",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:d1gkVwhDpl0C"
     },
     {
@@ -29,12 +27,8 @@ export default function Publications() {
       year: 2024,
       type: "journal",
       status: "published",
-      volume: "21",
-      issue: "8",
       doi: "https://doi.org/10.2514/1.I011234",
       pdf: "#",
-      abstract: "Real-time trajectory planning framework ensuring safety and scalability in high-density urban airspace environments.",
-      citation: "Taye, A., Valenti, R., Rajhans, A., Mavrommati, A., Mosterman, P. J., & Wei, P. (2024). Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility. AIAA Journal of Aerospace Information Systems, 21(8).",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:u-x6o8ySG0sC"
     },
     {
@@ -45,12 +39,8 @@ export default function Publications() {
       year: 2024,
       type: "journal",
       status: "published",
-      volume: "136",
-      issue: "part A",
       doi: "https://doi.org/10.1016/j.engappai.2024.108567",
       pdf: "#",
-      abstract: "Comprehensive survey of reinforcement learning applications in aviation systems and air transportation.",
-      citation: "Razzaghi, P., Tabrizian, A., Guo, W., Chen, S., Taye, A., Thompson, E., ... & Wei, P. (2024). A survey on reinforcement learning in aviation applications. Engineering Applications of Artificial Intelligence, 136, 108567.",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:d1gkVwhDpl0C"
     },
     {
@@ -64,8 +54,6 @@ export default function Publications() {
       location: "Orlando, FL",
       doi: "https://doi.org/10.2514/6.2025-1234",
       pdf: "#",
-      abstract: "Strategic traffic management framework for urban air mobility considering energy constraints and operational efficiency.",
-      citation: "Taye, A., Chen, S., & Wei, P. (2025). Energy-Aware Strategic Traffic Management for Urban Air Mobility. AIAA SCITECH 2025 Forum.",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:qjMakFHDy7sC"
     },
     {
@@ -79,8 +67,6 @@ export default function Publications() {
       location: "Las Vegas, NV",
       doi: "https://doi.org/10.2514/6.2024-4567",
       pdf: "#",
-      abstract: "Predictive framework for forecasting charging demand for electric vertical takeoff and landing aircraft in urban air mobility operations.",
-      citation: "Taye, A., Wei, P., Pradeep, P., Jones, J., Bonin, T., & Eberle, D. (2024). Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility. AIAA AVIATION 2024 Forum.",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:9yKSN-GCB0IC"
     },
     {
@@ -94,8 +80,6 @@ export default function Publications() {
       location: "Orlando, FL",
       doi: "https://doi.org/10.2514/6.2024-2345",
       pdf: "#",
-      abstract: "Framework for assessing flight mission feasibility considering battery energy constraints in urban air mobility operations.",
-      citation: "Taye, A., & Wei, P. (2024). Flight Mission Feasibility Assessment of Urban Air Mobility Operations under Battery Energy Constraint. AIAA SCITECH 2024 Forum.",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:IjCSPb-OGe4C"
     },
     {
@@ -109,8 +93,6 @@ export default function Publications() {
       location: "Chicago, IL",
       doi: "https://doi.org/10.2514/6.2022-3456",
       pdf: "#",
-      abstract: "Online safety verification using reachability analysis for trajectory planning in high-density urban air mobility environments.",
-      citation: "Taye, A., Bertram, J., Fan, C., & Wei, P. (2022). Reachability based online safety verification for high-density urban air mobility trajectory planning. AIAA AVIATION 2022 Forum.",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:WF5omc3nYNoC"
     },
     {
@@ -124,8 +106,6 @@ export default function Publications() {
       location: "San Diego, CA",
       doi: "https://doi.org/10.2514/6.2023-4567",
       pdf: "#",
-      abstract: "Probabilistic framework for evaluating flight mission feasibility of small octocopters under wind uncertainty.",
-      citation: "Taye, A., Thompson, E., Wei, P., Bonin, T., & Jones, J. (2023). Probabilistic Evaluation for Flight Mission Feasibility of a Small Octocopter in the Presence of Wind. AIAA AVIATION 2023 Forum.",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:9yKSN-GCB0IC"
     },
     {
@@ -137,17 +117,15 @@ export default function Publications() {
       year: 2022,
       publisher: "Aerospace Industries Association (AIA)",
       pdf: "#",
-      abstract: "Technical report identifying gaps and opportunities in AI safety and certification for aviation systems.",
-      citation: "Taye, A., & Wei, P. (2022). AI Safety and Certification in Aviation Systems - Identifying the Gaps and Opportunities. Aerospace Industries Association.",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:u5HHmVD_uO8C"
     }
   ];
 
   const filters = [
-    { key: 'all', label: 'All Publications', count: publications.length },
-    { key: 'journal', label: 'Journal Papers', count: publications.filter(p => p.type === 'journal').length },
-    { key: 'conference', label: 'Conference Proceedings', count: publications.filter(p => p.type === 'conference').length },
-    { key: 'report', label: 'Technical Reports', count: publications.filter(p => p.type === 'report').length }
+    { key: 'all', label: 'All', count: publications.length, icon: FileText },
+    { key: 'journal', label: 'Journal', count: publications.filter(p => p.type === 'journal').length, icon: BookOpen },
+    { key: 'conference', label: 'Conference', count: publications.filter(p => p.type === 'conference').length, icon: Calendar },
+    { key: 'report', label: 'Reports', count: publications.filter(p => p.type === 'report').length, icon: Award }
   ];
 
   const filteredPublications = publications.filter(pub => 
@@ -156,9 +134,9 @@ export default function Publications() {
 
   const getStatusBadge = (status: string) => {
     const styles = {
-      published: 'bg-green-100 text-green-800',
-      accepted: 'bg-blue-100 text-blue-800',
-      submitted: 'bg-yellow-100 text-yellow-800'
+      published: 'bg-green-100 text-green-800 border border-green-200',
+      accepted: 'bg-blue-100 text-blue-800 border border-blue-200',
+      submitted: 'bg-yellow-100 text-yellow-800 border border-yellow-200'
     };
     return (
       <span className={`px-2 py-1 rounded-full text-xs font-medium ${styles[status as keyof typeof styles]}`}>
@@ -169,187 +147,190 @@ export default function Publications() {
 
   const getTypeIcon = (type: string) => {
     const icons = {
-      journal: '📖',
-      conference: '🎤',
-      report: '📋'
+      journal: BookOpen,
+      conference: Calendar,
+      report: Award
     };
-    return icons[type as keyof typeof icons];
+    const Icon = icons[type as keyof typeof icons];
+    return <Icon className="h-4 w-4 text-gray-500" />;
   };
 
   return (
-    <div className="py-16 bg-white">
-      <div className="container-custom">
-        {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-primary-700 mb-4">Publications</h1>
-          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-            Research contributions in Advanced Air Mobility, trajectory planning, and autonomous systems.
-            <br />
-            <a 
-              href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center gap-1 mt-2"
-            >
-              View Complete Google Scholar Profile
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </p>
-        </div>
+    <div className="py-8">
+      {/* Page Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Publications</h1>
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          Research contributions in Advanced Air Mobility, trajectory planning, and autonomous systems.
+        </p>
+        <a 
+          href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-green-800 hover:text-green-900 font-medium mt-3"
+        >
+          View Google Scholar Profile
+          <ExternalLink className="h-4 w-4" />
+        </a>
+      </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-2 justify-center mb-8">
-          {filters.map((filterItem) => (
+      {/* Filter Buttons */}
+      <div className="flex flex-wrap gap-2 justify-center mb-10 max-w-2xl mx-auto">
+        {filters.map((filterItem) => {
+          const Icon = filterItem.icon;
+          return (
             <button
               key={filterItem.key}
               onClick={() => setFilter(filterItem.key)}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
+              className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 ${
                 filter === filterItem.key
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
+                  ? 'bg-green-700 text-white shadow-sm'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
+              <Icon className="h-4 w-4" />
               {filterItem.label}
               <span className={`text-xs px-1.5 py-0.5 rounded-full ${
                 filter === filterItem.key
-                  ? 'bg-primary-500 text-white'
-                  : 'bg-secondary-300 text-secondary-700'
+                  ? 'bg-white text-green-800'
+                  : 'bg-gray-300 text-gray-700'
               }`}>
                 {filterItem.count}
               </span>
             </button>
-          ))}
-        </div>
+          );
+        })}
+      </div>
 
-        {/* Publications List */}
-        <div className="space-y-6">
-          {filteredPublications.map((pub) => (
-            <div key={pub.id} className="bg-secondary-50 rounded-xl p-6 hover:shadow-md transition-shadow">
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                <div className="flex-1">
-                  <div className="flex items-start gap-3 mb-3">
-                    <span className="text-lg mt-1">{getTypeIcon(pub.type)}</span>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-secondary-900 mb-2">
-                        {pub.title}
-                      </h3>
-                      
-                      <div className="flex items-center gap-2 mb-2">
-                        <Users className="h-4 w-4 text-secondary-500" />
-                        <p className="text-secondary-700 text-sm">{pub.authors}</p>
-                      </div>
-                      
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-secondary-600 mb-3">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          {pub.year}
-                        </div>
-                        {pub.journal && (
-                          <span className="font-medium">{pub.journal}</span>
-                        )}
-                        {pub.conference && (
-                          <span className="font-medium">{pub.conference}</span>
-                        )}
-                        {pub.publisher && (
-                          <span className="font-medium">{pub.publisher}</span>
-                        )}
-                        {pub.volume && pub.issue && (
-                          <span>Vol. {pub.volume}, No. {pub.issue}</span>
-                        )}
-                        {pub.location && (
-                          <span>{pub.location}</span>
-                        )}
-                      </div>
+      {/* Publications List */}
+      <div className="space-y-6 max-w-6xl mx-auto">
+        {filteredPublications.map((pub) => (
+          <div key={pub.id} className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-sm transition-all duration-300">
+            <div className="flex flex-col lg:flex-row gap-6">
+              {/* Left: Type Icon and Status */}
+              <div className="flex lg:flex-col items-start gap-4 lg:gap-2">
+                <div className="p-3 bg-gray-50 rounded-lg">
+                  {getTypeIcon(pub.type)}
+                </div>
+                <div className="lg:mt-2">
+                  {getStatusBadge(pub.status)}
+                </div>
+              </div>
 
-                      {pub.abstract && (
-                        <p className="text-secondary-600 text-sm mb-3 leading-relaxed">{pub.abstract}</p>
-                      )}
-
-                      <div className="flex flex-wrap items-center gap-4 mt-4">
-                        {getStatusBadge(pub.status)}
-                        
-                        {/* Action Buttons */}
-                        <div className="flex gap-3">
-                          <a
-                            href={pub.scholarLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1 text-sm text-primary-600 hover:text-primary-700 font-medium"
-                          >
-                            <ExternalLink className="h-4 w-4" />
-                            Google Scholar
-                          </a>
-                          {pub.doi && pub.doi !== '#' && (
-                            <a
-                              href={pub.doi}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-1 text-sm text-primary-600 hover:text-primary-700 font-medium"
-                            >
-                              <ExternalLink className="h-4 w-4" />
-                              DOI
-                            </a>
-                          )}
-                          {pub.pdf && pub.pdf !== '#' && (
-                            <button className="flex items-center gap-1 text-sm text-primary-600 hover:text-primary-700 font-medium">
-                              <Download className="h-4 w-4" />
-                              PDF
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+              {/* Center: Publication Details */}
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-relaxed">
+                  {pub.title}
+                </h3>
+                
+                <div className="flex items-center gap-2 mb-3 text-gray-700">
+                  <Users className="h-4 w-4 text-gray-400" />
+                  <span className="text-sm">{pub.authors}</span>
+                </div>
+                
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    {pub.year}
                   </div>
+                  {pub.journal && (
+                    <span className="font-medium">{pub.journal}</span>
+                  )}
+                  {pub.conference && (
+                    <span className="font-medium">{pub.conference}</span>
+                  )}
+                  {pub.publisher && (
+                    <span className="font-medium">{pub.publisher}</span>
+                  )}
+                  {pub.location && (
+                    <span className="text-gray-500">• {pub.location}</span>
+                  )}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-wrap items-center gap-4">
+                  <a
+                    href={pub.scholarLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-900 transition-colors text-sm font-medium"
+                  >
+                    <ExternalLink className="h-3 w-3" />
+                    Google Scholar
+                  </a>
+                  {pub.doi && pub.doi !== '#' && (
+                    <a
+                      href={pub.doi}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium"
+                    >
+                      <ExternalLink className="h-3 w-3" />
+                      View DOI
+                    </a>
+                  )}
+                  {pub.pdf && pub.pdf !== '#' && (
+                    <button className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium">
+                      <Download className="h-3 w-3" />
+                      Download PDF
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
 
-        {/* Statistics and Call to Action */}
-        <div className="mt-16 text-center">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
+      {/* Statistics */}
+      <div className="mt-16 max-w-4xl mx-auto">
+        <div className="bg-gray-50 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Publication Metrics</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 mb-2">
-                {publications.filter(p => p.type === 'journal').length}
-              </div>
-              <div className="text-secondary-600">Journal Papers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 mb-2">
-                {publications.filter(p => p.type === 'conference').length}
-              </div>
-              <div className="text-secondary-600">Conference Papers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 mb-2">
-                {publications.filter(p => p.status === 'accepted').length}
-              </div>
-              <div className="text-secondary-600">Recent Acceptances</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 mb-2">
+              <div className="text-3xl font-bold text-green-800 mb-2">
                 {publications.length}
               </div>
-              <div className="text-secondary-600">Total Publications</div>
+              <div className="text-gray-600 text-sm">Total Publications</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-800 mb-2">
+                {publications.filter(p => p.type === 'journal').length}
+              </div>
+              <div className="text-gray-600 text-sm">Journal Papers</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-800 mb-2">
+                {publications.filter(p => p.type === 'conference').length}
+              </div>
+              <div className="text-gray-600 text-sm">Conference Papers</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-800 mb-2">
+                {publications.filter(p => p.status === 'accepted').length}
+              </div>
+              <div className="text-gray-600 text-sm">Recent Acceptances</div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div className="bg-primary-50 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-secondary-900 mb-4">Explore More Research</h2>
-            <p className="text-secondary-600 mb-6">
-              For the complete list of publications, citations, and research metrics, visit my Google Scholar profile.
-            </p>
-            <a
-              href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              <ExternalLink className="h-5 w-5" />
-              Visit Google Scholar Profile
-            </a>
-          </div>
+      {/* Call to Action */}
+      <div className="mt-12 text-center">
+        <div className="bg-green-50 rounded-2xl p-8 max-w-2xl mx-auto">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">View Complete Publication Record</h2>
+          <p className="text-gray-600 mb-6">
+            For citations, h-index, and complete research metrics, visit my Google Scholar profile.
+          </p>
+          <a
+            href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-900 transition-colors font-medium"
+          >
+            <ExternalLink className="h-5 w-5" />
+            Visit Google Scholar Profile
+          </a>
         </div>
       </div>
     </div>
