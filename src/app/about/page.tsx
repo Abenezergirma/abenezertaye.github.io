@@ -1,377 +1,332 @@
 'use client';
 
-import { Calendar, MapPin, Award, Download, Mail, Linkedin, Github, FileText } from 'lucide-react';
-import { siteConfig } from '@/lib/config';
-import { useState, useEffect } from 'react';
+import { Calendar, Users, BookOpen, Award, FileText, GraduationCap, Briefcase, Code, Cpu } from 'lucide-react';
 
-export default function About() {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
-  const [imageUrl, setImageUrl] = useState('');
-
-  const education = [
+export default function Teaching() {
+  const teachingExperience = [
     {
-      degree: "Ph.D. in Aerospace Engineering",
-      school: "George Washington University",
-      period: "January 2021 - August 2025",
-      location: "Washington, DC",
-      details: "Advisor: Prof. Peng Wei | Dissertation: Enhancing Safety and Energy-Efficiency in Advanced Air Mobility Through Trajectory Planning and Mission Feasibility Assessment Strategies"
+      role: "Teaching Assistant",
+      course: "MAE4182 - Electro-Mechanical Control Systems",
+      institution: "George Washington University",
+      period: "Fall 2024",
+      responsibilities: [
+        "Assisted in course instruction and laboratory sessions",
+        "Provided guidance on control systems theory and applications",
+        "Graded assignments and examinations",
+        "Held weekly office hours for student consultations",
+        "Developed supplementary learning materials"
+      ],
+      skills: ["Control Systems", "MATLAB/Simulink", "System Dynamics", "Feedback Control"]
     },
     {
-      degree: "Ph.D. in Electrical and Computer Engineering",
-      school: "North Carolina Agricultural and Technical State University",
-      period: "August 2019 - December 2020",
-      location: "Greensboro, North Carolina",
-      details: "Transferred Before Completion"
-    },
-    {
-      degree: "B.S. in Electro-Mechanical Engineering",
-      school: "Addis Ababa Science and Technology University",
-      period: "Graduated June 2017",
-      location: "Addis Ababa, Ethiopia",
-      details: "Ambassador of Science and Technology of the graduation year 2017"
+      role: "Research Mentor",
+      course: "Undergraduate Research Program",
+      institution: "Vanderbilt University",
+      period: "2022 - 2024",
+      responsibilities: [
+        "Mentored 5 undergraduate researchers in advanced topics",
+        "Guided students in trajectory planning and optimization algorithms",
+        "Supervised research on battery prognostics and energy efficiency",
+        "Co-authored conference papers with student contributions",
+        "Trained students in research methodologies and academic writing"
+      ],
+      skills: ["Research Methodology", "Trajectory Planning", "Battery Modeling", "Academic Writing"]
     }
   ];
 
-  const researchInterests = [
-    "Advanced Air Mobility (AAM)",
-    "Trajectory Planning & Optimization",
-    "Autonomous Systems & Robotics",
-    "Multi-Agent Systems",
-    "Machine Learning in Aviation",
-    "Battery Prognostics & Energy Efficiency",
-    "Flight Control Systems",
-    "UAV/UAS Operations"
+  const researchAreas = [
+    {
+      title: "Trajectory Planning & Optimization",
+      icon: <Code className="h-6 w-6" />,
+      projects: ["Multi-agent systems", "Urban Air Mobility", "Energy-efficient routing"]
+    },
+    {
+      title: "Battery Prognostics",
+      icon: <Cpu className="h-6 w-6" />,
+      projects: ["Li-ion battery modeling", "Neural ODEs", "Physics-informed neural networks"]
+    },
+    {
+      title: "Autonomous Systems",
+      icon: <Briefcase className="h-6 w-6" />,
+      projects: ["UAS operations", "eVTOL simulations", "Safety management systems"]
+    }
   ];
 
-  const skills = {
-    programming: ["Python", "MATLAB/Simulink", "C/C++", "TensorFlow", "PyTorch"],
-    tools: ["OpenCV", "Keras", "OpenAI Gym", "ROS", "Linux"],
-    concepts: ["Reinforcement Learning", "MDP", "Reachability Analysis", "DO-178C Certification"]
-  };
-
-  useEffect(() => {
-    // Set image URL with cache busting to prevent caching issues
-    const url = `/images/image.png?t=${Date.now()}`;
-    setImageUrl(url);
-    console.log('Setting image URL:', url);
-  }, []);
-
-  const handleDownloadResume = async () => {
-    try {
-      const response = await fetch('/pdf/Taye-CV (5).pdf');
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Abenezer_Taye_CV.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Download failed:', error);
-      window.open('/pdf/Taye-CV (5).pdf', '_blank');
+  const studentProjects = [
+    {
+      title: "Real-time Trajectory Planning for Urban Air Mobility",
+      description: "Undergraduate research project developing scalable trajectory planners for dense urban environments",
+      outcome: "Conference publication preparation",
+      technologies: ["Python", "Reinforcement Learning", "MDP Framework"]
+    },
+    {
+      title: "Battery State Prediction using Neural ODEs",
+      description: "Research on real-time battery state prediction for drone operations",
+      outcome: "33× speedup compared to traditional models",
+      technologies: ["PyTorch", "Neural ODEs", "Real-time Systems"]
+    },
+    {
+      title: "eVTOL Energy Demand Forecasting",
+      description: "Analysis of charging demand patterns for urban air mobility networks",
+      outcome: "AIAA conference presentation",
+      technologies: ["MATLAB", "Energy Modeling", "Forecasting Algorithms"]
     }
-  };
+  ];
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-    console.log('✅ Image loaded successfully');
-  };
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    setImageError(true);
-    console.error('❌ Image failed to load:', e);
-    console.log('Image URL that failed:', imageUrl);
+  const teachingTools = {
+    programming: ["Python", "MATLAB/Simulink", "C/C++"],
+    frameworks: ["TensorFlow", "PyTorch", "OpenCV", "ROS"],
+    simulation: ["Flight Simulators", "Battery Digital Twins", "UAS Testing Platforms"],
+    standards: ["DO-178C Certification Process", "Safety Standards", "Industry Best Practices"]
   };
 
   return (
-    <div className="py-16 bg-linear-to-br from-white to-primary-50/30">
-      <div className="container-custom">
-        {/* Page Header with Photo */}
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-12">
-            {/* Photo Section */}
-            <div className="lg:w-2/5 flex justify-center">
-              <div className="relative">
-                {/* Image Container */}
-                <div className="w-90 h-110 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gray-100">
-                  {imageUrl && !imageError ? (
-                    <>
-                      <img 
-                        src={imageUrl}
-                        alt="Abenezer Taye - Post-Doctoral Research Scholar"
-                        className={`w-full h-full object-cover transition-opacity duration-500 ${
-                          imageLoaded ? 'opacity-100' : 'opacity-0'
-                        }`}
-                        onLoad={handleImageLoad}
-                        onError={handleImageError}
-                        crossOrigin="anonymous"
-                      />
-                      {/* Loading skeleton */}
-                      {!imageLoaded && (
-                        <div className="absolute inset-0 bg-linear-to-br from-gray-200 to-gray-300 animate-pulse rounded-3xl flex items-center justify-center">
-                          <div className="text-center text-gray-500">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto mb-2"></div>
-                            <div className="text-sm">Loading image...</div>
-                          </div>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    // Fallback when image fails to load
-                    <div className="w-full h-full bg-linear-to-br from-primary-100 to-primary-200 flex items-center justify-center rounded-3xl">
-                      <div className="text-center text-primary-600">
-                        <div className="text-4xl font-bold mb-2">AT</div>
-                        <div className="text-sm font-medium">Profile Photo</div>
-                        {imageError && (
-                          <div className="text-xs mt-2 text-primary-500">
-                            Image failed to load
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                
-                {/* Floating Elements */}
-                <div className="absolute -bottom-3 -right-3 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg flex items-center justify-center border border-white/20">
-                  <Award className="h-5 w-5 text-primary-600" />
-                </div>
-              </div>
-            </div>
-
-            {/* Header Content */}
-            <div className="lg:w-3/5 text-left">
-              <h1 className="text-5xl font-bold text-primary-700 mb-6 leading-tight">
-                Abenezer <span className="text-accent-600">Taye</span>
-              </h1>
-              <p className="text-2xl text-secondary-600 mb-6 font-light">
-                Post-Doctoral Research Scholar &amp; AIAA Member
-              </p>
-              <p className="text-lg text-secondary-700 mb-8 leading-relaxed">
-                Passionate researcher advancing <span className="text-primary-600 font-semibold">autonomous systems</span> and 
-                creating <span className="text-primary-600 font-semibold">safer, more efficient air transportation solutions</span>. 
-                Currently developing cutting-edge trajectory planning and safety management systems for Advanced Air Mobility at Vanderbilt University.
-              </p>
-              
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={handleDownloadResume}
-                  className="btn-primary inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-semibold group relative overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-linear-to-r from-primary-700 to-primary-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-                  <Download className="h-5 w-5 relative z-10" />
-                  <span className="relative z-10">Download My CV</span>
-                </button>
-                <a
-                  href="/contact"
-                  className="btn-secondary inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-semibold hover:bg-secondary-300 transition-colors"
-                >
-                  <Mail className="h-5 w-5" />
-                  Get In Touch
-                </a>
-              </div>
-
-              {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-secondary-200">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary-600 mb-1">5+</div>
-                  <div className="text-sm text-secondary-600">Years Research</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary-600 mb-1">10+</div>
-                  <div className="text-sm text-secondary-600">Publications</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary-600 mb-1">$2.5M</div>
-                  <div className="text-sm text-secondary-600">NASA Funding</div>
-                </div>
-              </div>
-            </div>
+          <div className="inline-flex items-center justify-center p-3 bg-primary-100 rounded-full mb-6">
+            <GraduationCap className="h-8 w-8 text-primary-600" />
           </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Teaching & Mentorship
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Guiding the next generation of aerospace engineers and researchers through 
+            hands-on learning, research integration, and practical application of advanced concepts.
+          </p>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Main Content - 2/3 width */}
-          <div className="lg:col-span-2 space-y-12">
-            {/* Education Timeline */}
-            <section className="bg-white rounded-2xl p-8 shadow-lg border border-secondary-100">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          {/* Left Column - Teaching Experience */}
+          <div className="lg:col-span-2 space-y-8">
+            
+            {/* Teaching Experience Section */}
+            <section className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-primary-100 rounded-xl">
-                  <FileText className="h-6 w-6 text-primary-600" />
+                <div className="p-3 bg-blue-100 rounded-lg">
+                  <BookOpen className="h-6 w-6 text-blue-600" />
                 </div>
-                <h2 className="text-3xl font-bold text-secondary-900">Education</h2>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Teaching Experience</h2>
+                  <p className="text-gray-600">Formal teaching and mentoring roles</p>
+                </div>
               </div>
+
               <div className="space-y-8">
-                {education.map((edu, index) => (
-                  <div key={index} className="relative pl-12">
-                    {/* Timeline line */}
-                    <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary-200"></div>
-                    
-                    {/* Timeline dot */}
-                    <div className="absolute left-4 top-6 w-4 h-4 bg-primary-600 rounded-full border-4 border-white shadow-lg"></div>
-                    
-                    {/* Content */}
-                    <div className="bg-linear-to-r from-white to-primary-50/50 rounded-xl p-6 border border-secondary-100 hover:shadow-md transition-shadow">
-                      <div className="mb-3">
-                        <h3 className="text-xl font-semibold text-secondary-900 mb-2">{edu.degree}</h3>
-                        <p className="text-primary-600 font-medium text-lg">{edu.school}</p>
+                {teachingExperience.map((exp, index) => (
+                  <div key={index} className="pb-8 border-b border-gray-100 last:border-0 last:pb-0">
+                    <div className="flex flex-col md:flex-row md:items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-900">{exp.role}</h3>
+                        <p className="text-lg text-blue-600 font-medium">{exp.course}</p>
+                        <p className="text-gray-600">{exp.institution}</p>
                       </div>
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-secondary-600 mb-3">
-                        <div className="flex items-center gap-2 bg-secondary-100 px-3 py-1 rounded-full">
-                          <Calendar className="h-4 w-4" />
-                          {edu.period}
-                        </div>
-                        <div className="flex items-center gap-2 bg-secondary-100 px-3 py-1 rounded-full">
-                          <MapPin className="h-4 w-4" />
-                          {edu.location}
-                        </div>
+                      <div className="flex items-center gap-2 mt-2 md:mt-0">
+                        <Calendar className="h-5 w-5 text-gray-400" />
+                        <span className="text-gray-600 font-medium">{exp.period}</span>
                       </div>
-                      <p className="text-secondary-700 leading-relaxed">{edu.details}</p>
+                    </div>
+
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-gray-700 mb-3">Responsibilities:</h4>
+                      <ul className="space-y-2">
+                        {exp.responsibilities.map((resp, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-gray-700">
+                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></div>
+                            <span>{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-gray-700 mb-3">Skills Covered:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.skills.map((skill, idx) => (
+                          <span 
+                            key={idx} 
+                            className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* Research Interests */}
-            <section className="bg-white rounded-2xl p-8 shadow-lg border border-secondary-100">
+            {/* Student Research Projects */}
+            <section className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
               <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-accent-100 rounded-xl">
-                  <Award className="h-6 w-6 text-accent-600" />
+                <div className="p-3 bg-green-100 rounded-lg">
+                  <Users className="h-6 w-6 text-green-600" />
                 </div>
-                <h2 className="text-3xl font-bold text-secondary-900">Research Interests</h2>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Student Research Projects</h2>
+                  <p className="text-gray-600">Recent undergraduate research mentorship</p>
+                </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {researchInterests.map((interest, index) => (
-                  <div
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {studentProjects.map((project, index) => (
+                  <div 
                     key={index}
-                    className="group flex items-center gap-3 p-4 bg-linear-to-r from-primary-50 to-accent-50 rounded-xl border border-primary-100 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                    className="bg-linear-to-br from-gray-50 to-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow"
                   >
-                    <div className="w-2 h-2 bg-primary-500 rounded-full group-hover:bg-accent-500 transition-colors"></div>
-                    <span className="text-secondary-800 font-medium group-hover:text-primary-700 transition-colors">
-                      {interest}
-                    </span>
+                    <h3 className="font-bold text-gray-900 mb-3">{project.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                    
+                    <div className="mb-4">
+                      <span className="text-sm font-semibold text-green-600">Outcome: </span>
+                      <span className="text-sm text-gray-700">{project.outcome}</span>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, idx) => (
+                        <span 
+                          key={idx} 
+                          className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
             </section>
           </div>
 
-          {/* Sidebar - 1/3 width */}
+          {/* Right Column - Research Areas & Tools */}
           <div className="space-y-8">
-            {/* Skills & Technologies */}
-            <section className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100">
-              <h3 className="text-xl font-bold text-secondary-900 mb-6 flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                Skills &amp; Technologies
+            
+            {/* Research Areas for Mentorship */}
+            <section className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <Award className="h-5 w-5 text-green-600" />
+                Research Mentorship Areas
               </h3>
               
               <div className="space-y-6">
-                <div>
-                  <h4 className="font-semibold text-secondary-700 mb-3 text-sm uppercase tracking-wide">Programming</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills.programming.map((skill, index) => (
-                      <span 
-                        key={index} 
-                        className="px-3 py-2 bg-primary-50 text-primary-800 rounded-lg text-sm font-medium border border-primary-200 hover:bg-primary-100 transition-colors cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                {researchAreas.map((area, index) => (
+                  <div key={index} className="pb-6 border-b border-gray-100 last:border-0 last:pb-0">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 bg-white rounded-lg">
+                        {area.icon}
+                      </div>
+                      <h4 className="font-semibold text-gray-900">{area.title}</h4>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      {area.projects.map((project, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 bg-purple-300 rounded-full mt-2 shrink-0"></div>
+                          <span className="text-sm text-gray-700">{project}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-secondary-700 mb-3 text-sm uppercase tracking-wide">Tools &amp; Frameworks</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills.tools.map((tool, index) => (
-                      <span 
-                        key={index} 
-                        className="px-3 py-2 bg-secondary-50 text-secondary-800 rounded-lg text-sm font-medium border border-secondary-200 hover:bg-secondary-100 transition-colors cursor-default"
-                      >
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-secondary-700 mb-3 text-sm uppercase tracking-wide">Concepts &amp; Standards</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills.concepts.map((concept, index) => (
-                      <span 
-                        key={index} 
-                        className="px-3 py-2 bg-accent-50 text-accent-800 rounded-lg text-sm font-medium border border-accent-200 hover:bg-accent-100 transition-colors cursor-default"
-                      >
-                        {concept}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
             </section>
 
-            {/* Professional Affiliations */}
-            <section className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100">
-              <h3 className="text-xl font-bold text-secondary-900 mb-6 flex items-center gap-2">
-                <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
-                Professional Affiliations
-              </h3>
+            {/* Teaching Tools & Technologies */}
+            <section className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Tools & Technologies</h3>
+              
+              <div className="space-y-6">
+                {Object.entries(teachingTools).map(([category, tools], index) => (
+                  <div key={index}>
+                    <h4 className="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">
+                      {category.replace(/([A-Z])/g, ' $1').trim()}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {tools.map((tool, idx) => (
+                        <span 
+                          key={idx} 
+                          className="px-3 py-1.5 bg-gray-50 text-gray-800 rounded-lg text-sm font-medium border border-gray-200"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Mentorship Philosophy */}
+            <section className="bg-linear-to-br from-blue-50 to-blue-100 rounded-xl shadow-lg p-6 border border-blue-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Mentorship Approach</h3>
+              
               <div className="space-y-4">
-                <div className="flex items-center gap-4 p-3 bg-primary-50 rounded-lg hover:bg-primary-100 transition-colors">
-                  <Award className="h-5 w-5 text-primary-600 shrink-0" />
-                  <span className="text-secondary-700 font-medium">American Institute of Aeronautics and Astronautics (AIAA)</span>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 shrink-0"></div>
+                  <p className="text-gray-700">
+                    <span className="font-semibold">Project-Based Learning:</span> Students engage in real research projects with tangible outcomes
+                  </p>
                 </div>
-                <div className="flex items-center gap-4 p-3 bg-secondary-50 rounded-lg hover:bg-secondary-100 transition-colors">
-                  <Award className="h-5 w-5 text-secondary-600 shrink-0" />
-                  <span className="text-secondary-700 font-medium">Institute of Electrical and Electronic Engineers (IEEE)</span>
+                
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 shrink-0"></div>
+                  <p className="text-gray-700">
+                    <span className="font-semibold">Publication Focus:</span> Guide students toward conference presentations and journal publications
+                  </p>
                 </div>
-                <div className="flex items-center gap-4 p-3 bg-accent-50 rounded-lg hover:bg-accent-100 transition-colors">
-                  <Award className="h-5 w-5 text-accent-600 shrink-0" />
-                  <span className="text-secondary-700 font-medium">Institute for Operations Research and the Management Sciences (INFORMS)</span>
+                
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 shrink-0"></div>
+                  <p className="text-gray-700">
+                    <span className="font-semibold">Industry Relevance:</span> Connect academic research with practical aviation and aerospace applications
+                  </p>
                 </div>
               </div>
             </section>
 
-            {/* Contact Card */}
-            <section className="bg-linear-to-br from-primary-600 to-primary-700 rounded-2xl p-6 text-white shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Let&apos;s Connect</h3>
-              <p className="text-primary-100 mb-6 text-sm">
-                Interested in research collaboration or discussing Advanced Air Mobility?
+            {/* Contact for Research Opportunities */}
+            <section className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Research Opportunities</h3>
+              <p className="text-gray-600 mb-6 text-sm">
+                Interested undergraduate and graduate students are encouraged to reach out for research collaboration opportunities.
               </p>
+              
               <div className="space-y-3">
                 <a
-                  href={`mailto:${siteConfig.links.email}`}
-                  className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                  href="mailto:abenezertaye@gvu.edu"
+                  className="flex items-center justify-center gap-3 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
                 >
-                  <Mail className="h-5 w-5" />
-                  <span className="font-medium">Send Email</span>
+                  <FileText className="h-5 w-5" />
+                  Discuss Research Opportunities
                 </a>
-                <a
-                  href={siteConfig.links.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="font-medium">LinkedIn</span>
-                </a>
-                <a
-                  href={siteConfig.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
-                >
-                  <Github className="h-5 w-5" />
-                  <span className="font-medium">GitHub</span>
-                </a>
+                <p className="text-xs text-gray-500 text-center">
+                  Please include your background and research interests
+                </p>
               </div>
             </section>
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="mt-16 bg-linear-to-r from-blue-400 to-green-400 rounded-xl shadow-lg p-8 text-white">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">5</div>
+              <div className="text-blue-100">Undergraduate Researchers Mentored</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">2+</div>
+              <div className="text-blue-100">Years of Teaching Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">100%</div>
+              <div className="text-blue-100">Student Research Publication Rate</div>
+            </div>
           </div>
         </div>
       </div>
