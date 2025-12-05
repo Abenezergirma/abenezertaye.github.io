@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
-import Layout from '@/components/layout/Layout';
+import LayoutWrapper from '@/components/layout/LayoutWrapper';
 import './globals.css';
 
 const inter = Inter({
@@ -51,9 +51,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-white font-sans antialiased">
-        <Layout>
+        <LayoutWrapper>
           {children}
-        </Layout>
+        </LayoutWrapper>
       </body>
     </html>
   );
