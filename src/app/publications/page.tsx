@@ -128,9 +128,7 @@ export default function Publications() {
     { key: 'report', label: 'Reports', count: publications.filter(p => p.type === 'report').length, icon: Award }
   ];
 
-  const filteredPublications = publications.filter(pub => 
-    filter === 'all' || pub.type === filter
-  );
+  const filteredPublications = publications.filter(pub => filter === 'all' || pub.type === filter);
 
   const getStatusBadge = (status: string) => {
     const styles = {
@@ -146,28 +144,24 @@ export default function Publications() {
   };
 
   const getTypeIcon = (type: string) => {
-    const icons = {
-      journal: BookOpen,
-      conference: Calendar,
-      report: Award
-    };
+    const icons = { journal: BookOpen, conference: Calendar, report: Award };
     const Icon = icons[type as keyof typeof icons];
     return <Icon className="h-4 w-4 text-gray-500" />;
   };
 
   return (
-    <div className="py-8">
+    <div className="py-10 px-4 md:px-8 bg-gray-100 min-h-screen">
       {/* Page Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Publications</h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+      <div className="text-center mb-14 max-w-3xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Publications</h1>
+        <p className="text-gray-600 mb-4">
           Research contributions in Advanced Air Mobility, trajectory planning, and autonomous systems.
         </p>
         <a 
           href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-green-800 hover:text-green-900 font-medium mt-3"
+          className="inline-flex items-center gap-2 text-green-800 hover:text-green-900 font-medium"
         >
           View Google Scholar Profile
           <ExternalLink className="h-4 w-4" />
@@ -176,26 +170,22 @@ export default function Publications() {
 
       {/* Filter Buttons */}
       <div className="flex flex-wrap gap-2 justify-center mb-10 max-w-2xl mx-auto">
-        {filters.map((filterItem) => {
-          const Icon = filterItem.icon;
+        {filters.map(f => {
+          const Icon = f.icon;
           return (
             <button
-              key={filterItem.key}
-              onClick={() => setFilter(filterItem.key)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 ${
-                filter === filterItem.key
-                  ? 'bg-green-700 text-white shadow-sm'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              key={f.key}
+              onClick={() => setFilter(f.key)}
+              className={`px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-all duration-200 ${
+                filter === f.key ? 'bg-green-700 text-white shadow-sm' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
               <Icon className="h-4 w-4" />
-              {filterItem.label}
+              {f.label}
               <span className={`text-xs px-1.5 py-0.5 rounded-full ${
-                filter === filterItem.key
-                  ? 'bg-white text-green-800'
-                  : 'bg-gray-300 text-gray-700'
+                filter === f.key ? 'bg-white text-green-800' : 'bg-gray-300 text-gray-700'
               }`}>
-                {filterItem.count}
+                {f.count}
               </span>
             </button>
           );
@@ -204,47 +194,31 @@ export default function Publications() {
 
       {/* Publications List */}
       <div className="space-y-6 max-w-6xl mx-auto">
-        {filteredPublications.map((pub) => (
-          <div key={pub.id} className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-sm transition-all duration-300">
+        {filteredPublications.map(pub => (
+          <div key={pub.id} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-all duration-300">
             <div className="flex flex-col lg:flex-row gap-6">
-              {/* Left: Type Icon and Status */}
+              {/* Left: Type & Status */}
               <div className="flex lg:flex-col items-start gap-4 lg:gap-2">
-                <div className="p-3 bg-gray-50 rounded-lg">
-                  {getTypeIcon(pub.type)}
-                </div>
-                <div className="lg:mt-2">
-                  {getStatusBadge(pub.status)}
-                </div>
+                <div className="p-3 bg-gray-50 rounded-lg">{getTypeIcon(pub.type)}</div>
+                <div className="lg:mt-2">{getStatusBadge(pub.status)}</div>
               </div>
 
-              {/* Center: Publication Details */}
+              {/* Details */}
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-relaxed">
-                  {pub.title}
-                </h3>
-                
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{pub.title}</h3>
                 <div className="flex items-center gap-2 mb-3 text-gray-700">
                   <Users className="h-4 w-4 text-gray-400" />
                   <span className="text-sm">{pub.authors}</span>
                 </div>
-                
                 <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600 mb-4">
                   <div className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
                     {pub.year}
                   </div>
-                  {pub.journal && (
-                    <span className="font-medium">{pub.journal}</span>
-                  )}
-                  {pub.conference && (
-                    <span className="font-medium">{pub.conference}</span>
-                  )}
-                  {pub.publisher && (
-                    <span className="font-medium">{pub.publisher}</span>
-                  )}
-                  {pub.location && (
-                    <span className="text-gray-500">• {pub.location}</span>
-                  )}
+                  {pub.journal && <span className="font-medium">{pub.journal}</span>}
+                  {pub.conference && <span className="font-medium">{pub.conference}</span>}
+                  {pub.publisher && <span className="font-medium">{pub.publisher}</span>}
+                  {pub.location && <span className="text-gray-500">• {pub.location}</span>}
                 </div>
 
                 {/* Action Buttons */}
@@ -282,33 +256,25 @@ export default function Publications() {
         ))}
       </div>
 
-      {/* Statistics */}
+      {/* Publication Metrics */}
       <div className="mt-16 max-w-4xl mx-auto">
         <div className="bg-gray-50 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Publication Metrics</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-800 mb-2">
-                {publications.length}
-              </div>
+              <div className="text-3xl font-bold text-green-800 mb-2">{publications.length}</div>
               <div className="text-gray-600 text-sm">Total Publications</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-800 mb-2">
-                {publications.filter(p => p.type === 'journal').length}
-              </div>
+              <div className="text-3xl font-bold text-green-800 mb-2">{publications.filter(p => p.type === 'journal').length}</div>
               <div className="text-gray-600 text-sm">Journal Papers</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-800 mb-2">
-                {publications.filter(p => p.type === 'conference').length}
-              </div>
+              <div className="text-3xl font-bold text-green-800 mb-2">{publications.filter(p => p.type === 'conference').length}</div>
               <div className="text-gray-600 text-sm">Conference Papers</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-800 mb-2">
-                {publications.filter(p => p.status === 'accepted').length}
-              </div>
+              <div className="text-3xl font-bold text-green-800 mb-2">{publications.filter(p => p.status === 'accepted').length}</div>
               <div className="text-gray-600 text-sm">Recent Acceptances</div>
             </div>
           </div>

@@ -18,10 +18,18 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: {
     default: 'Abenezer Taye - Research Portfolio',
-    template: '%s | Abenezer Taye'
+    template: '%s | Abenezer Taye',
   },
-  description: 'Post-Doctoral Research Scholar specializing in Advanced Air Mobility, Trajectory Planning, and Autonomous Systems at Vanderbilt University',
-  keywords: ['Advanced Air Mobility', 'Trajectory Planning', 'Autonomous Systems', 'UAV Research', 'Vanderbilt University', 'NASA Research'],
+  description:
+    'Post-Doctoral Research Scholar specializing in Advanced Air Mobility, Trajectory Planning, and Autonomous Systems at Vanderbilt University',
+  keywords: [
+    'Advanced Air Mobility',
+    'Trajectory Planning',
+    'Autonomous Systems',
+    'UAV Research',
+    'Vanderbilt University',
+    'NASA Research',
+  ],
   authors: [{ name: 'Abenezer Taye' }],
   robots: {
     index: true,
@@ -38,22 +46,33 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://abenezertaye.com',
     title: 'Abenezer Taye - Research Portfolio',
-    description: 'Post-Doctoral Research Scholar specializing in Advanced Air Mobility and Autonomous Systems',
+    description:
+      'Post-Doctoral Research Scholar specializing in Advanced Air Mobility and Autonomous Systems',
     siteName: 'Abenezer Taye Research Portfolio',
+  },
+  // ✅ Favicon using single at.png
+  icons: {
+    icon: '/at.png',
+    shortcut: '/at.png',
+    apple: '/at.png',
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Fallback links for older browsers / Apple devices */}
+        <link rel="icon" href="/at.png" />
+        <link rel="shortcut icon" href="/at.png" />
+        <link rel="apple-touch-icon" href="/at.png" />
+      </head>
       <body className="min-h-screen bg-white font-sans antialiased">
-        <LayoutWrapper>
-          {children}
-        </LayoutWrapper>
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

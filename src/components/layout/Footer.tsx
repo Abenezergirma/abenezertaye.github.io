@@ -28,9 +28,7 @@ export default function Footer() {
               <Link href="/about" className="block text-gray-400 hover:text-white text-sm">
                 About
               </Link>
-              <Link href="/contact" className="block text-gray-400 hover:text-white text-sm">
-                Contact
-              </Link>
+             
             </div>
           </div>
 
