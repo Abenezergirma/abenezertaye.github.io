@@ -8,9 +8,10 @@ import { cn } from '@/lib/utils';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Teaching', href: '/teaching' },
   { name: 'Research', href: '/research' },
   { name: 'Publications', href: '/publications' },
+  { name: 'Teaching', href: '/teaching' },
+
 ];
 
 export default function Header() {
@@ -80,9 +81,6 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* -------------------------------------------------- */}
-      {/* Mobile Menu Overlay */}
-      {/* -------------------------------------------------- */}
       <div
         className={cn(
           "lg:hidden fixed inset-0 z-50 transition-all duration-300",
