@@ -18,23 +18,28 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   const showSidebar = pathname !== "/";
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Header – always visible */}
+    <div className="min-h-screen bg-gray-100 flex flex-col">
+
       <ScrollProgress />
       <Header />
 
-      <div className="flex">
+      <div className="flex flex-1">
         {/* Sidebar */}
         {showSidebar && (
           <aside
             className="
               hidden lg:block
-              fixed top-16 left-10 
-              h-[calc(100vh-4rem)]
               w-80
+              ml-10 /* Added left margin for distance from edge */
               bg-white
               border-r border-gray-200
               z-30
+              shrink-0
+              sticky top-16 
+              h-[calc(100vh-4rem)] 
+              overflow-y-auto
+              rounded-r-lg 
+              shadow-sm
             "
           >
             <Sidebar />
@@ -44,12 +49,14 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
         {/* MAIN CONTENT */}
         <main
           className={`
-            flex-1 min-h-screen
+            flex-1
             pt-16  /* space for header */
-            ${showSidebar ? "lg:ml-80" : ""}
+            ${showSidebar ? "" : ""}
+            min-h-[calc(100vh-8rem)] /* Ensure minimum height */
+            px-8 /* Add horizontal padding */
           `}
         >
-          <div className="p-8">
+          <div className="max-w-7xl mx-auto"> {/* Optional: constrain max width */}
             {children}
           </div>
         </main>
