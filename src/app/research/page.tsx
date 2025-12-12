@@ -19,6 +19,7 @@ export default function Research() {
       icon: Rocket,
       status: "Active",
       image: "/images/research/auv.jpg",
+      imageDimensions: { width: 400, height: 250 },
       links: [
         { name: "NASA Project Details", url: "https://www.nasa.gov/aeroresearch/system-wide-safety" },
         { name: "Related Publication", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:u5HHmVD_uO8C" }
@@ -38,6 +39,7 @@ export default function Research() {
       icon: Battery,
       status: "Active",
       image: "/images/research/auv.jpg",
+      imageDimensions: { width: 400, height: 250 },
       links: [
         { name: "Publication", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:2osOgNQ5qMEC" }
       ]
@@ -56,6 +58,7 @@ export default function Research() {
       icon: Cpu,
       status: "Completed",
       image: "/images/research/auv.jpg",
+      imageDimensions: { width: 400, height: 250 },
       links: [
         { name: "Journal Paper", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:qjMakFHDy7sC" },
         { name: "Conference Paper", url: "https://arxiv.org/pdf/2306.11647" }
@@ -75,31 +78,37 @@ export default function Research() {
       icon: Zap,
       status: "Completed",
       image: "/images/research/auv.jpg",
+      imageDimensions: { width: 400, height: 250 },
       links: [
         { name: "Publication", url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:Tyk-4Ss8FVUC" }
       ]
     }
   ];
-const testingPlatforms = [
+  
+  const testingPlatforms = [
     {
       name: "eVTOL simulators",
       description: "High-fidelity simulation environments for electric vertical takeoff and landing aircraft",
-      image: "/images/research/roo.png"
+      image: "/images/research/roo.png",
+      imageDimensions: { width: 400, height: 250 }
     },
     {
       name: "sUAS hardware flight testing", 
       description: "Real-world testing with small unmanned aerial systems",
-      image: "/images/research/roo.png"
+      image: "/images/research/roo.png",
+      imageDimensions: { width: 400, height: 250 }
     },
     {
       name: "Battery digital twins",
       description: "Virtual replicas of battery systems for predictive maintenance and optimization",
-      image: "/images/research/roo.png"
+      image: "/images/research/roo.png",
+      imageDimensions: { width: 400, height: 250 }
     },
     {
       name: "UAM/UAS transportation networks",
       description: "Network simulation and optimization for urban air mobility systems",
-      image: "/images/research/roo.png"
+      image: "/images/research/roo.png",
+      imageDimensions: { width: 400, height: 250 }
     }
   ];
 
@@ -127,14 +136,28 @@ const testingPlatforms = [
         {projects.map((project, idx) => (
           <div key={idx} className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
             <div className="flex flex-col lg:flex-row">
-              {/* Project Image */}
-              <div className="lg:w-2/5 h-94 relative">
-                <Image src={project.image} alt={project.title} fill className="object-cover" />
-                <span className={`absolute top-4 left-4 px-3 py-1 text-sm font-medium rounded-full ${
-                  project.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
-                }`}>
-                  {project.status}
-                </span>
+              {/* Project Image - Fixed to maintain aspect ratio */}
+              <div className="lg:w-2/5 relative h-auto min-h-[250px]">
+                <div className="relative w-full h-full">
+                  <Image 
+                    src={project.image} 
+                    alt={project.title}
+                    width={project.imageDimensions.width}
+                    height={project.imageDimensions.height}
+                    className="object-cover w-full h-full"
+                    style={{ 
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center'
+                    }}
+                  />
+                  <span className={`absolute top-4 left-4 px-3 py-1 text-sm font-medium rounded-full ${
+                    project.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
+                  }`}>
+                    {project.status}
+                  </span>
+                </div>
               </div>
 
               {/* Project Details */}
@@ -170,8 +193,7 @@ const testingPlatforms = [
                   ))}
                 </div>
 
-Nataya, [12/5/2025 5:26 PM]
-<div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {project.links.map((link, i) => (
                     <a
                       key={i}
@@ -200,11 +222,24 @@ Nataya, [12/5/2025 5:26 PM]
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testingPlatforms.map((platform, index) => (
-            <div key={index} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-              <div className="h-48 relative">
-                <Image src={platform.image} alt={platform.name} fill className="object-cover" />
+            <div key={index} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+              {/* Platform Image - Fixed to maintain aspect ratio */}
+              <div className="relative w-full h-48 overflow-hidden">
+                <Image 
+                  src={platform.image} 
+                  alt={platform.name}
+                  width={platform.imageDimensions.width}
+                  height={platform.imageDimensions.height}
+                  className="object-cover w-full h-full"
+                  style={{ 
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center'
+                  }}
+                />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex-grow">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{platform.name}</h3>
                 <p className="text-gray-600 text-sm">{platform.description}</p>
               </div>
@@ -254,9 +289,7 @@ Nataya, [12/5/2025 5:26 PM]
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-green-800">33×</p>
-
-Nataya, [12/5/2025 5:26 PM]
-<p className="text-sm text-gray-600">Speedup</p>
+                    <p className="text-sm text-gray-600">Speedup</p>
                   </div>
                 </div>
               </div>

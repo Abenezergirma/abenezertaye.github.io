@@ -15,7 +15,6 @@ export default function Publications() {
       year: 2024,
       type: "journal",
       status: "accepted",
-      doi: "https://doi.org/10.2514/1.I011345",
       pdf: "#",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:d1gkVwhDpl0C"
     },
@@ -27,7 +26,6 @@ export default function Publications() {
       year: 2024,
       type: "journal",
       status: "published",
-      doi: "https://doi.org/10.2514/1.I011234",
       pdf: "#",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:u-x6o8ySG0sC"
     },
@@ -39,7 +37,6 @@ export default function Publications() {
       year: 2024,
       type: "journal",
       status: "published",
-      doi: "https://doi.org/10.1016/j.engappai.2024.108567",
       pdf: "#",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:d1gkVwhDpl0C"
     },
@@ -52,7 +49,6 @@ export default function Publications() {
       type: "conference",
       status: "accepted",
       location: "Orlando, FL",
-      doi: "https://doi.org/10.2514/6.2025-1234",
       pdf: "#",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:qjMakFHDy7sC"
     },
@@ -65,7 +61,6 @@ export default function Publications() {
       type: "conference",
       status: "published",
       location: "Las Vegas, NV",
-      doi: "https://doi.org/10.2514/6.2024-4567",
       pdf: "#",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:9yKSN-GCB0IC"
     },
@@ -78,7 +73,6 @@ export default function Publications() {
       type: "conference",
       status: "published",
       location: "Orlando, FL",
-      doi: "https://doi.org/10.2514/6.2024-2345",
       pdf: "#",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:IjCSPb-OGe4C"
     },
@@ -91,7 +85,6 @@ export default function Publications() {
       type: "conference",
       status: "published",
       location: "Chicago, IL",
-      doi: "https://doi.org/10.2514/6.2022-3456",
       pdf: "#",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:WF5omc3nYNoC"
     },
@@ -104,7 +97,6 @@ export default function Publications() {
       type: "conference",
       status: "published",
       location: "San Diego, CA",
-      doi: "https://doi.org/10.2514/6.2023-4567",
       pdf: "#",
       scholarLink: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G04pCsMAAAAJ&citation_for_view=G04pCsMAAAAJ:9yKSN-GCB0IC"
     },
