@@ -1,7 +1,6 @@
 'use client';
 
-import { Calendar, Users, BookOpen, Award, GraduationCap, Briefcase, Code, Cpu } from 'lucide-react';
-import SidebarLayout from '@/components/layout/SidebarLayout';
+import { Calendar, Users, BookOpen, Briefcase, Code, Cpu } from 'lucide-react';
 import { ReactElement } from 'react';
 
 interface TeachingExperience {
@@ -98,36 +97,17 @@ export default function Teaching() {
   ];
 
   return (
-    <SidebarLayout>
+    <div>
       {/* Header Section */}
       <div className="mb-12">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-3 bg-linear-to-br from-blue-100 to-indigo-100 rounded-xl">
-            <GraduationCap className="h-8 w-8 text-blue-600" />
-          </div>
-          <div>
-            <h1 className="text-4xl font-bold text-gray-900">Teaching & Mentorship</h1>
-            <p className="text-lg text-gray-600 mt-2">
-              Guiding the next generation of aerospace engineers through hands-on learning and research
-            </p>
-          </div>
+        <div className="mb-6">
+          <h1 className="text-4xl font-bold text-gray-900 pt-8">Teaching & Mentorship</h1>
+          <p className="text-lg text-gray-600 mt-2">
+            Guiding the next generation of aerospace engineers through hands-on learning and research
+          </p>
         </div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="text-3xl font-bold text-green-600 mb-2">5</div>
-            <div className="text-sm text-gray-600">Undergraduate Researchers Mentored</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="text-3xl font-bold text-green-600 mb-2">2+</div>
-            <div className="text-sm text-gray-600">Years Teaching Experience</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
-            <div className="text-sm text-gray-600">Student Publication Rate</div>
-          </div>
-        </div>
+       
       </div>
 
       {/* Teaching Experience */}
@@ -228,9 +208,6 @@ export default function Teaching() {
       {/* Research Areas */}
       <section className="mb-12">
         <div className="flex items-center gap-3 mb-6">
-          <div className="p-2 bg-purple-100 rounded-lg">
-            <Award className="h-6 w-6 text-purple-600" />
-          </div>
           <h2 className="text-2xl font-bold text-gray-900">Research Mentorship Areas</h2>
         </div>
 
@@ -258,7 +235,7 @@ export default function Teaching() {
       </section>
 
       {/* Mentorship Philosophy */}
-      <section className="bg-linear-to-br from-green-50 to-indigo-50 rounded-lg shadow-sm border border-green-100 p-8">
+      <section className="bg-linear-to-br from-green-50 to-blue-50 rounded-lg shadow-sm border border-green-100 p-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Mentorship Philosophy</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -293,6 +270,6 @@ export default function Teaching() {
           </div>
         </div>
       </section>
-    </SidebarLayout>
+    </div>
   );
 }
