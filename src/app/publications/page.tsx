@@ -196,7 +196,7 @@ export default function Publications() {
               </div>
 
               {/* Details */}
-              <div className="flex-1">
+                <div className="flex-1">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">{pub.title}</h3>
                 <div className="flex items-center gap-2 mb-3 text-gray-700">
                   <Users className="h-4 w-4 text-gray-400" />
@@ -204,8 +204,8 @@ export default function Publications() {
                 </div>
                 <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600 mb-4">
                   <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    {pub.year}
+                  <Calendar className="h-4 w-4" />
+                  {pub.year}
                   </div>
                   {pub.journal && <span className="font-medium">{pub.journal}</span>}
                   {pub.conference && <span className="font-medium">{pub.conference}</span>}
@@ -216,33 +216,22 @@ export default function Publications() {
                 {/* Action Buttons */}
                 <div className="flex flex-wrap items-center gap-4">
                   <a
-                    href={pub.scholarLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-900 transition-colors text-sm font-medium"
+                  href={pub.scholarLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-900 transition-colors text-sm font-medium"
                   >
-                    <ExternalLink className="h-3 w-3" />
-                    Google Scholar
+                  <ExternalLink className="h-3 w-3" />
+                  Google Scholar
                   </a>
-                  {pub.doi && pub.doi !== '#' && (
-                    <a
-                      href={pub.doi}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium"
-                    >
-                      <ExternalLink className="h-3 w-3" />
-                      View DOI
-                    </a>
-                  )}
                   {pub.pdf && pub.pdf !== '#' && (
-                    <button className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium">
-                      <Download className="h-3 w-3" />
-                      Download PDF
-                    </button>
+                  <button className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium">
+                    <Download className="h-3 w-3" />
+                    Download PDF
+                  </button>
                   )}
                 </div>
-              </div>
+                </div>
             </div>
           </div>
         ))}

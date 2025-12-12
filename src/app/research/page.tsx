@@ -1,6 +1,6 @@
 'use client';
 
-import { Rocket, Battery, Cpu, Zap, ExternalLink } from 'lucide-react';
+import {ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Research() {
@@ -16,8 +16,6 @@ export default function Research() {
         "Demonstrated framework in drone delivery and urban air taxi scenarios"
       ],
       technologies: ["Python", "TensorFlow", "Reinforcement Learning", "MDP"],
-      icon: Rocket,
-      status: "Active",
       image: "/images/research/auv.jpg",
       imageDimensions: { width: 400, height: 250 },
       links: [
@@ -36,8 +34,6 @@ export default function Research() {
         "Maintained accuracy under computational constraints"
       ],
       technologies: ["PyTorch", "Neural ODEs", "Physics-Informed Neural Networks", "Python"],
-      icon: Battery,
-      status: "Active",
       image: "/images/research/auv.jpg",
       imageDimensions: { width: 400, height: 250 },
       links: [
@@ -55,8 +51,6 @@ export default function Research() {
         "Optimized energy efficiency using aircraft modeling"
       ],
       technologies: ["Python", "OpenAI Gym", "Reachability Analysis", "Multi-Agent Systems"],
-      icon: Cpu,
-      status: "Completed",
       image: "/images/research/auv.jpg",
       imageDimensions: { width: 400, height: 250 },
       links: [
@@ -75,8 +69,6 @@ export default function Research() {
         "Enabled proactive energy planning and infrastructure optimization"
       ],
       technologies: ["Python", "Data Analysis", "Energy Modeling", "Forecasting"],
-      icon: Zap,
-      status: "Completed",
       image: "/images/research/auv.jpg",
       imageDimensions: { width: 400, height: 250 },
       links: [
@@ -152,20 +144,12 @@ export default function Research() {
                       objectPosition: 'center'
                     }}
                   />
-                  <span className={`absolute top-4 left-4 px-3 py-1 text-sm font-medium rounded-full ${
-                    project.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
-                  }`}>
-                    {project.status}
-                  </span>
                 </div>
               </div>
 
               {/* Project Details */}
               <div className="lg:w-3/5 p-6 lg:p-8">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="p-2 bg-green-50 rounded-xl">
-                    <project.icon className="h-5 w-5 text-green-800" />
-                  </div>
                   <div>
                     <h2 className="text-xl font-bold text-gray-900 mb-1">{project.title}</h2>
                     <div className="text-sm text-gray-600">
@@ -239,7 +223,7 @@ export default function Research() {
                   }}
                 />
               </div>
-              <div className="p-6 flex-grow">
+              <div className="p-6 grow">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{platform.name}</h3>
                 <p className="text-gray-600 text-sm">{platform.description}</p>
               </div>

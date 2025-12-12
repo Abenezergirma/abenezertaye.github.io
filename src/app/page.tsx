@@ -17,8 +17,11 @@ export default function Home() {
                       alt="Abenezer Taye"
                       width={208}
                       height={208}
-                      className="w-full h-full object-contain"
-                      style={{ objectPosition: 'center 20%' }}
+                      className="w-full h-full object-cover"
+                       style={{ 
+                        objectPosition: 'center center',
+                        transform: 'scale(1.2)'
+                      }}
                       priority
                     />
                   </div>
