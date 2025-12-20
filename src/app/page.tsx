@@ -34,8 +34,8 @@ export default function Home() {
                   <p className='text-xl md:text-2xl font-semibold text-gray-900'>
                     Post-Doctoral Research Scholar
                   </p>
-                  <p className="text-gray-900">Institute for Software Integrated Systems nbvc cvb Institute for Software Integrated SystemsInstitute for Software Integrated SystemsInstitute for Software Integrated Systems Institute for Software Integrated Systems Institute for Software Integrated Syst Institute for Software Integrated Systems Institute for Software Integrated Systems myfiyc jydltc </p>
-                  <p className="text-gray-900 font-semibold">Vanderbilt University</p>
+                  <p className="text-gray-900">
+                  By contributing to the intersection of flight control, battery prognostics, multi-agent systems and machine learning, I develop autonomous systems and decision support tools for aviation, air transportation, and aerial vehicles. My research expertise blends in both learning-based and model-based approaches for flight mechanics (both fixed-wing and rotorcraft) and control, aviation electrification and battery prognostics, and ensuring that new aircraft types such as small unmanned aerial systems (UAS) and electrical take-off and landing (eVTOL) vehicles operate safely and energy-efficiently in complex environments, e.g. high-density airspaces under winds.                  <p className="text-gray-900 font-semibold">Vanderbilt University</p>
                 </div>
 
                 {/* Contact Links */}
