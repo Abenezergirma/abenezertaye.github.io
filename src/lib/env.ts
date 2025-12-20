@@ -1,7 +1,7 @@
 export const env = {
   // Email Configuration
   resendApiKey: process.env.RESEND_API_KEY,
-  contactEmail: process.env.CONTACT_EMAIL || 'abenezertaye@gvu.edu',
+  contactEmail: process.env.CONTACT_EMAIL || 'abenezertaye@gwu.edu',
   adminEmail: process.env.ADMIN_EMAIL,
   
   // Security Configuration
