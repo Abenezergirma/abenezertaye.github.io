@@ -38,9 +38,10 @@ const nextConfig = {
   // Image optimization and security
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: [], 
+    domains: [],
     dangerouslyAllowSVG: false, // Prevent SVG XSS attacks
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    qualities: [75, 90],
   },
   // Security: disable source maps in production
   productionBrowserSourceMaps: false,

@@ -10,16 +10,14 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Research', href: '/research' },
   { name: 'Publications', href: '/publications' },
-  { name: 'Teaching', href: '/teaching' },
-  { name: 'CV', href: '/cv' },
-
+  { name: 'Notes', href: '/notes' },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-// Removed useEffect that closes menu on route change
+  // Removed useEffect that closes menu on route change
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'unset';
@@ -31,17 +29,15 @@ export default function Header() {
   return (
     <>
       {/* Top Header */}
-      <header className="bg-white/95 backdrop-blur-sm border-b border-gray-200 fixed top-0 left-0 right-0 z-50">
+      {/* Top Header - Green with White Text */}
+      <header className="bg-[#0B6A6C] text-white fixed top-0 left-0 right-0 z-50 shadow">
         <nav className="container-custom">
           <div className="flex items-center justify-between h-16">
 
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-green-900 rounded-full flex items-center justify-center group-hover:bg-green-800 transition-all">
-                <span className="text-white font-bold text-lg">AT</span>
-              </div>
-              <span className="hidden sm:block font-semibold text-gray-900 text-sm">
-                Abenezer Taye
+            {/* Logo - Simple Text */}
+            <Link href="/" className="flex items-center space-x-2 group">
+              <span className="font-bold text-xl tracking-tight text-white group-hover:text-gray-200 transition-colors" style={{ fontFamily: 'var(--font-eb-garamond)' }}>
+                Abenezer G. Taye
               </span>
             </Link>
 
@@ -49,30 +45,28 @@ export default function Header() {
             <div className="hidden lg:flex lg:gap-x-8">
               {navigation.map((item) => {
                 const isActive = pathname === item.href;
-            
+
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      "text-sm font-medium transition-all duration-200 relative py-2",
+                      "text-base font-medium transition-all duration-200 relative py-2",
                       isActive
-                        ? "text-green-900 font-semibold"
-                        : "text-gray-700 hover:text-green-900"
+                        ? "text-white font-semibold border-b-2 border-white"
+                        : "text-gray-100 hover:text-white"
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
-            
-                    {isActive && (
-                      <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-green-900 rounded-full"></div>
-                    )}
+
+                    {/* Underline handled by border-b-2 above */}
                   </Link>
                 );
               })}
             </div>
             <button
-              className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-all"
+              className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-all"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"
             >
@@ -108,9 +102,16 @@ export default function Header() {
             {/* Panel Header */}
             <div className="p-6 border-b border-gray-200 flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-green-900 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">AT</span>
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow">
+                  <span
+                    className="text-xl font-semibold"
+                    style={{ fontFamily: "var(--font-eb-garamond)", color: "#0B3C3D" }}
+                  >
+                    AT
+                  </span>
                 </div>
+
+
 
                 <div>
                   <h3 className="font-bold text-gray-900">Abenezer Taye</h3>
