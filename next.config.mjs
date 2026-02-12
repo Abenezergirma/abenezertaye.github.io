@@ -5,7 +5,7 @@ const nextConfig = {
         unoptimized: true,
     },
     basePath: process.env.NEXT_PUBLIC_BUILD_STANDALONE === 'true' ? '/abenezertaye.github.io' : '',
-    assetPrefix: process.env.NEXT_PUBLIC_BUILD_STANDALONE === 'true' ? '/abenezertaye.github.io/' : '',
+    assetPrefix: process.env.NEXT_PUBLIC_BUILD_STANDALONE === 'true' ? '/abenezertaye.github.io' : '',
 };
 
 export default nextConfig;
