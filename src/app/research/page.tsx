@@ -25,7 +25,7 @@ export default function Research() {
             <div className="w-full bg-gray-50 border border-gray-200 rounded-lg p-2">
               <div className="aspect-[16/9] relative bg-white rounded overflow-hidden">
                 <Image
-                  src="/abenezertaye.github.io/images/research/safe.png"
+                  src="/images/research/safe.png"
                   alt="Safe and Scalable Trajectory Planner for AAM Operations"
                   fill
                   className="object-contain"
@@ -79,7 +79,7 @@ export default function Research() {
             <div className="w-full bg-gray-50 border border-gray-200 rounded-lg p-2">
               <div className="aspect-[16/9] relative bg-white rounded overflow-hidden">
                 <Image
-                  src="/abenezertaye.github.io/images/research/actual_aircraft.png"
+                  src="/images/research/actual_aircraft.png"
                   alt="In-Time Safety Management of AAM Operations"
                   fill
                   className="object-contain"
@@ -157,7 +157,7 @@ export default function Research() {
             <div className="w-full bg-gray-50 border border-gray-200 rounded-lg p-2">
               <div className="aspect-[16/9] relative bg-white rounded overflow-hidden">
                 <Image
-                  src="/abenezertaye.github.io/images/research/workflow.png"
+                  src="/images/research/workflow.png"
                   alt="Securing High-Density Urban Airspaces"
                   fill
                   className="object-contain"
@@ -247,7 +247,7 @@ export default function Research() {
             <div className="w-full bg-gray-50 border border-gray-200 rounded-lg p-2">
               <div className="aspect-[16/9] relative bg-white rounded overflow-hidden">
                 <Image
-                  src="/abenezertaye.github.io/images/research/safetofly.png"
+                  src="/images/research/safetofly.png"
                   alt="Real-Time Flight Mission Feasibility Assessment"
                   fill
                   className="object-contain"
@@ -289,7 +289,7 @@ export default function Research() {
             <div className="w-full bg-gray-50 border border-gray-200 rounded-lg p-2">
               <div className="aspect-[16/9] relative bg-white rounded overflow-hidden">
                 <Image
-                  src="/abenezertaye.github.io/images/research/traffic_management.png"
+                  src="/images/research/traffic_management.png"
                   alt="Energy-Aware Strategic Traffic Management for Urban Air Mobility"
                   fill
                   className="object-contain"
@@ -331,7 +331,7 @@ export default function Research() {
             <div className="w-full bg-gray-50 border border-gray-200 rounded-lg p-2">
               <div className="aspect-[16/9] relative bg-white rounded overflow-hidden">
                 <Image
-                  src="/abenezertaye.github.io/images/research/heatmap.png"
+                  src="/images/research/heatmap.png"
                   alt="Energy Demand Analysis for eVTOL Charging Stations in UAM"
                   fill
                   className="object-contain"

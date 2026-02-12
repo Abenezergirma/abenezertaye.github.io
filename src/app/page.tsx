@@ -13,7 +13,7 @@ export default function Home() {
             <div className="float-left w-full md:w-[35%] mr-0 md:mr-10 mb-8 mt-2">
               <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
                 <Image
-                  src="/abenezertaye.github.io/images/image.jpg"
+                  src="/images/image.jpg"
                   alt="Abenezer Taye"
                   width={400}
                   height={500}
@@ -78,7 +78,7 @@ export default function Home() {
                 <div className="shrink-0 w-32 md:w-64">
                   <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
                     <Image
-                      src="/abenezertaye.github.io/images/research/snapshot_029_highres.png"
+                      src="/images/research/snapshot_029_highres.png"
                       alt="Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility"
                       fill
                       className="object-contain"
@@ -115,7 +115,7 @@ export default function Home() {
                 <div className="shrink-0 w-32 md:w-64">
                   <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
                     <Image
-                      src="/abenezertaye.github.io/images/research/energy_efficient.png"
+                      src="/images/research/energy_efficient.png"
                       alt="Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery"
                       fill
                       className="object-contain"
@@ -136,7 +136,7 @@ export default function Home() {
                       </a>
                       <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
                         <Image
-                          src="/abenezertaye.github.io/images/icons/github_standard.png"
+                          src="/images/icons/github_standard.png"
                           alt="Github"
                           width={20}
                           height={20}
@@ -161,7 +161,7 @@ export default function Home() {
                 <div className="shrink-0 w-32 md:w-64">
                   <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
                     <Image
-                      src="/abenezertaye.github.io/images/research/RID_spoof.png"
+                      src="/images/research/RID_spoof.png"
                       alt="Remote ID Spoofing Attacks and Defenses"
                       fill
                       className="object-contain"
@@ -182,7 +182,7 @@ export default function Home() {
                       </a>
                       <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
                         <Image
-                          src="/abenezertaye.github.io/images/icons/github_standard.png"
+                          src="/images/icons/github_standard.png"
                           alt="Github"
                           width={20}
                           height={20}
@@ -207,7 +207,7 @@ export default function Home() {
                 <div className="shrink-0 w-32 md:w-64">
                   <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
                     <Image
-                      src="/abenezertaye.github.io/images/research/neural_ode.png"
+                      src="/images/research/neural_ode.png"
                       alt="Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations"
                       fill
                       className="object-contain"
@@ -228,7 +228,7 @@ export default function Home() {
                       </a>
                       <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
                         <Image
-                          src="/abenezertaye.github.io/images/icons/github_standard.png"
+                          src="/images/icons/github_standard.png"
                           alt="Github"
                           width={20}
                           height={20}
@@ -253,7 +253,7 @@ export default function Home() {
                 <div className="shrink-0 w-32 md:w-64">
                   <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
                     <Image
-                      src="/abenezertaye.github.io/images/research/energy_aware.png"
+                      src="/images/research/energy_aware.png"
                       alt="Energy-Aware Strategic Traffic Management for Urban Air Mobility"
                       fill
                       className="object-contain"
@@ -274,7 +274,7 @@ export default function Home() {
                       </a>
                       <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
                         <Image
-                          src="/abenezertaye.github.io/images/icons/github_standard.png"
+                          src="/images/icons/github_standard.png"
                           alt="Github"
                           width={20}
                           height={20}
@@ -299,7 +299,7 @@ export default function Home() {
                 <div className="shrink-0 w-32 md:w-64">
                   <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
                     <Image
-                      src="/abenezertaye.github.io/images/research/LLM_fig.png"
+                      src="/images/research/LLM_fig.png"
                       alt="Using Large Language Models to Automate Flight Planning Under Wind Hazards"
                       fill
                       className="object-contain"
@@ -320,7 +320,7 @@ export default function Home() {
                       </a>
                       <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
                         <Image
-                          src="/abenezertaye.github.io/images/icons/github_standard.png"
+                          src="/images/icons/github_standard.png"
                           alt="Github"
                           width={20}
                           height={20}
@@ -345,7 +345,7 @@ export default function Home() {
                 <div className="shrink-0 w-32 md:w-64">
                   <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
                     <Image
-                      src="/abenezertaye.github.io/images/research/energy_demand.png"
+                      src="/images/research/energy_demand.png"
                       alt="Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility"
                       fill
                       className="object-contain"
@@ -366,7 +366,7 @@ export default function Home() {
                       </a>
                       <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
                         <Image
-                          src="/abenezertaye.github.io/images/icons/github_standard.png"
+                          src="/images/icons/github_standard.png"
                           alt="Github"
                           width={20}
                           height={20}
