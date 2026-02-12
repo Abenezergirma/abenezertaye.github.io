@@ -27,7 +27,7 @@ export default function Sidebar() {
         <div className="text-center mb-8">
           <h1 className="text-xl font-bold text-gray-900 mb-2">Abenezer Taye</h1>
           <div className="space-y-1 text-gray-800">
-            <p className="text-base">Post-Doctoral Research Scholar</p>
+            <p className="text-base">Postdoctoral Scholar</p>
             <p className="text-sm">Institute for Software Integrated Systems</p>
             <p className="text-sm">Vanderbilt University</p>
           </div>
@@ -39,34 +39,34 @@ export default function Sidebar() {
         {/* Contact Links */}
         <div className="mb-6">
           <div className="space-y-4">
-            <a 
-              href="mailto:abenezertaye@gvu.edu" 
+            <a
+              href="mailto:abenezertaye@gvu.edu"
               className="flex items-center gap-3 text-green-700 hover:text-green-900 hover:underline"
             >
               <Mail className="h-4 w-4 text-gray-400" />
               <span className="text-sm">Email</span>
             </a>
-            <a 
-              href="https://www.linkedin.com/in/abenezer-taye/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/abenezer-taye/"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-green-700 hover:text-green-900 hover:underline"
             >
               <Linkedin className="h-4 w-4 text-gray-400" />
               <span className="text-sm">LinkedIn</span>
             </a>
-            <a 
-              href="https://github.com/Abenezergirma" 
-              target="_blank" 
+            <a
+              href="https://github.com/Abenezergirma"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-green-700 hover:text-green-900 hover:underline"
             >
               <Github className="h-4 w-4 text-gray-400" />
               <span className="text-sm">GitHub</span>
             </a>
-            <a 
-              href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" 
-              target="_blank" 
+            <a
+              href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-green-700 hover:text-green-900 hover:underline"
             >

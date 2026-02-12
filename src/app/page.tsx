@@ -38,7 +38,7 @@ export default function Home() {
                   <span className="text-gray-600">|</span>
                   <a href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" className="text-[#0B6A6C] underline hover:text-green-900">Google Scholar</a>
                   <span className="text-gray-600">|</span>
-                  <a href="/cv.pdf" target="_blank" className="text-[#0B6A6C] underline hover:text-green-900">CV</a>
+                  <a href="/pdf/cv.pdf" target="_blank" className="text-[#0B6A6C] underline hover:text-green-900">CV</a>
                 </div>
               </div>
             </div>
