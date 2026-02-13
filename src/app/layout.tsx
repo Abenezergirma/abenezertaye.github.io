@@ -21,6 +21,15 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
+export const metadata: Metadata = {
+  title: 'Abenezer G. Taye',
+  icons: {
+    icon: '/at.png',
+    shortcut: '/at.png',
+    apple: '/at.png',
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -28,11 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${crimsonPro.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <link rel="icon" href="/at.png" />
-        <link rel="shortcut icon" href="/at.png" />
-        <link rel="apple-touch-icon" href="/at.png" />
-      </head>
+
 
       {/* Body uses Crimson Pro (Palatino-like), headings can use Inter via CSS */}
       <body
