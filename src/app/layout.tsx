@@ -23,11 +23,6 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Abenezer G. Taye',
-  icons: {
-    icon: '/at.png',
-    shortcut: '/at.png',
-    apple: '/at.png',
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
