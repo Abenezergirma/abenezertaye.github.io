@@ -31,7 +31,7 @@ export default function Home() {
                   <span className="font-bold text-black">Email:</span>
                   <a href="mailto:abenezertaye@gwu.edu" className="text-[#0B6A6C] underline hover:text-green-900">abenezertaye@gwu.edu</a>
                 </div>
-                <div className="flex items-center gap-3 font-medium whitespace-nowrap">
+                <div className="flex items-center gap-1.5 font-medium whitespace-nowrap">
                   <a href="https://github.com/Nati-darse" className="text-[#0B6A6C] underline hover:text-green-900">GitHub</a>
                   <span className="text-gray-600">|</span>
                   <a href="https://www.linkedin.com/in/abenezer-taye/" className="text-[#0B6A6C] underline hover:text-green-900">LinkedIn</a>
