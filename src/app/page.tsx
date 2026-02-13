@@ -78,7 +78,7 @@ export default function Home() {
                 <div className="shrink-0 w-32 md:w-64">
                   <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
                     <Image
-                      src="/images/research/snapshot_029_highres.png"
+                      src="/images/research/snapshot_029.png"
                       alt="Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility"
                       fill
                       className="object-contain"
