@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono, Crimson_Pro } from 'next/font/google';
 import LayoutWrapper from '@/components/layout/LayoutWrapper';
+import Script from 'next/script';
 import './globals.css';
 
 const inter = Inter({
@@ -42,6 +43,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-DQ0G0KS5B8"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-DQ0G0KS5B8');
+        `}
+      </Script>
     </html>
   );
 }
