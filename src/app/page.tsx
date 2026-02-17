@@ -41,7 +41,6 @@ export default function Home() {
                   <a href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" className="text-[#0B6A6C] hover:text-green-900" title="Google Scholar">
                     <GraduationCap size={20} />
                   </a>
-                  <span className="text-gray-300">|</span>
                   <a href="/pdf/cv.pdf" target="_blank" className="text-[#0B6A6C] font-bold hover:text-green-900 hover:underline">CV</a>
                 </div>
               </div>
