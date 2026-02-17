@@ -5,13 +5,13 @@ export default function PersonalInterests() {
         {
             src: '/images/personal/aircraft_flying.jpg',
             alt: 'Flying a GA aircraft',
-            description: 'Having fun learning how to fly a GA aircraft',
+            description: 'Learning to Fly',
             aspectRatio: 'aspect-[4/3]', // Adjust based on actual image dims if needed
         },
         {
             src: '/images/personal/biking.jpg',
             alt: 'Biking in DC',
-            description: 'Biking around Washington DC with lab mates',
+            description: 'Biking – Washington DC',
             aspectRatio: 'aspect-[4/3]',
         },
         {
@@ -31,13 +31,14 @@ export default function PersonalInterests() {
     return (
         <div className="container-custom pt-24 pb-12">
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl font-serif font-bold text-gray-900 mb-8">
+                <h1 className="text-3xl font-serif font-bold text-black">
                     Personal Interests
                 </h1>
+                <div className="double-line-separator mb-12" />
 
-                <div className="prose prose-lg text-gray-700 font-serif text-justify leading-relaxed mb-12">
+                <div className="prose prose-lg text-black font-serif text-justify leading-relaxed mb-12">
                     <p>
-                        When I’m not working or studying for classes, I like to spend time outdoors biking, hiking, and flying an aircraft. I also enjoy running, playing soccer, and reading nonfiction books.
+                        When I’m not working on my research, I like to spend time outdoors biking, hiking, and flying an aircraft. I also enjoy running, playing soccer, and reading nonfiction books.
                     </p>
                 </div>
 
