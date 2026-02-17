@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FileText, Github } from 'lucide-react';
+import { FileText, Github, Linkedin, GraduationCap } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -31,14 +31,18 @@ export default function Home() {
                   <span className="font-bold text-black">Email:</span>
                   <a href="mailto:abenezertaye@gwu.edu" className="text-[#0B6A6C] underline hover:text-green-900">abenezertaye@gwu.edu</a>
                 </div>
-                <div className="flex items-center gap-1.5 font-medium whitespace-nowrap">
-                  <a href="https://github.com/Abenezergirma" className="text-[#0B6A6C] underline hover:text-green-900">GitHub</a>
-                  <span className="text-gray-600">|</span>
-                  <a href="https://www.linkedin.com/in/abenezer-taye/" className="text-[#0B6A6C] underline hover:text-green-900">LinkedIn</a>
-                  <span className="text-gray-600">|</span>
-                  <a href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" className="text-[#0B6A6C] underline hover:text-green-900">Google Scholar</a>
-                  <span className="text-gray-600">|</span>
-                  <a href="/pdf/cv.pdf" target="_blank" className="text-[#0B6A6C] underline hover:text-green-900">CV</a>
+                <div className="flex items-center gap-4 font-medium whitespace-nowrap">
+                  <a href="https://github.com/Abenezergirma" className="text-[#0B6A6C] hover:text-green-900" title="GitHub">
+                    <Github size={20} />
+                  </a>
+                  <a href="https://www.linkedin.com/in/abenezer-taye/" className="text-[#0B6A6C] hover:text-green-900" title="LinkedIn">
+                    <Linkedin size={20} />
+                  </a>
+                  <a href="https://scholar.google.com/citations?user=G04pCsMAAAAJ&hl=en" className="text-[#0B6A6C] hover:text-green-900" title="Google Scholar">
+                    <GraduationCap size={20} />
+                  </a>
+                  <span className="text-gray-300">|</span>
+                  <a href="/pdf/cv.pdf" target="_blank" className="text-[#0B6A6C] font-bold hover:text-green-900 hover:underline">CV</a>
                 </div>
               </div>
             </div>
