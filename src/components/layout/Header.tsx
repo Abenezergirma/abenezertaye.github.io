@@ -10,7 +10,8 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Research', href: '/research' },
   { name: 'Publications', href: '/publications' },
-  { name: 'Notes', href: '/notes' },
+  { name: 'Personal Interests', href: '/personal' },
+  { name: 'Things', href: '/things' },
 ];
 
 export default function Header() {
