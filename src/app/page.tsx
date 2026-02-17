@@ -79,7 +79,7 @@ export default function Home() {
               {/* ITEM 1: JAIS 2024 Trajectory Planning */}
               <div className="flex gap-6 md:gap-8">
                 <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
+                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
                     <Image
                       src="/images/research/snapshot_029.png"
                       alt="Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility"
@@ -116,7 +116,7 @@ export default function Home() {
               {/* ITEM 2: Energy-Efficient Trajectory Planning */}
               <div className="flex gap-6 md:gap-8">
                 <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
+                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
                     <Image
                       src="/images/research/energy_efficient.png"
                       alt="Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery"
@@ -162,7 +162,7 @@ export default function Home() {
               {/* ITEM 3: Remote ID Spoofing */}
               <div className="flex gap-6 md:gap-8">
                 <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
+                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
                     <Image
                       src="/images/research/RID_spoof.png"
                       alt="Remote ID Spoofing Attacks and Defenses"
@@ -208,7 +208,7 @@ export default function Home() {
               {/* ITEM 4: Safe to Fly? */}
               <div className="flex gap-6 md:gap-8">
                 <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
+                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
                     <Image
                       src="/images/research/neural_ode.png"
                       alt="Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations"
@@ -254,7 +254,7 @@ export default function Home() {
               {/* ITEM 5: Energy-Aware Strategic Traffic Management */}
               <div className="flex gap-6 md:gap-8">
                 <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
+                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
                     <Image
                       src="/images/research/energy_aware.png"
                       alt="Energy-Aware Strategic Traffic Management for Urban Air Mobility"
@@ -300,7 +300,7 @@ export default function Home() {
               {/* ITEM 6: Using LLMs */}
               <div className="flex gap-6 md:gap-8">
                 <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
+                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
                     <Image
                       src="/images/research/LLM_fig.png"
                       alt="Using Large Language Models to Automate Flight Planning Under Wind Hazards"
@@ -346,7 +346,7 @@ export default function Home() {
               {/* ITEM 7: Energy Demand Analysis */}
               <div className="flex gap-6 md:gap-8">
                 <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-white border border-gray-100 rounded-sm overflow-hidden">
+                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
                     <Image
                       src="/images/research/energy_demand.png"
                       alt="Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility"
