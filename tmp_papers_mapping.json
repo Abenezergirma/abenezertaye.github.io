@@ -1,0 +1,97 @@
+{
+  "Networked Simulation for Cybersecurity Evaluation of Small Unmanned Aircraft Systems in Dense Urban Environments": {
+    "year": "2026",
+    "best": "a-survey-of-security-challenges-and-solutions-for-uas-traffic-management-utm-and-small-unmanned-aerial-systems-suas-2026.pdf",
+    "score": 0.45454545454545453
+  },
+  "Remote ID Spoofing Attacks and Defenses": {
+    "year": "2026",
+    "best": "a-survey-of-security-challenges-and-solutions-for-advanced-air-mobility-and-evtol-aircraft-2026.pdf",
+    "score": 0.25
+  },
+  "Detection of Compromised UAVs using Graph Machine Learning": {
+    "year": "2026",
+    "best": "a-survey-of-security-challenges-and-solutions-for-advanced-air-mobility-and-evtol-aircraft-2026.pdf",
+    "score": 0.25
+  },
+  "A Survey of Security Challenges and Solutions for Advanced Air Mobility and eVTOL Aircraft": {
+    "year": "2026",
+    "best": "a-survey-of-security-challenges-and-solutions-for-advanced-air-mobility-and-evtol-aircraft-2026.pdf",
+    "score": 1
+  },
+  "A Survey of Security Challenges and Solutions for UAS Traffic Management (UTM) and small Unmanned Aerial Systems (sUAS)": {
+    "year": "2026",
+    "best": "a-survey-of-security-challenges-and-solutions-for-uas-traffic-management-utm-and-small-unmanned-aerial-systems-suas-2026.pdf",
+    "score": 1
+  },
+  "Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery": {
+    "year": "2025",
+    "best": "a-survey-of-security-challenges-and-solutions-for-advanced-air-mobility-and-evtol-aircraft-2026.pdf",
+    "score": 0.25
+  },
+  "Small UAS Landing Site Detection with ArUco Markers and Deep Learning Based Computer Vision": {
+    "year": "2025",
+    "best": "a-survey-of-security-challenges-and-solutions-for-uas-traffic-management-utm-and-small-unmanned-aerial-systems-suas-2026.pdf",
+    "score": 0.3125
+  },
+  "Energy-Aware Strategic Traffic Management for Urban Air Mobility": {
+    "year": "2025",
+    "best": "a-survey-of-security-challenges-and-solutions-for-uas-traffic-management-utm-and-small-unmanned-aerial-systems-suas-2026.pdf",
+    "score": 0.4642857142857143
+  },
+  "Transformer or CNN? Benchmarking Real-Time Detection Transformer and YOLOv8 for Small UAS Autonomous Landing": {
+    "year": "2025",
+    "best": "a-survey-of-security-challenges-and-solutions-for-uas-traffic-management-utm-and-small-unmanned-aerial-systems-suas-2026.pdf",
+    "score": 0.325
+  },
+  "Synthetic Data Generation for Computer Vision Based Autonomous Landing for Small UAS Package Delivery": {
+    "year": "2025",
+    "best": "a-survey-of-security-challenges-and-solutions-for-uas-traffic-management-utm-and-small-unmanned-aerial-systems-suas-2026.pdf",
+    "score": 0.38636363636363635
+  },
+  "Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations": {
+    "year": "2025",
+    "best": "a-survey-of-security-challenges-and-solutions-for-advanced-air-mobility-and-evtol-aircraft-2026.pdf",
+    "score": 0.25
+  },
+  "Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility": {
+    "year": "2024",
+    "best": "using-large-language-models-to-automate-flight-planning-under-wind-hazards-2024.pdf",
+    "score": 0.41666666666666663
+  },
+  "Using Large Language Models to Automate Flight Planning Under Wind Hazards": {
+    "year": "2024",
+    "best": "using-large-language-models-to-automate-flight-planning-under-wind-hazards-2024.pdf",
+    "score": 1
+  },
+  "A Survey on Reinforcement Learning in Aviation Applications": {
+    "year": "2024",
+    "best": "a-survey-of-security-challenges-and-solutions-for-uas-traffic-management-utm-and-small-unmanned-aerial-systems-suas-2026.pdf",
+    "score": 0.30000000000000004
+  },
+  "Flight Mission Feasibility Assessment of Urban Air Mobility Operations Under Battery Energy Constraint": {
+    "year": "2024",
+    "best": "using-large-language-models-to-automate-flight-planning-under-wind-hazards-2024.pdf",
+    "score": 0.45454545454545453
+  },
+  "Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility": {
+    "year": "2024",
+    "best": "using-large-language-models-to-automate-flight-planning-under-wind-hazards-2024.pdf",
+    "score": 0.34375
+  },
+  "Probabilistic Evaluation for Flight Mission Feasibility of a Small Octocopter in the Presence of Wind": {
+    "year": "2023",
+    "best": "using-large-language-models-to-automate-flight-planning-under-wind-hazards-2024.pdf",
+    "score": 0.41666666666666663
+  },
+  "Reachability based Online Safety Verification for High-Density Urban Air Mobility Trajectory Planning": {
+    "year": "2022",
+    "best": "a-survey-of-security-challenges-and-solutions-for-advanced-air-mobility-and-evtol-aircraft-2026.pdf",
+    "score": 0.3181818181818182
+  },
+  "A Survey of eVTOL Aircraft and AAM Operation Hazards": {
+    "year": "2022",
+    "best": "a-survey-of-security-challenges-and-solutions-for-advanced-air-mobility-and-evtol-aircraft-2026.pdf",
+    "score": 0.7
+  }
+}

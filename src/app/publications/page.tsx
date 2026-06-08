@@ -1,7 +1,5 @@
-"use client";
-
-import { FileText, ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import fs from "fs";
+import path from "path";
 
 interface PubItem {
   id: string;
@@ -307,59 +305,108 @@ const publications: PubItem[] = [
   }
 ];
 
+function slugify(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+// Read available PDF filenames from public/papers at build time
+let availablePapers: string[] = [];
+try {
+  const papersDir = path.join(process.cwd(), "public", "papers");
+  availablePapers = fs.readdirSync(papersDir).filter((f) => /\.pdf$/i.test(f));
+} catch (e) {
+  availablePapers = [];
+}
+
+// Prefer explicit mapping file when available (created by tmp_confirm_pdfs.js)
+let tmpMapping: Record<string, { year?: string; best?: string; score?: number }> = {};
+try {
+  const mapPath = path.join(process.cwd(), 'tmp_papers_mapping.json');
+  if (fs.existsSync(mapPath)) {
+    tmpMapping = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
+  }
+} catch (e) {
+  tmpMapping = {};
+}
+
+// Track mapped files we've already assigned to avoid duplicate linking
+const assignedMappedFiles = new Set<string>();
+
+function findMatchingFile(title: string): string | null {
+  const mapped = tmpMapping[title];
+  // Use mapped filename only when confidence is high enough and file not already assigned.
+  if (mapped && mapped.best && mapped.score && mapped.score >= 0.4) {
+    const candidate = mapped.best;
+    if (availablePapers.includes(candidate) && !assignedMappedFiles.has(candidate)) {
+      assignedMappedFiles.add(candidate);
+      return `/papers/${candidate}`;
+    }
+  }
+
+  // fallback: simple word-overlap heuristic
+  const titleWords = title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter(Boolean);
+
+  let best: { file: string; score: number } | null = null;
+
+  for (const file of availablePapers) {
+    const name = file.toLowerCase().replace(/[^a-z0-9\s]/g, " ");
+    const matches = titleWords.filter((w) => w.length > 2 && name.includes(w)).length;
+    const score = matches / Math.max(1, titleWords.length);
+    if (!best || score > best.score) best = { file, score };
+  }
+
+  if (best && best.score >= 0.35) {
+    return `/papers/${best.file}`;
+  }
+  return null;
+}
+
+function formatVenue(item: PubItem) {
+  const v = item.venue || "";
+  const y = item.year || "";
+  const lower = v.toLowerCase();
+
+  if (lower.includes("scitech") || lower.includes("science and technology")) {
+    return `AIAA SciTech, Orlando, FL, Jan. ${y}`;
+  }
+  if (lower.includes("aviation")) {
+    return `AIAA Aviation, San Diego, CA, Jun. ${y}`;
+  }
+  if (lower.includes("dasc") || lower.includes("digital avionics")) {
+    return `AIAA/IEEE Digital Avionics Systems Conference (DASC), Montreal, Canada, Sep. ${y}`;
+  }
+
+  // Default: keep venue and year inline
+  return `${v}, ${y}`;
+}
+
 function PublicationItem({ item, index }: { item: PubItem; index: number }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const localPdf = findMatchingFile(item.title);
+  const href = localPdf ?? item.url;
 
   return (
-    <div className="flex gap-4">
-      <span className="text-black font-mono text-sm pt-1 shrink-0">[{index}]</span>
+    <div className="flex gap-4 font-serif">
+      <span className="text-black font-serif text-base pt-1 shrink-0">[{index}]</span>
       <div className="flex-1 space-y-1">
         <div className="flex items-start justify-between gap-4">
           <a
-            href={item.url}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-black hover:text-green-800 hover:underline leading-snug"
+            className="text-base font-bold font-serif text-black hover:text-green-800 hover:underline leading-snug"
           >
             {item.title}
           </a>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-black/40 hover:text-green-800 transition-colors pt-1"
-            title={isOpen ? "Hide details" : "Show details"}
-          >
-            {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-          </button>
         </div>
 
-        <p className="text-black text-sm" dangerouslySetInnerHTML={{ __html: item.authors }} />
-
-        <p className="text-black text-sm italic">
-          {item.venue}, {item.year}
-        </p>
-
-        {isOpen && (
-          <div className="mt-3 p-4 bg-gray-50 border border-gray-100 rounded-sm text-sm space-y-4 animate-in fade-in slide-in-from-top-1 duration-200">
-            <div>
-              <p className="font-bold text-black mb-2 uppercase text-[10px] tracking-widest">BibTeX</p>
-              <pre className="text-black leading-relaxed font-mono text-xs bg-white p-3 rounded border border-gray-200 overflow-x-auto whitespace-pre-wrap">{item.bibtex}</pre>
-            </div>
-            <div>
-              <p className="font-bold text-black mb-1 uppercase text-[10px] tracking-widest">Details</p>
-              <div className="flex gap-4 items-center">
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-black hover:text-green-800 transition-colors"
-                >
-                  <FileText size={14} />
-                  <span>Full Paper (Official)</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
+        <p className="text-black text-sm" dangerouslySetInnerHTML={{ __html: `${item.authors}, ${formatVenue(item)}` }} />
       </div>
     </div>
   );
