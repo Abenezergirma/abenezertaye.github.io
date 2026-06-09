@@ -1,3 +1,4 @@
+import PubLink from '../../components/PubLink';
 import fs from "fs";
 import path from "path";
 
@@ -312,61 +313,7 @@ function slugify(title: string) {
     .replace(/(^-|-$)/g, "");
 }
 
-// Read available PDF filenames from public/papers at build time
-let availablePapers: string[] = [];
-try {
-  const papersDir = path.join(process.cwd(), "public", "papers");
-  availablePapers = fs.readdirSync(papersDir).filter((f) => /\.pdf$/i.test(f));
-} catch (e) {
-  availablePapers = [];
-}
-
-// Prefer explicit mapping file when available (created by tmp_confirm_pdfs.js)
-let tmpMapping: Record<string, { year?: string; best?: string; score?: number }> = {};
-try {
-  const mapPath = path.join(process.cwd(), 'tmp_papers_mapping.json');
-  if (fs.existsSync(mapPath)) {
-    tmpMapping = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
-  }
-} catch (e) {
-  tmpMapping = {};
-}
-
-// Track mapped files we've already assigned to avoid duplicate linking
-const assignedMappedFiles = new Set<string>();
-
-function findMatchingFile(title: string): string | null {
-  const mapped = tmpMapping[title];
-  // Use mapped filename only when confidence is high enough and file not already assigned.
-  if (mapped && mapped.best && mapped.score && mapped.score >= 0.4) {
-    const candidate = mapped.best;
-    if (availablePapers.includes(candidate) && !assignedMappedFiles.has(candidate)) {
-      assignedMappedFiles.add(candidate);
-      return `/papers/${candidate}`;
-    }
-  }
-
-  // fallback: simple word-overlap heuristic
-  const titleWords = title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, " ")
-    .split(/\s+/)
-    .filter(Boolean);
-
-  let best: { file: string; score: number } | null = null;
-
-  for (const file of availablePapers) {
-    const name = file.toLowerCase().replace(/[^a-z0-9\s]/g, " ");
-    const matches = titleWords.filter((w) => w.length > 2 && name.includes(w)).length;
-    const score = matches / Math.max(1, titleWords.length);
-    if (!best || score > best.score) best = { file, score };
-  }
-
-  if (best && best.score >= 0.35) {
-    return `/papers/${best.file}`;
-  }
-  return null;
-}
+// PDF matching is handled by the shared src/components/PubLink
 
 function formatVenue(item: PubItem) {
   const v = item.venue || "";
@@ -388,22 +335,12 @@ function formatVenue(item: PubItem) {
 }
 
 function PublicationItem({ item, index }: { item: PubItem; index: number }) {
-  const localPdf = findMatchingFile(item.title);
-  const href = localPdf ?? item.url;
-
   return (
     <div className="flex gap-4 font-serif">
       <span className="text-black font-serif text-base pt-1 shrink-0">[{index}]</span>
       <div className="flex-1 space-y-1">
         <div className="flex items-start justify-between gap-4">
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-base font-bold font-serif text-black hover:text-green-800 hover:underline leading-snug"
-          >
-            {item.title}
-          </a>
+          <PubLink title={item.title} url={item.url}>{item.title}</PubLink>
         </div>
 
         <p className="text-black text-sm" dangerouslySetInnerHTML={{ __html: `${item.authors}, ${formatVenue(item)}` }} />

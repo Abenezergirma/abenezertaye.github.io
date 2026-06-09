@@ -6,7 +6,7 @@ export const siteConfig = {
   links: {
     linkedin: "https://www.linkedin.com/in/abenezer-taye/",
     github: "https://github.com/Abenezergirma",
-    email: "abenezertaye@gvu.edu"
+    email: "abenezertaye@gwu.edu"
   },
   contact: {
     phone: "(336) 335-8289",
