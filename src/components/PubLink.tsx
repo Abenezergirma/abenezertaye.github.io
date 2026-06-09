@@ -54,10 +54,15 @@ export function findMatchingFile(title: string): string | null {
   return null;
 }
 
-export default function PubLink({ title, url, children }: { title: string; url: string; children?: React.ReactNode }) {
+export default function PubLink({ title, url, children, className }: { title: string; url: string; children?: React.ReactNode; className?: string }) {
   const href = findMatchingFile(title) ?? url;
+  const isLocalPdf = href?.startsWith('/papers/');
+  const defaultCls = 'text-sm font-semibold font-serif text-black hover:text-green-800 hover:underline leading-snug';
+  const ariaLabel = isLocalPdf
+    ? `${title} — opens local PDF in a new tab`
+    : `${title} — opens external link in a new tab`;
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="text-base font-bold font-serif text-black hover:text-green-800 hover:underline leading-snug">
+    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} title={title} className={className ?? defaultCls}>
       {children ?? title}
     </a>
   );

@@ -320,6 +320,11 @@ function formatVenue(item: PubItem) {
   const y = item.year || "";
   const lower = v.toLowerCase();
 
+  // If the venue string already includes a 4-digit year, don't append the year again
+  if (/\b\d{4}\b/.test(v)) {
+    return v;
+  }
+
   if (lower.includes("scitech") || lower.includes("science and technology")) {
     return `AIAA SciTech, Orlando, FL, Jan. ${y}`;
   }
@@ -336,14 +341,15 @@ function formatVenue(item: PubItem) {
 
 function PublicationItem({ item, index }: { item: PubItem; index: number }) {
   return (
-    <div className="flex gap-4 font-serif">
-      <span className="text-black font-serif text-base pt-1 shrink-0">[{index}]</span>
-      <div className="flex-1 space-y-1">
+    <div className="relative bg-gray-50 border border-gray-200 text-sm text-black font-serif space-y-2 rounded-lg overflow-hidden">
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-300" />
+      <div className="pl-6 p-4">
         <div className="flex items-start justify-between gap-4">
           <PubLink title={item.title} url={item.url}>{item.title}</PubLink>
+          <span className="text-black text-sm opacity-70 ml-2 shrink-0">[{index}]</span>
         </div>
 
-        <p className="text-black text-sm" dangerouslySetInnerHTML={{ __html: `${item.authors}, ${formatVenue(item)}` }} />
+        <p className="text-black text-sm mt-1" dangerouslySetInnerHTML={{ __html: `${item.authors}, ${formatVenue(item)}` }} />
       </div>
     </div>
   );
