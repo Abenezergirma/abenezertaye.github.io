@@ -349,7 +349,9 @@ function PublicationItem({ item, index }: { item: PubItem; index: number }) {
           <span className="text-black text-sm opacity-70 ml-2 shrink-0">[{index}]</span>
         </div>
 
-        <p className="text-black text-sm mt-1" dangerouslySetInnerHTML={{ __html: `${item.authors}, ${formatVenue(item)}` }} />
+        <p className="text-black text-sm mt-1">
+          <span dangerouslySetInnerHTML={{ __html: item.authors }} />{', '}{formatVenue(item)}
+        </p>
       </div>
     </div>
   );
