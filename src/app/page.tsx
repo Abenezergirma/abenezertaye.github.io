@@ -9,9 +9,9 @@ export default function Home() {
       <section className="pt-24 pb-16">
         <div className="container-custom">
 
-          <div className="clearfix">
-            {/* Image Column - Floated Left */}
-            <div className="float-left w-full md:w-[35%] mr-0 md:mr-10 mb-8 mt-2">
+          <div className="md:flex md:items-start md:gap-8">
+            {/* Image Column - Responsive left column */}
+            <div className="w-full md:w-1/3 mb-8 md:mb-0 md:flex-none">
               <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
                 <Image
                   src="/images/image.jpg"
@@ -47,8 +47,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Text Content - Flows around floated image */}
-            <div className="font-serif text-black">
+            {/* Text Content - Sits to the right on md+ screens */}
+            <div className="font-serif text-black md:flex-1">
               {/* Branding - Centered within column, smaller font */}
               <div className="mb-6 text-center md:text-left">
                 <h1 className="text-3xl font-bold text-black mb-6 leading-tight md:text-center w-full">
