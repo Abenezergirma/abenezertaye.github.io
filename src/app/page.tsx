@@ -80,7 +80,7 @@ export default function Home() {
               <ResearchItem
                 title={"Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility"}
                 authors={"A. Taye, R. Valenti, A. Rajhans, A. Mavrommati, P. J. Mosterman, P. Wei"}
-                venue={"AIAA Journal of Aerospace Information Systems (JAIS), 21 (8), 641-650"}
+                venue={"AIAA Journal of Aerospace Information Systems"}
                 year={"2024"}
                 imageSrc={"/images/research/snapshot_029.png"}
                 pdfPath={"/papers/safe-and-scalable-real-time-trajectory-planning-framework-for-urban-air-mobility.pdf"}
@@ -109,7 +109,7 @@ export default function Home() {
               <ResearchItem
                 title={"Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations"}
                 authors={"A. Taye, A. Coursey, M. Quinones-Grueiro, C. Hu, G. Biswas, P. Wei"}
-                venue={"DX 2025"}
+                venue={"36th International Conference on Principles of Diagnosis and Resilient Systems (DX 2025)"}
                 imageSrc={"/images/research/neural_ode.png"}
                 pdfPath={"/papers/safe-to-fly-real-time-flight-mission-feasibility-assessment-for-drone-package-delivery-operations-2025.pdf"}
               />
@@ -117,7 +117,7 @@ export default function Home() {
               <ResearchItem
                 title={"Energy-Aware Strategic Traffic Management for Urban Air Mobility"}
                 authors={"A. Taye, S. Chen, P. Wei"}
-                venue={"AIAA SCITECH 2025 Forum"}
+                venue={"AIAA SciTech, Orlando, FL, Jan. 2025"}
                 imageSrc={"/images/research/energy_aware.png"}
                 pdfPath={"/papers/a-survey-of-security-challenges-and-solutions-for-advanced-air-mobility-and-evtol-aircraft-2026.pdf"}
               />
@@ -125,7 +125,7 @@ export default function Home() {
               <ResearchItem
                 title={"Using Large Language Models to Automate Flight Planning Under Wind Hazards"}
                 authors={"A. Tabrizian, P. Gupta, A. Taye, J. Jones, E. Thompson, S. Chen"}
-                venue={"DASC 2024"}
+                venue={" AIAA DATC/IEEE 43rd Digital Avionics Systems Conference (DASC) 2024"}
                 imageSrc={"/images/research/LLM_fig.png"}
                 pdfPath={"/papers/using-large-language-models-to-automate-flight-planning-under-wind-hazards-2024.pdf"}
               />
@@ -133,7 +133,7 @@ export default function Home() {
               <ResearchItem
                 title={"Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility"}
                 authors={"A. Taye, P. Pradeep, P. Wei, J. C. Jones, T. Bonin, D. Eberle"}
-                venue={"AIAA Aviation Forum 2024"}
+                venue={"AIAA Aviation, Las Vegas, NV, July. 2024"}
                 imageSrc={"/images/research/energy_demand.png"}
                 pdfPath={"/papers/energy-demand-analysis-for-evtol-charging-stations-in-urban-air-mobility-2024.pdf"}
               />
