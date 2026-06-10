@@ -15,7 +15,7 @@ export default function ResearchItem({ title, authors, venue, year, imageSrc, pd
     <div className="flex gap-6 md:gap-8">
       <div className="shrink-0 w-32 md:w-64">
         <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
-          <Image src={imageSrc} alt={title} fill className="object-cover" />
+          <Image src={imageSrc} alt={title} fill className="object-contain object-center bg-white" />
         </div>
       </div>
 
