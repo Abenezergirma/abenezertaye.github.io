@@ -32,8 +32,8 @@ function formatVenue(v: string, y?: string) {
 export default function ResearchItem({ title, authors, venue, year, imageSrc, pdfPath, codeUrl }: Props) {
   return (
     <div className="flex gap-6 md:gap-8 items-start">
-      <div className="shrink-0 w-36 md:w-72">
-        <div className="w-full h-28 md:h-44 relative bg-gray-50 border border-gray-100 rounded-sm overflow-hidden">
+      <div className="shrink-0 w-40 md:w-72">
+        <div className="w-full h-40 md:h-56 relative bg-transparent rounded-lg overflow-hidden">
           <Image src={imageSrc} alt={title} fill className="object-contain object-center" />
         </div>
       </div>
