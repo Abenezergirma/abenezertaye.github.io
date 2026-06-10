@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { FileText, Github, Linkedin, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, GraduationCap } from 'lucide-react';
+import ResearchItem from '../components/ResearchItem';
 
 export default function Home() {
   return (
@@ -76,318 +77,66 @@ export default function Home() {
             <div className="double-line-separator mb-8" />
 
             <div className="space-y-12">
-              {/* ITEM 1: JAIS 2024 Trajectory Planning */}
-              <div className="flex gap-6 md:gap-8">
-                <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
-                    <Image
-                      src="/images/research/snapshot_029.png"
-                      alt="Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
+              <ResearchItem
+                title={"Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility"}
+                authors={"A. Taye, R. Valenti, A. Rajhans, A. Mavrommati, P. J. Mosterman, P. Wei"}
+                venue={"AIAA Journal of Aerospace Information Systems (JAIS), 21 (8), 641-650"}
+                year={"2024"}
+                imageSrc={"/images/research/snapshot_029.png"}
+                pdfPath={"/papers/safe-and-scalable-real-time-trajectory-planning-framework-for-urban-air-mobility.pdf"}
+              />
 
-                <div className="flex-1 font-serif">
-                  <div className="flex flex-wrap items-center gap-x-2 mb-1">
-                    <h3 className="text-base font-bold text-black leading-snug">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/1.I011381" target="_blank" className="hover:text-green-800 hover:underline">
-                        Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility
-                      </a>
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/1.I011381" target="_blank" className="text-black/60 hover:text-green-800 transition-colors" title="PDF">
-                        <FileText size={18} />
-                      </a>
-                    </div>
-                  </div>
+              <ResearchItem
+                title={"Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery"}
+                authors={"A. Taye, P. Wei"}
+                venue={"Journal of Aerospace Information Systems"}
+                year={"2025"}
+                imageSrc={"/images/research/energy_efficient.png"}
+                pdfPath={"/papers/energy-efficient-trajectory-planning-and-feasibility-assessment-framework-for-drone-package-delivery-2025.pdf"}
+                codeUrl={"https://github.com/Abenezergirma"}
+              />
 
-                  <div className="text-black text-sm mb-1">
-                    <span className="font-bold">A. Taye</span>, R. Valenti, A. Rajhans, A. Mavrommati, P. J. Mosterman, P. Wei
-                  </div>
+              <ResearchItem
+                title={"Remote ID Spoofing Attacks and Defenses"}
+                authors={"B. Bjorkman, S. Zheng, A. Coursey, C. Lemieux-Mack, S. Gonzalez, A. Diaz-Gonzalez, N. W. Dahle, N. Koroma, R. E. Canady, X. Koutsoukos, G. Biswas, A. Taye, B. Ward"}
+                venue={"AIAA SCITECH Forum"}
+                year={"2026"}
+                imageSrc={"/images/research/RID_spoof.png"}
+                pdfPath={"/papers/remote-id-spoofing-attacks-and-defenses-2026.pdf"}
+                codeUrl={"https://github.com/Abenezergirma"}
+              />
 
-                  <div className="text-black text-sm italic">
-                    AIAA Journal of Aerospace Information Systems (JAIS), 21 (8), 641-650, 2024.
-                  </div>
-                </div>
-              </div>
+              <ResearchItem
+                title={"Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations"}
+                authors={"A. Taye, A. Coursey, M. Quinones-Grueiro, C. Hu, G. Biswas, P. Wei"}
+                venue={"DX 2025"}
+                imageSrc={"/images/research/neural_ode.png"}
+                pdfPath={"/papers/safe-to-fly-real-time-flight-mission-feasibility-assessment-for-drone-package-delivery-operations-2025.pdf"}
+              />
 
-              {/* ITEM 2: Energy-Efficient Trajectory Planning */}
-              <div className="flex gap-6 md:gap-8">
-                <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
-                    <Image
-                      src="/images/research/energy_efficient.png"
-                      alt="Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
+              <ResearchItem
+                title={"Energy-Aware Strategic Traffic Management for Urban Air Mobility"}
+                authors={"A. Taye, S. Chen, P. Wei"}
+                venue={"AIAA SCITECH 2025 Forum"}
+                imageSrc={"/images/research/energy_aware.png"}
+                pdfPath={"/papers/a-survey-of-security-challenges-and-solutions-for-advanced-air-mobility-and-evtol-aircraft-2026.pdf"}
+              />
 
-                <div className="flex-1 font-serif">
-                  <div className="flex flex-wrap items-center gap-x-2 mb-1">
-                    <h3 className="text-base font-bold text-black leading-snug">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/1.I011594" target="_blank" className="hover:text-green-800 hover:underline">
-                        Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery
-                      </a>
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/1.I011594" target="_blank" className="text-black/60 hover:text-green-800 transition-colors" title="PDF">
-                        <FileText size={18} />
-                      </a>
-                      <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
-                        <Image
-                          src="/images/icons/github_standard.png"
-                          alt="Github"
-                          width={20}
-                          height={20}
-                          className="rounded-full"
-                        />
-                      </a>
-                    </div>
-                  </div>
+              <ResearchItem
+                title={"Using Large Language Models to Automate Flight Planning Under Wind Hazards"}
+                authors={"A. Tabrizian, P. Gupta, A. Taye, J. Jones, E. Thompson, S. Chen"}
+                venue={"DASC 2024"}
+                imageSrc={"/images/research/LLM_fig.png"}
+                pdfPath={"/papers/using-large-language-models-to-automate-flight-planning-under-wind-hazards-2024.pdf"}
+              />
 
-                  <div className="text-black mb-1">
-                    <span className="font-bold">A. Taye</span>, P. Wei
-                  </div>
-
-                  <div className="text-black italic">
-                    Journal of Aerospace Information Systems, pp. 1-12, 2025.
-                  </div>
-                </div>
-              </div>
-
-              {/* ITEM 3: Remote ID Spoofing */}
-              <div className="flex gap-6 md:gap-8">
-                <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
-                    <Image
-                      src="/images/research/RID_spoof.png"
-                      alt="Remote ID Spoofing Attacks and Defenses"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex-1 font-serif">
-                  <div className="flex flex-wrap items-center gap-x-2 mb-1">
-                    <h3 className="text-base font-bold text-black leading-snug">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2665" target="_blank" className="hover:text-green-800 hover:underline">
-                        Remote ID Spoofing Attacks and Defenses
-                      </a>
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2665" target="_blank" className="text-black/60 hover:text-green-800 transition-colors" title="PDF">
-                        <FileText size={18} />
-                      </a>
-                      <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
-                        <Image
-                          src="/images/icons/github_standard.png"
-                          alt="Github"
-                          width={20}
-                          height={20}
-                          className="rounded-full"
-                        />
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="text-black mb-1">
-                    B. Bjorkman, S. Zheng, A. Coursey, C. Lemieux-Mack, S. Gonzalez, A. Diaz-Gonzalez, N. W. Dahle, N. Koroma, R. E. Canady, X. Koutsoukos, G. Biswas, <span className="font-bold">A. Taye</span>, B. Ward
-                  </div>
-
-                  <div className="text-black italic">
-                    AIAA SCITECH 2026 Forum, 2026.
-                  </div>
-                </div>
-              </div>
-
-              {/* ITEM 4: Safe to Fly? */}
-              <div className="flex gap-6 md:gap-8">
-                <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
-                    <Image
-                      src="/images/research/neural_ode.png"
-                      alt="Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex-1 font-serif">
-                  <div className="flex flex-wrap items-center gap-x-2 mb-1">
-                    <h3 className="text-base font-bold text-black leading-snug">
-                      <a href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.DX.2025.8" target="_blank" className="hover:text-green-800 hover:underline">
-                        Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations
-                      </a>
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      <a href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.DX.2025.8" target="_blank" className="text-black/60 hover:text-green-800 transition-colors" title="PDF">
-                        <FileText size={18} />
-                      </a>
-                      <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
-                        <Image
-                          src="/images/icons/github_standard.png"
-                          alt="Github"
-                          width={20}
-                          height={20}
-                          className="rounded-full"
-                        />
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="text-black mb-1">
-                    <span className="font-bold">A. Taye</span>, A. Coursey, M. Quinones-Grueiro, C. Hu, G. Biswas, P. Wei
-                  </div>
-
-                  <div className="text-black italic">
-                    36th International Conference on Principles of Diagnosis and Resilient Systems (DX 2025).
-                  </div>
-                </div>
-              </div>
-
-              {/* ITEM 5: Energy-Aware Strategic Traffic Management */}
-              <div className="flex gap-6 md:gap-8">
-                <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
-                    <Image
-                      src="/images/research/energy_aware.png"
-                      alt="Energy-Aware Strategic Traffic Management for Urban Air Mobility"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex-1 font-serif">
-                  <div className="flex flex-wrap items-center gap-x-2 mb-1">
-                    <h3 className="text-base font-bold text-black leading-snug">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2025-0580" target="_blank" className="hover:text-green-800 hover:underline">
-                        Energy-Aware Strategic Traffic Management for Urban Air Mobility
-                      </a>
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2025-0580" target="_blank" className="text-black/60 hover:text-green-800 transition-colors" title="PDF">
-                        <FileText size={18} />
-                      </a>
-                      <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
-                        <Image
-                          src="/images/icons/github_standard.png"
-                          alt="Github"
-                          width={20}
-                          height={20}
-                          className="rounded-full"
-                        />
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="text-black mb-1">
-                    <span className="font-bold">A. Taye</span>, S. Chen, P. Wei
-                  </div>
-
-                  <div className="text-black italic">
-                    AIAA SCITECH 2025 Forum, 0580, 2025.
-                  </div>
-                </div>
-              </div>
-
-              {/* ITEM 6: Using LLMs */}
-              <div className="flex gap-6 md:gap-8">
-                <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
-                    <Image
-                      src="/images/research/LLM_fig.png"
-                      alt="Using Large Language Models to Automate Flight Planning Under Wind Hazards"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex-1 font-serif">
-                  <div className="flex flex-wrap items-center gap-x-2 mb-1">
-                    <h3 className="text-base font-bold text-black leading-snug">
-                      <a href="https://ieeexplore.ieee.org/abstract/document/10749512/" target="_blank" className="hover:text-green-800 hover:underline">
-                        Using Large Language Models to Automate Flight Planning Under Wind Hazards
-                      </a>
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      <a href="https://ieeexplore.ieee.org/abstract/document/10749512/" target="_blank" className="text-black/60 hover:text-green-800 transition-colors" title="PDF">
-                        <FileText size={18} />
-                      </a>
-                      <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
-                        <Image
-                          src="/images/icons/github_standard.png"
-                          alt="Github"
-                          width={20}
-                          height={20}
-                          className="rounded-full"
-                        />
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="text-black mb-1">
-                    A. Tabrizian, P. Gupta, <span className="font-bold">A. Taye</span>, J. Jones, E. Thompson, S. Chen, T. Bonin, D. Eberle, P. Wei
-                  </div>
-
-                  <div className="text-black italic">
-                    2024 AIAA DATC/IEEE 43rd Digital Avionics Systems Conference (DASC).
-                  </div>
-                </div>
-              </div>
-
-              {/* ITEM 7: Energy Demand Analysis */}
-              <div className="flex gap-6 md:gap-8">
-                <div className="shrink-0 w-32 md:w-64">
-                  <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
-                    <Image
-                      src="/images/research/energy_demand.png"
-                      alt="Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex-1 font-serif">
-                  <div className="flex flex-wrap items-center gap-x-2 mb-1">
-                    <h3 className="text-base font-bold text-black leading-snug">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2024-4627" target="_blank" className="hover:text-green-800 hover:underline">
-                        Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility
-                      </a>
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2024-4627" target="_blank" className="text-black/60 hover:text-green-800 transition-colors" title="PDF">
-                        <FileText size={18} />
-                      </a>
-                      <a href="#" className="hover:opacity-80 transition-opacity flex items-center" title="Code">
-                        <Image
-                          src="/images/icons/github_standard.png"
-                          alt="Github"
-                          width={20}
-                          height={20}
-                          className="rounded-full"
-                        />
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="text-black mb-1">
-                    <span className="font-bold">A. Taye</span>, P. Pradeep, P. Wei, J. C. Jones, T. Bonin, D. Eberle
-                  </div>
-
-                  <div className="text-black italic">
-                    AIAA AVIATION FORUM AND ASCEND 2024, 4627, 2024.
-                  </div>
-                </div>
-              </div>
+              <ResearchItem
+                title={"Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility"}
+                authors={"A. Taye, P. Pradeep, P. Wei, J. C. Jones, T. Bonin, D. Eberle"}
+                venue={"AIAA Aviation Forum 2024"}
+                imageSrc={"/images/research/energy_demand.png"}
+                pdfPath={"/papers/energy-demand-analysis-for-evtol-charging-stations-in-urban-air-mobility-2024.pdf"}
+              />
             </div>
           </div>
         </div>
