@@ -10,12 +10,31 @@ type Props = {
   codeUrl?: string;
 };
 
+function formatVenue(v: string, y?: string) {
+  const venue = v || '';
+  const year = y || '';
+  if (/\b\d{4}\b/.test(venue)) return venue;
+  const lower = venue.toLowerCase();
+
+  if (lower.includes('scitech') || lower.includes('science and technology')) {
+    return `AIAA SciTech, Orlando, FL, Jan. ${year}`;
+  }
+  if (lower.includes('aviation')) {
+    return `AIAA Aviation, San Diego, CA, Jun. ${year}`;
+  }
+  if (lower.includes('dasc') || lower.includes('digital avionics')) {
+    return `AIAA/IEEE Digital Avionics Systems Conference (DASC), Montreal, Canada, Sep. ${year}`;
+  }
+
+  return `${venue}${year ? `, ${year}` : ''}`;
+}
+
 export default function ResearchItem({ title, authors, venue, year, imageSrc, pdfPath, codeUrl }: Props) {
   return (
-    <div className="flex gap-6 md:gap-8">
-      <div className="shrink-0 w-32 md:w-64">
-        <div className="w-full aspect-[4/3] relative bg-gray-100 border border-gray-100 rounded-sm overflow-hidden">
-          <Image src={imageSrc} alt={title} fill className="object-contain object-center bg-white" />
+    <div className="flex gap-6 md:gap-8 items-start">
+      <div className="shrink-0 w-36 md:w-72">
+        <div className="w-full h-28 md:h-44 relative bg-gray-50 border border-gray-100 rounded-sm overflow-hidden">
+          <Image src={imageSrc} alt={title} fill className="object-contain object-center" />
         </div>
       </div>
 
@@ -37,11 +56,11 @@ export default function ResearchItem({ title, authors, venue, year, imageSrc, pd
         </div>
 
         <div className="text-black text-sm mb-1">
-          <span className="font-bold">{authors}</span>
+          <span dangerouslySetInnerHTML={{ __html: authors }} />
         </div>
 
         <div className="text-black text-sm italic">
-          {venue}{year ? `, ${year}` : ''}
+          {formatVenue(venue, year)}
         </div>
       </div>
     </div>
