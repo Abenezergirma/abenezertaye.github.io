@@ -40,7 +40,7 @@ export default function Sidebar() {
         <div className="mb-6">
           <div className="space-y-4">
             <a
-              href="mailto:abenezertaye@gvu.edu"
+              href="mailto:abenezer.taye@vanderbilt.edu"
               className="flex items-center gap-3 text-green-700 hover:text-green-900 hover:underline"
             >
               <Mail className="h-4 w-4 text-gray-400" />
