@@ -39,9 +39,7 @@ jobs:
         env:
           NODE_ENV: production
           NEXT_PUBLIC_BUILD_STANDALONE: 'true'
-      - name: Export static
-        run: npm run export
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
