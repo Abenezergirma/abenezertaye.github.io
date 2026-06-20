@@ -46,23 +46,23 @@ export default function Things() {
                 <p>Technical notes, unpublished works, and slides.</p>
             </div>
 
-            {/* B.Sc. Thesis */}
+            {/* PhD Defense */}
             <section className="mb-16">
-                <h2 className="text-2xl font-serif font-bold text-black mb-2">B.Sc. Thesis</h2>
+                <h2 className="text-2xl font-serif font-bold text-black mb-2">Ph.D. Defense</h2>
                 <div className="double-line-separator mb-8" />
 
                 <div className="relative bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
                     <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-300" />
                     <div className="pl-6 p-4">
                         <a
-                            href="/pdf/bsc_thesis.pdf"
+                            href="https://docs.google.com/presentation/d/1w2aAPsw9pp3_g2LhY6R7q_HyjHYob2Cm/view"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm font-semibold font-serif text-black hover:text-green-800 hover:underline leading-snug"
                         >
-                            Design and Control of Autonomous Forklift for EPHARM Pharmaceuticals
+                            Safe and Energy-Efficient Urban Air Mobility: Trajectory Planning, Feasibility Assessment, and Traffic Management
                         </a>
-                        <p className="text-xs text-gray-500 mt-1 font-serif">B.Sc. Thesis</p>
+                        <p className="text-xs text-gray-500 mt-1 font-serif">Ph.D. Defense</p>
                     </div>
                 </div>
             </section>
@@ -118,6 +118,27 @@ export default function Things() {
                             </div>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* B.Sc. Thesis */}
+            <section className="mb-16">
+                <h2 className="text-2xl font-serif font-bold text-black mb-2">B.Sc. Thesis</h2>
+                <div className="double-line-separator mb-8" />
+
+                <div className="relative bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-300" />
+                    <div className="pl-6 p-4">
+                        <a
+                            href="/pdf/bsc_thesis.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-semibold font-serif text-black hover:text-green-800 hover:underline leading-snug"
+                        >
+                            Design and Control of Autonomous Forklift for EPHARM Pharmaceuticals
+                        </a>
+                        <p className="text-xs text-gray-500 mt-1 font-serif">B.Sc. Thesis</p>
+                    </div>
                 </div>
             </section>
         </div>
