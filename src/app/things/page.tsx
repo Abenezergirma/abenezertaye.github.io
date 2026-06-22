@@ -78,7 +78,7 @@ export default function Things() {
                     <p>
                         I initiated, designed, and taught an informal seminar based on Prof. Sayan Mitra&apos;s book{' '}
                         <a
-                            href="https://mitpress.mit.edu/9780262045292/verifying-cyber-physical-systems/"
+                            href="https://mitpress.mit.edu/9780262044806/verifying-cyber-physical-systems/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-black hover:text-green-800 hover:underline italic"
