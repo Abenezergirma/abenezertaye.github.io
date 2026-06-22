@@ -60,7 +60,7 @@ export default function Things() {
                             rel="noopener noreferrer"
                             className="text-sm font-semibold font-serif text-black hover:text-green-800 hover:underline leading-snug"
                         >
-                            Safe and Energy-Efficient Urban Air Mobility: Trajectory Planning, Feasibility Assessment, and Traffic Management
+                            Enhancing Safety and Energy-Efficiency in Advanced Air Mobility Through Trajectory Planning and Mission Feasibility Assessment Strategies
                         </a>
                         <p className="text-xs text-gray-500 mt-1 font-serif">Ph.D. Defense</p>
                     </div>
