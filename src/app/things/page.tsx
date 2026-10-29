@@ -42,7 +42,7 @@ export default function Things() {
     ];
 
     return (
-        <div className="container-custom pt-24 pb-12">
+        <div className="container-custom pt-16 pb-12">
             <h1 className="text-3xl font-serif font-bold text-black">Things</h1>
             <div className="double-line-separator mb-12" />
 

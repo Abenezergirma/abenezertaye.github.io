@@ -349,7 +349,7 @@ export default function Publications() {
   let globalCounter = 0;
 
   return (
-    <div className="container-custom pt-24 pb-20">
+    <div className="container-custom pt-16 pb-20">
       <h1 className="text-3xl font-serif font-bold text-black">
         Publications
       </h1>

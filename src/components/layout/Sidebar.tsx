@@ -39,9 +39,9 @@ export default function Sidebar() {
         {/* Contact Links */}
         <div className="mb-6">
           <div className="space-y-4">
-            <div className="flex items-center gap-3 text-green-700">
-              <Mail className="h-4 w-4 text-gray-400 shrink-0" />
-              <span className="text-sm">abenezer [dot] taye [at] vanderbilt [dot] edu</span>
+            <div className="flex items-center gap-3 text-green-700 whitespace-nowrap">
+              <Mail className="h-4 w-4 text-gray-400 shrink-0" aria-label="Email" />
+              <span className="text-xs">abenezer [dot] taye [at] vanderbilt [dot] edu</span>
             </div>
             <a
               href="https://www.linkedin.com/in/abenezer-taye/"

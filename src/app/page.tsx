@@ -1,17 +1,17 @@
 import Image from 'next/image';
-import { Github, Linkedin, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, GraduationCap, Mail } from 'lucide-react';
 import ResearchItem from '../components/ResearchItem';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Main Content Section */}
-      <section className="pt-24 pb-16">
+      <section className="pt-16 pb-16">
         <div className="container-custom">
 
           <div className="clearfix">
             {/* Image Column - Floated Left */}
-            <div className="float-left w-full md:w-[35%] mr-0 md:mr-10 mb-8 mt-2">
+            <div className="float-left w-full md:w-[35%] mr-0 md:mr-10 mb-2.5 mt-1">
               <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
                 <Image
                   src="/images/image.jpg"
@@ -27,9 +27,9 @@ export default function Home() {
               </div>
 
               {/* Contact Info below image - Optimized for single line */}
-              <div className="mt-4 text-[13px] text-black font-serif border-t border-gray-100 pt-4 flex flex-col items-center">
-                <div className="flex flex-wrap items-center justify-center gap-x-2 mb-2 text-center">
-                  <span className="font-bold text-black">Email:</span>
+              <div className="mt-3 text-[13px] text-black font-serif flex flex-col items-center">
+                <div className="flex items-center justify-center gap-1 mb-2 whitespace-nowrap text-[12px]">
+                  <Mail size={14} className="text-[#0B6A6C] shrink-0" aria-label="Email" />
                   <span className="text-[#0B6A6C]">abenezer [dot] taye [at] vanderbilt [dot] edu</span>
                 </div>
                 <div className="flex items-center gap-4 font-medium whitespace-nowrap">
@@ -72,7 +72,7 @@ export default function Home() {
           </div>
 
           {/* Selected Research / Theses Section */}
-          <div className="mt-16">
+          <div className="mt-12">
             <h2 className="text-2xl font-bold font-serif text-black">Selected Research</h2>
             <div className="double-line-separator mb-8" />
 

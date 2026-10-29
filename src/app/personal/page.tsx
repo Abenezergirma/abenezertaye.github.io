@@ -32,7 +32,7 @@ export default function PersonalInterests() {
     ];
 
     return (
-        <div className="container-custom pt-24 pb-12">
+        <div className="container-custom pt-16 pb-12">
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-3xl font-serif font-bold text-black">
                     Personal Interests
