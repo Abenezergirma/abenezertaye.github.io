@@ -7,7 +7,7 @@ export default function Sidebar() {
   return (
     <div className="h-full ">
       {/* Container with left margin */}
-      <div className="ml-6 py-12">
+      <div className="px-6 py-12">
         {/* Profile Image */}
         <div className="flex justify-center mb-6">
           <div className="w-40 h-40 rounded-full overflow-hidden border border-gray-300">
@@ -25,7 +25,7 @@ export default function Sidebar() {
 
         {/* Name and Title */}
         <div className="text-center mb-8">
-          <h1 className="text-xl font-bold text-gray-900 mb-2">Abenezer Taye</h1>
+          <p className="text-xl font-bold text-gray-900 mb-2">Abenezer Taye</p>
           <div className="space-y-1 text-gray-800">
             <p className="text-base">Postdoctoral Scholar</p>
             <p className="text-sm">Institute for Software Integrated Systems</p>
@@ -39,13 +39,10 @@ export default function Sidebar() {
         {/* Contact Links */}
         <div className="mb-6">
           <div className="space-y-4">
-            <a
-              href="mailto:abenezer.taye@vanderbilt.edu"
-              className="flex items-center gap-3 text-green-700 hover:text-green-900 hover:underline"
-            >
-              <Mail className="h-4 w-4 text-gray-400" />
-              <span className="text-sm">Email</span>
-            </a>
+            <div className="flex items-center gap-3 text-green-700">
+              <Mail className="h-4 w-4 text-gray-400 shrink-0" />
+              <span className="text-sm">abenezer [dot] taye [at] vanderbilt [dot] edu</span>
+            </div>
             <a
               href="https://www.linkedin.com/in/abenezer-taye/"
               target="_blank"

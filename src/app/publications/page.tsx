@@ -1,6 +1,8 @@
+import type { Metadata } from 'next';
 import PubLink from '../../components/PubLink';
-import fs from "fs";
-import path from "path";
+import { formatVenue } from '@/lib/publications';
+
+export const metadata: Metadata = { title: 'Publications' };
 
 interface PubItem {
   id: string;
@@ -13,6 +15,20 @@ interface PubItem {
 }
 
 const publications: PubItem[] = [
+  {
+    id: "0",
+    title: "Remote ID Spoofing-Aware Trajectory Planning for Small Unmanned Aerial Systems",
+    authors: "Jeremiah Webb, Bryce Bjorkman, Abel Diaz-Gonzalez, Austin Coursey, Noah W. Dahle, Cailani Lemieux-Mack, Filippos Fotiadis, Gautam Biswas, Bryan Ward, <strong>A. Taye</strong>",
+    venue: "arXiv preprint",
+    year: "2026",
+    url: "https://arxiv.org/abs/2607.19650",
+    bibtex: `@article{webb2026remote,
+  title={Remote ID Spoofing-Aware Trajectory Planning for Small Unmanned Aerial Systems},
+  author={Webb, Jeremiah and Bjorkman, Bryce and Diaz-Gonzalez, Abel and Coursey, Austin and Dahle, Noah W and Lemieux-Mack, Cailani and Fotiadis, Filippos and Biswas, Gautam and Ward, Bryan C and Taye, Abenezer},
+  journal={arXiv preprint arXiv:2607.19650},
+  year={2026}
+}`
+  },
   {
     id: "1",
     title: "Networked Simulation for Cybersecurity Evaluation of Small Unmanned Aircraft Systems in Dense Urban Environments",
@@ -125,7 +141,7 @@ const publications: PubItem[] = [
     venue: "AIAA Science and Technology Forum and Exposition (SciTech)",
     year: "2025",
     url: "https://arc.aiaa.org/doi/abs/10.2514/6.2025-0580",
-    bibtex: `@inproceedings{taye2025energy,
+    bibtex: `@inproceedings{taye2025energyaware,
   title={Energy-Aware Strategic Traffic Management for Urban Air Mobility},
   author={Taye, Abenezer Girma and Chen, Shulu and Wei, Peng},
   booktitle={AIAA SCITECH 2025 Forum},
@@ -182,7 +198,7 @@ const publications: PubItem[] = [
     id: "12",
     title: "Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility",
     authors: "<strong>A. G. Taye</strong>, Roberto Valenti, Akshay Rajhans, Anastasia Mavrommati, Pieter J. Mosterman, Peng Wei",
-    venue: "Journal of Aerospace Information Systems (JAIS), 21 (8), 641-650",
+    venue: "Journal of Aerospace Information Systems (JAIS), 21 (8), 641–650",
     year: "2024",
     url: "https://arc.aiaa.org/doi/abs/10.2514/1.I011381",
     bibtex: `@article{taye2024safe,
@@ -216,15 +232,15 @@ const publications: PubItem[] = [
     id: "14",
     title: "A Survey on Reinforcement Learning in Aviation Applications",
     authors: "Pouria Razzaghi, Amin Tabrizian, Wei Guo, Shulu Chen, <strong>A. Taye</strong>, Ellis Thompson, Alexis Bregeon, Ali Baheri, Peng Wei",
-    venue: "Engineering Applications of Artificial Intelligence",
+    venue: "Engineering Applications of Artificial Intelligence, 136, 108911",
     year: "2024",
     url: "https://www.sciencedirect.com/science/article/pii/S0952197624010698",
     bibtex: `@article{razzaghi2024survey,
   title={A Survey on Reinforcement Learning in Aviation Applications},
   author={Razzaghi, Pouria and Tabrizian, Amin and Guo, Wei and Chen, Shulu and Taye, A and Thompson, Ellis and Bregeon, Alexis and Baheri, Ali and Wei, Peng},
   journal={Engineering Applications of Artificial Intelligence},
-  volume={137},
-  pages={109059},
+  volume={136},
+  pages={108911},
   year={2024},
   publisher={Elsevier}
 }`
@@ -262,13 +278,13 @@ const publications: PubItem[] = [
   {
     id: "17",
     title: "Probabilistic Evaluation for Flight Mission Feasibility of a Small Octocopter in the Presence of Wind",
-    authors: "<strong>A. Taye</strong>, Ellis L. Thompson, Peng Wei, Timothy Bonin, James C. Jones",
+    authors: "Ellis L. Thompson, <strong>A. Taye</strong>, James Ashby, Gerald Fattah, Peng Wei, Timothy Bonin, James C. Jones, Marcos Quinones-Grueiro, Gautam Biswas",
     venue: "AIAA AVIATION Forum",
     year: "2023",
     url: "https://arc.aiaa.org/doi/abs/10.2514/6.2023-3964",
-    bibtex: `@inproceedings{taye2023probabilistic,
+    bibtex: `@inproceedings{thompson2023probabilistic,
   title={Probabilistic Evaluation for Flight Mission Feasibility of a Small Octocopter in the Presence of Wind},
-  author={Taye, A and Thompson, Ellis L and Wei, Peng and Bonin, Timothy and Jones, James C},
+  author={Thompson, Ellis L and Taye, Abenezer and Ashby, James and Fattah, Gerald and Wei, Peng and Bonin, Timothy and Jones, James C and Quinones-Grueiro, Marcos and Biswas, Gautam},
   booktitle={AIAA AVIATION 2023 Forum},
   pages={3964},
   year={2023}
@@ -292,13 +308,13 @@ const publications: PubItem[] = [
   {
     id: "19",
     title: "A Survey of eVTOL Aircraft and AAM Operation Hazards",
-    authors: "Ellis L. Thompson, <strong>A. G. Taye</strong>, Wei Guo, Peng Wei, Marcos Quinones, Ibrahim Ahmed, Gautam Biswas, Jesse Quattrociocchi, Steven Carr, Ufuk Topcu, James C. Jones, Marc W. Brittain",
+    authors: "Ellis L. Thompson, <strong>A. G. Taye</strong>, Wei Guo, Peng Wei, Marcos Quinones-Grueiro, Ibrahim Ahmed, Gautam Biswas, Jesse Quattrociocchi, Steven Carr, Ufuk Topcu, James C. Jones, Marc W. Brittain",
     venue: "AIAA Aviation Forum",
     year: "2022",
     url: "https://arc.aiaa.org/doi/abs/10.2514/6.2022-3539",
     bibtex: `@inproceedings{thompson2022survey,
   title={A Survey of eVTOL Aircraft and AAM Operation Hazards},
-  author={Thompson, Ellis L and Taye, Abenezer Girma and Guo, Wei and Wei, Peng and Quinones, Marcos and Ahmed, Ibrahim and Biswas, Gautam and Quattrociocchi, Jesse and Carr, Steven and Topcu, Ufuk and others},
+  author={Thompson, Ellis L and Taye, Abenezer Girma and Guo, Wei and Wei, Peng and Quinones-Grueiro, Marcos and Ahmed, Ibrahim and Biswas, Gautam and Quattrociocchi, Jesse and Carr, Steven and Topcu, Ufuk and others},
   booktitle={AIAA AVIATION 2022 Forum},
   pages={3539},
   year={2022}
@@ -306,38 +322,7 @@ const publications: PubItem[] = [
   }
 ];
 
-function slugify(title: string) {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
-
 // PDF matching is handled by the shared src/components/PubLink
-
-function formatVenue(item: PubItem) {
-  const v = item.venue || "";
-  const y = item.year || "";
-  const lower = v.toLowerCase();
-
-  // If the venue string already includes a 4-digit year, don't append the year again
-  if (/\b\d{4}\b/.test(v)) {
-    return v;
-  }
-
-  if (lower.includes("scitech") || lower.includes("science and technology")) {
-    return `AIAA SciTech, Orlando, FL, Jan. ${y}`;
-  }
-  if (lower.includes("aviation")) {
-    return `AIAA Aviation, San Diego, CA, Jun. ${y}`;
-  }
-  if (lower.includes("dasc") || lower.includes("digital avionics")) {
-    return `AIAA/IEEE Digital Avionics Systems Conference (DASC), Montreal, Canada, Sep. ${y}`;
-  }
-
-  // Default: keep venue and year inline
-  return `${v}, ${y}`;
-}
 
 function PublicationItem({ item, index }: { item: PubItem; index: number }) {
   return (
@@ -350,7 +335,7 @@ function PublicationItem({ item, index }: { item: PubItem; index: number }) {
         </div>
 
         <p className="text-black text-sm mt-1">
-          <span dangerouslySetInnerHTML={{ __html: item.authors }} />{', '}{formatVenue(item)}
+          <span dangerouslySetInnerHTML={{ __html: item.authors }} />{', '}<span className="italic">{formatVenue(item.venue, item.year)}</span>.
         </p>
       </div>
     </div>

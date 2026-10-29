@@ -1,23 +1,26 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = { title: 'Personal Interests' };
 
 export default function PersonalInterests() {
     const interests = [
         {
             src: '/images/personal/aircraft_flying.jpg',
-            alt: 'Flying a GA aircraft',
-            description: 'Learning to Fly',
+            alt: 'Flying a general aviation aircraft',
+            description: 'Learning to fly',
             aspectRatio: 'aspect-[4/3]', // Adjust based on actual image dims if needed
         },
         {
             src: '/images/personal/biking.jpg',
-            alt: 'Biking in DC',
-            description: 'Biking – Washington DC',
+            alt: 'Biking in Washington, DC',
+            description: 'Biking – Washington, DC',
             aspectRatio: 'aspect-[4/3]',
         },
         {
             src: '/images/personal/soccer.jpg',
             alt: 'Playing soccer',
-            description: 'Playing soccer – Washington DC',
+            description: 'Playing soccer – Washington, DC',
             aspectRatio: 'aspect-[4/3]',
         },
         {
@@ -38,7 +41,7 @@ export default function PersonalInterests() {
 
                 <div className="prose prose-lg text-black font-serif text-justify leading-relaxed mb-12">
                     <p>
-                        When I’m not working on my research, I like to spend time outdoors biking, hiking, and flying an aircraft. I also enjoy running, playing soccer, and reading nonfiction books.
+                        When I’m not working on my research, I like to spend time outdoors biking, hiking, and flying airplanes. I also enjoy running, playing soccer, and reading nonfiction books.
                     </p>
                 </div>
 

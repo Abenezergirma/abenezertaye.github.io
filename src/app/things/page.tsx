@@ -1,3 +1,7 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = { title: 'Things' };
+
 export default function Things() {
     const vcpsChapters = [
         {
@@ -43,7 +47,7 @@ export default function Things() {
             <div className="double-line-separator mb-12" />
 
             <div className="prose prose-lg text-black font-serif text-justify leading-relaxed mb-12">
-                <p>Technical notes, unpublished works, and slides.</p>
+                <p>Talks, seminar slides, and theses.</p>
             </div>
 
             {/* PhD Defense */}
@@ -62,7 +66,7 @@ export default function Things() {
                         >
                             Enhancing Safety and Energy-Efficiency in Advanced Air Mobility Through Trajectory Planning and Mission Feasibility Assessment Strategies
                         </a>
-                        <p className="text-xs text-gray-500 mt-1 font-serif">Ph.D. Defense</p>
+                        <p className="text-xs text-gray-500 mt-1 font-serif">Slides · The George Washington University</p>
                     </div>
                 </div>
             </section>
@@ -85,7 +89,7 @@ export default function Things() {
                         >
                             Verifying Cyber-Physical Systems
                         </a>
-                        . The group met monthly and was primarily intended for PhD students interested in
+                        . The group met monthly and was primarily intended for Ph.D. students interested in
                         safety-critical cyber-physical systems research.
                     </p>
                 </div>
@@ -135,9 +139,9 @@ export default function Things() {
                             rel="noopener noreferrer"
                             className="text-sm font-semibold font-serif text-black hover:text-green-800 hover:underline leading-snug"
                         >
-                            Design and Control of Autonomous Forklift for EPHARM Pharmaceuticals
+                            Design and Control of an Autonomous Forklift for EPHARM Pharmaceuticals
                         </a>
-                        <p className="text-xs text-gray-500 mt-1 font-serif">B.Sc. Thesis</p>
+                        <p className="text-xs text-gray-500 mt-1 font-serif">Addis Ababa Science and Technology University</p>
                     </div>
                 </div>
             </section>

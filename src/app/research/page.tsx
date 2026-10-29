@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import PubLink from '../../components/PubLink';
 
@@ -8,6 +9,8 @@ function renderVenue(v: string, y: string) {
   }
   return <><span className="italic">{v}</span>, {y}</>;
 }
+
+export const metadata: Metadata = { title: 'Research' };
 
 export default function Research() {
   return (
@@ -22,7 +25,7 @@ export default function Research() {
 
           <div className="prose text-sm md:text-base text-black font-serif leading-relaxed text-justify">
             <p>
-              Developing a trajectory planning algorithm that scales to a high number of aircraft while maintaining safety guarantees is critical for high-density airspace. This work introduces a correct-by-construction approach that combines reachability analysis and Markov decision processes to achieve safe and scalable real-time trajectory planning.
+              Developing a trajectory planning algorithm that scales to a large number of aircraft while maintaining safety guarantees is critical for high-density advanced air mobility (AAM) operations. This work introduces a correct-by-construction approach that combines reachability analysis and Markov decision processes to achieve safe and scalable real-time trajectory planning.
             </p>
           </div>
 
@@ -37,10 +40,10 @@ export default function Research() {
               <div className="pl-6 p-4">
                 <ol className="list-decimal ml-6 space-y-2 text-sm">
                   <li>
-                    <span className="font-bold">A. G. Taye</span>, J. Bertram, C. Fan, P. Wei. <PubLink title="Reachability based Online Safety Verification for High-Density Urban Air Mobility Trajectory Planning" url="https://arc.aiaa.org/doi/abs/10.2514/6.2022-3542">"Reachability based Online Safety Verification for High-Density Urban Air Mobility Trajectory Planning"</PubLink>.{' '}{renderVenue('AIAA AVIATION 2022 Forum', '2022')}.
+                    <span className="font-bold">A. G. Taye</span>, J. Bertram, C. Fan, P. Wei. <PubLink title="Reachability based Online Safety Verification for High-Density Urban Air Mobility Trajectory Planning" url="https://arc.aiaa.org/doi/abs/10.2514/6.2022-3542">&ldquo;Reachability based Online Safety Verification for High-Density Urban Air Mobility Trajectory Planning&rdquo;</PubLink>.{' '}{renderVenue('AIAA Aviation 2022 Forum', '2022')}.
                   </li>
                   <li>
-                    <span className="font-bold">A. G. Taye</span>, R. Valenti, A. Rajhans, A. Mavrommati, P. J. Mosterman, P. Wei. <PubLink title="Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility" url="https://arc.aiaa.org/doi/abs/10.2514/1.I011381">"Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility"</PubLink>.{' '}{renderVenue('Journal of Aerospace Information Systems (JAIS), 21 (8), 641-650', '2024')}.
+                    <span className="font-bold">A. G. Taye</span>, R. Valenti, A. Rajhans, A. Mavrommati, P. J. Mosterman, P. Wei. <PubLink title="Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility" url="https://arc.aiaa.org/doi/abs/10.2514/1.I011381">&ldquo;Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility&rdquo;</PubLink>.{' '}{renderVenue('Journal of Aerospace Information Systems (JAIS), 21 (8), 641–650', '2024')}.
                   </li>
                 </ol>
               </div>
@@ -53,7 +56,7 @@ export default function Research() {
 
           <div className="prose text-sm md:text-base text-black font-serif leading-relaxed text-justify">
             <p>
-              Ensuring the safety of AAM operations requires assessing hazards that affect the safety of the flight mission pre-departure. This project introduces an energy-efficient trajectory planner and a model-based prognostics approach to assess the risk that arises from insufficient battery energy and other environmental factors such as winds.
+              Ensuring the safety of AAM operations requires assessing, before departure, the hazards that could jeopardize a flight mission. This project introduces an energy-efficient trajectory planner and a model-based prognostics approach to assess the risk arising from insufficient battery energy and environmental factors such as wind.
             </p>
           </div>
 
@@ -68,16 +71,16 @@ export default function Research() {
             <div className="pl-6 p-4">
               <ol className="list-decimal ml-6 space-y-2 text-sm">
                   <li>
-                  <span className="font-bold">A. Taye</span>, E. L. Thompson, P. Wei, T. Bonin, J. C. Jones. <PubLink title="Probabilistic Evaluation for Flight Mission Feasibility of a Small Octocopter in the Presence of Wind" url="https://arc.aiaa.org/doi/abs/10.2514/6.2023-3964">"Probabilistic Evaluation for Flight Mission Feasibility of a Small Octocopter in the Presence of Wind"</PubLink>.{' '}{renderVenue('AIAA AVIATION 2023 Forum', '2023')}.
+                  E. L. Thompson, <span className="font-bold">A. Taye</span>, J. Ashby, G. Fattah, P. Wei, T. Bonin, J. C. Jones, M. Quinones-Grueiro, G. Biswas. <PubLink title="Probabilistic Evaluation for Flight Mission Feasibility of a Small Octocopter in the Presence of Wind" url="https://arc.aiaa.org/doi/abs/10.2514/6.2023-3964">&ldquo;Probabilistic Evaluation for Flight Mission Feasibility of a Small Octocopter in the Presence of Wind&rdquo;</PubLink>.{' '}{renderVenue('AIAA Aviation 2023 Forum', '2023')}.
                 </li>
                 <li>
-                  <span className="font-bold">A. G. Taye</span>, P. Wei. <PubLink title="Flight Mission Feasibility Assessment of Urban Air Mobility Operations Under Battery Energy Constraint" url="https://arc.aiaa.org/doi/abs/10.2514/6.2024-0532">"Flight Mission Feasibility Assessment of Urban Air Mobility Operations Under Battery Energy Constraint"</PubLink>.{' '}{renderVenue('AIAA SCITECH 2024 Forum', '2024')}.
+                  <span className="font-bold">A. G. Taye</span>, P. Wei. <PubLink title="Flight Mission Feasibility Assessment of Urban Air Mobility Operations Under Battery Energy Constraint" url="https://arc.aiaa.org/doi/abs/10.2514/6.2024-0532">&ldquo;Flight Mission Feasibility Assessment of Urban Air Mobility Operations Under Battery Energy Constraint&rdquo;</PubLink>.{' '}{renderVenue('AIAA SciTech 2024 Forum', '2024')}.
                 </li>
                 <li>
-                  E. L. Thompson, <span className="font-bold">A. G. Taye</span>, W. Guo, P. Wei, M. Quinones, I. Ahmed, G. Biswas, J. Quattrociocchi, S. Carr, U. Topcu, J. C. Jones, M. W. Brittain. <PubLink title="A Survey of eVTOL Aircraft and AAM Operation Hazards" url="https://arc.aiaa.org/doi/abs/10.2514/6.2022-3539">"A Survey of eVTOL Aircraft and AAM Operation Hazards"</PubLink>.{' '}{renderVenue('AIAA Aviation 2022 Forum', '2022')}.
+                  E. L. Thompson, <span className="font-bold">A. G. Taye</span>, W. Guo, P. Wei, M. Quinones-Grueiro, I. Ahmed, G. Biswas, J. Quattrociocchi, S. Carr, U. Topcu, J. C. Jones, M. W. Brittain. <PubLink title="A Survey of eVTOL Aircraft and AAM Operation Hazards" url="https://arc.aiaa.org/doi/abs/10.2514/6.2022-3539">&ldquo;A Survey of eVTOL Aircraft and AAM Operation Hazards&rdquo;</PubLink>.{' '}{renderVenue('AIAA Aviation 2022 Forum', '2022')}.
                 </li>
                 <li>
-                  <span className="font-bold">A. G. Taye</span>, P. Wei. <PubLink title="Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery" url="https://arc.aiaa.org/doi/abs/10.2514/1.I011594">"Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery"</PubLink>.{' '}{renderVenue('Journal of Aerospace Information Systems', '2025')}.
+                  <span className="font-bold">A. G. Taye</span>, P. Wei. <PubLink title="Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery" url="https://arc.aiaa.org/doi/abs/10.2514/1.I011594">&ldquo;Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery&rdquo;</PubLink>.{' '}{renderVenue('Journal of Aerospace Information Systems', '2025')}.
                 </li>
               </ol>
             </div>
@@ -105,22 +108,22 @@ export default function Research() {
             <div className="pl-6 p-4">
               <ol className="list-decimal ml-6 space-y-2 text-sm">
                 <li>
-                  M. Ghazanfari, I. Sharifi, P. Wei, <span className="font-bold">A. Taye</span>, A. Diaz-Gonzalez, A. Coursey, B. Bjorkman, R. E. Canady, B. Ward, G. Biswas, X. Koutsoukos. <PubLink title="A Survey of Security Challenges and Solutions for Advanced Air Mobility and eVTOL Aircraft" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2891">"A Survey of Security Challenges and Solutions for Advanced Air Mobility and eVTOL Aircraft"</PubLink>.
-                  {renderVenue('AIAA SCITECH 2026 Forum', '2026')}.
+                  M. Ghazanfari, I. Sharifi, P. Wei, <span className="font-bold">A. Taye</span>, A. Diaz-Gonzalez, A. Coursey, B. Bjorkman, R. E. Canady, B. Ward, G. Biswas, X. Koutsoukos. <PubLink title="A Survey of Security Challenges and Solutions for Advanced Air Mobility and eVTOL Aircraft" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2891">&ldquo;A Survey of Security Challenges and Solutions for Advanced Air Mobility and eVTOL Aircraft&rdquo;</PubLink>.{' '}
+                  {renderVenue('AIAA SciTech 2026 Forum', '2026')}.
                 </li>
                 <li>
-                  I. Sharifi, M. Ghazanfari, <span className="font-bold">A. Taye</span>, P. Wei, A. Diaz-Gonzalez, A. Coursey, B. Bjorkman, R. E. Canady, B. Ward, G. Biswas, X. Koutsoukos. <PubLink title="A Survey of Security Challenges and Solutions for UAS Traffic Management (UTM) and small Unmanned Aerial Systems (sUAS)" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2892">"A Survey of Security Challenges and Solutions for UAS Traffic Management (UTM) and small Unmanned Aerial Systems (sUAS)"</PubLink>.
-                   {renderVenue('AIAA SCITECH 2026 Forum', '2026')}.
+                  I. Sharifi, M. Ghazanfari, <span className="font-bold">A. Taye</span>, P. Wei, A. Diaz-Gonzalez, A. Coursey, B. Bjorkman, R. E. Canady, B. Ward, G. Biswas, X. Koutsoukos. <PubLink title="A Survey of Security Challenges and Solutions for UAS Traffic Management (UTM) and small Unmanned Aerial Systems (sUAS)" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2892">&ldquo;A Survey of Security Challenges and Solutions for UAS Traffic Management (UTM) and small Unmanned Aerial Systems (sUAS)&rdquo;</PubLink>.{' '}
+                   {renderVenue('AIAA SciTech 2026 Forum', '2026')}.
                 </li>
                 <li>
-                  A. Diaz-Gonzalez, A. Coursey, B. Bjorkman, D. Shatokhin, C. Lemieux-Mack, N. W. Dahle, R. E. Canady, <span className="font-bold">A. Taye</span>, X. Koutsoukos, G. Biswas, B. Ward. <PubLink title="Networked Simulation for Cybersecurity Evaluation of Small Unmanned Aircraft Systems in Dense Urban Environments" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-1797">"Networked Simulation for Cybersecurity Evaluation of Small Unmanned Aircraft Systems in Dense Urban Environments"</PubLink>.
-                  {renderVenue('AIAA SCITECH 2026 Forum', '2026')}.
+                  A. Diaz-Gonzalez, A. Coursey, B. Bjorkman, D. Shatokhin, C. Lemieux-Mack, N. W. Dahle, R. E. Canady, <span className="font-bold">A. Taye</span>, X. Koutsoukos, G. Biswas, B. Ward. <PubLink title="Networked Simulation for Cybersecurity Evaluation of Small Unmanned Aircraft Systems in Dense Urban Environments" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-1797">&ldquo;Networked Simulation for Cybersecurity Evaluation of Small Unmanned Aircraft Systems in Dense Urban Environments&rdquo;</PubLink>.{' '}
+                  {renderVenue('AIAA SciTech 2026 Forum', '2026')}.
                 </li>
                 <li>
-                  N. W. Dahle, R. E. Canady, A. Coursey, A. Diaz-Gonzalez, C. Lemieux-Mack, B. Bjorkman, <span className="font-bold">A. Taye</span>, B. Ward, G. Biswas, X. Koutsoukos. <PubLink title="Detection of Compromised UAVs using Graph Machine Learning" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2667">"Detection of Compromised UAVs using Graph Machine Learning"</PubLink>.{' '}{renderVenue('AIAA SCITECH 2026 Forum', '2026')}.
+                  N. W. Dahle, R. E. Canady, A. Coursey, A. Diaz-Gonzalez, C. Lemieux-Mack, B. Bjorkman, <span className="font-bold">A. Taye</span>, B. Ward, G. Biswas, X. Koutsoukos. <PubLink title="Detection of Compromised UAVs using Graph Machine Learning" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2667">&ldquo;Detection of Compromised UAVs using Graph Machine Learning&rdquo;</PubLink>.{' '}{renderVenue('AIAA SciTech 2026 Forum', '2026')}.
                 </li>
                 <li>
-                  B. Bjorkman, S. Zheng, A. Coursey, C. Lemieux-Mack, S. Gonzalez, A. Diaz-Gonzalez, N. W. Dahle, N. Koroma, R. E. Canady, X. Koutsoukos, G. Biswas, <span className="font-bold">A. Taye</span>, B. Ward. <PubLink title="Remote ID Spoofing Attacks and Defenses" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2665">"Remote ID Spoofing Attacks and Defenses"</PubLink>.{' '}{renderVenue('AIAA SCITECH 2026 Forum', '2026')}.
+                  B. Bjorkman, S. Zheng, A. Coursey, C. Lemieux-Mack, S. Gonzalez, A. Diaz-Gonzalez, N. W. Dahle, N. Koroma, R. E. Canady, X. Koutsoukos, G. Biswas, <span className="font-bold">A. Taye</span>, B. Ward. <PubLink title="Remote ID Spoofing Attacks and Defenses" url="https://arc.aiaa.org/doi/abs/10.2514/6.2026-2665">&ldquo;Remote ID Spoofing Attacks and Defenses&rdquo;</PubLink>.{' '}{renderVenue('AIAA SciTech 2026 Forum', '2026')}.
                 </li>
               </ol>
             </div>
@@ -133,7 +136,7 @@ export default function Research() {
 
           <div className="prose text-sm md:text-base text-black font-serif leading-relaxed text-justify">
             <p>
-              Ensuring flight safety for small unmanned aerial systems (sUAS) requires continuous in-flight monitoring and decision-making, as unexpected events can occur during flight. In this work, we present an online feasibility assessment and contingency management framework that continuously monitors the aircraft's battery state and the energy required to complete the flight in real-time.
+              Ensuring flight safety for small unmanned aerial systems (sUAS) requires continuous in-flight monitoring and decision-making, as unexpected events can occur during flight. In this work, we present an online feasibility assessment and contingency management framework that continuously monitors the aircraft's battery state and the energy required to complete the flight in real time.
             </p>
           </div>
 
@@ -148,7 +151,7 @@ export default function Research() {
             <div className="pl-6 p-4">
               <ol className="list-decimal ml-6 space-y-2 text-sm">
                 <li>
-                  <span className="font-bold">A. Taye</span>, A. Coursey, M. Quinones-Grueiro, C. Hu, G. Biswas, P. Wei. <PubLink title="Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations" url="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.DX.2025.8">"Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations"</PubLink>.
+                  <span className="font-bold">A. Taye</span>, A. Coursey, M. Quinones-Grueiro, C. Hu, G. Biswas, P. Wei. <PubLink title="Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations" url="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.DX.2025.8">&ldquo;Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations&rdquo;</PubLink>.{' '}
                   {renderVenue('36th International Conference on Principles of Diagnosis and Resilient Systems (DX 2025)', '2025')}.
                 </li>
               </ol>
@@ -162,7 +165,7 @@ export default function Research() {
 
           <div className="prose text-sm md:text-base text-black font-serif leading-relaxed text-justify">
             <p>
-              We propose a strategic traffic management framework that explicitly accounts for the energy constraints of electric vertical take-off and landing (eVTOL) vehicles. By integrating energy consumption models into the traffic flow management process, we ensure that flights are not only de-conflicted but also operate within safe energy margins.
+              We propose a strategic traffic management framework that explicitly accounts for the energy constraints of electric vertical take-off and landing (eVTOL) vehicles. By integrating energy consumption models into the traffic flow management process, we ensure that flights are not only deconflicted but also operate within safe energy margins.
             </p>
           </div>
 
@@ -177,8 +180,8 @@ export default function Research() {
             <div className="pl-6 p-4">
               <ol className="list-decimal ml-6 space-y-2 text-sm">
                 <li>
-                  <span className="font-bold">A. G. Taye</span>, S. Chen, P. Wei. <PubLink title="Energy-Aware Strategic Traffic Management for Urban Air Mobility" url="https://arc.aiaa.org/doi/abs/10.2514/6.2025-0580">"Energy-Aware Strategic Traffic Management for Urban Air Mobility"</PubLink>.
-                  {' '}{renderVenue('AIAA SCITECH 2025 Forum', '2025')}.
+                  <span className="font-bold">A. G. Taye</span>, S. Chen, P. Wei. <PubLink title="Energy-Aware Strategic Traffic Management for Urban Air Mobility" url="https://arc.aiaa.org/doi/abs/10.2514/6.2025-0580">&ldquo;Energy-Aware Strategic Traffic Management for Urban Air Mobility&rdquo;</PubLink>.{' '}
+                  {renderVenue('AIAA SciTech 2025 Forum', '2025')}.
                 </li>
               </ol>
             </div>
@@ -191,7 +194,7 @@ export default function Research() {
 
           <div className="prose text-sm md:text-base text-black font-serif leading-relaxed text-justify">
             <p>
-              Understanding the energy infrastructure requirements is critical for the successful deployment of urban air mobility. This work analyzes the electrical load requirements for eVTOL charging stations, considering flight frequency, vehicle turnaround times, and battery characteristics to inform grid integration planning and ensure reliable operations.
+              Understanding energy infrastructure requirements is critical for the successful deployment of urban air mobility. This work analyzes the electrical load requirements for eVTOL charging stations, considering flight frequency, vehicle turnaround times, and battery characteristics to inform grid integration planning and ensure reliable operations.
             </p>
           </div>
 
@@ -206,8 +209,8 @@ export default function Research() {
             <div className="pl-6 p-4">
               <ol className="list-decimal ml-6 space-y-2 text-sm">
                 <li>
-                  <span className="font-bold">A. G. Taye</span>, P. Pradeep, P. Wei, J. C. Jones, T. Bonin, D. Eberle. <PubLink title="Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility" url="https://arc.aiaa.org/doi/abs/10.2514/6.2024-4627">"Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility"</PubLink>.
-                  {renderVenue('AIAA AVIATION FORUM AND ASCEND 2024', '2024')}.
+                  <span className="font-bold">A. G. Taye</span>, P. Pradeep, P. Wei, J. C. Jones, T. Bonin, D. Eberle. <PubLink title="Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility" url="https://arc.aiaa.org/doi/abs/10.2514/6.2024-4627">&ldquo;Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility&rdquo;</PubLink>.{' '}
+                  {renderVenue('AIAA Aviation Forum and ASCEND 2024', '2024')}.
                 </li>
               </ol>
             </div>

@@ -23,7 +23,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Abenezer G. Taye',
+  title: {
+    default: 'Abenezer G. Taye',
+    template: '%s | Abenezer G. Taye',
+  },
+  description:
+    'Abenezer G. Taye is a postdoctoral scholar at Vanderbilt University working on safe, secure, and reliable autonomy for advanced air mobility.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -42,20 +47,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
 
         <LayoutWrapper>{children}</LayoutWrapper>
-      </body>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-DQ0G0KS5B8"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DQ0G0KS5B8"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-          gtag('config', 'G-DQ0G0KS5B8');
-        `}
-      </Script>
+            gtag('config', 'G-DQ0G0KS5B8');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

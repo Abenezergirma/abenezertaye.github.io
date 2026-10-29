@@ -18,8 +18,6 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Removed useEffect that closes menu on route change
-
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'unset';
     return () => {
@@ -29,7 +27,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Top Header */}
       {/* Top Header - Green with White Text */}
       <header className="bg-[#0B6A6C] text-white fixed top-0 left-0 right-0 z-50 shadow">
         <nav className="container-custom">
@@ -60,8 +57,6 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
-
-                    {/* Underline handled by border-b-2 above */}
                   </Link>
                 );
               })}
@@ -78,6 +73,7 @@ export default function Header() {
       </header>
 
       <div
+        aria-hidden={!mobileMenuOpen}
         className={cn(
           "lg:hidden fixed inset-0 z-50 transition-all duration-300",
           mobileMenuOpen

@@ -50,10 +50,9 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
         <main
           className={`
             flex-1
-            pt-16  /* space for header */
             ${showSidebar ? "" : ""}
             min-h-[calc(100vh-8rem)] /* Ensure minimum height */
-            px-8 /* Add horizontal padding */
+            md:px-8 /* Horizontal padding (container-custom already pads on mobile) */
           `}
         >
           <div className="max-w-7xl mx-auto"> {/* Optional: constrain max width */}
