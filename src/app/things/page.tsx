@@ -1,150 +1,85 @@
 import type { Metadata } from 'next';
+import { talks, vcpsChapters } from '@/lib/data';
 
-export const metadata: Metadata = { title: 'Things' };
+export const metadata: Metadata = { title: 'Talks' };
 
-export default function Things() {
-    const vcpsChapters = [
-        {
-            label: "Chapters 1–2",
-            titles: ['"Introduction"', '"Modeling Computation"'],
-            pdf: "/VCPS/Verfiying%20CPS%201-2.pdf",
-        },
-        {
-            label: "Chapter 3",
-            titles: ['"Modeling Physical Systems"'],
-            pdf: "/VCPS/Verfiying%20CPS%203-4.pdf",
-        },
-        {
-            label: "Chapters 4–5",
-            titles: ['"Modeling Cyberphysical Systems"', '"Composing Models"'],
-            pdf: "/VCPS/Verifying%20CPS%204-5.pdf",
-        },
-        {
-            label: "Chapter 6",
-            titles: ['"Specifying Requirements"'],
-            pdf: "/VCPS/Verfiying%20CPS%206.pdf",
-        },
-        {
-            label: "Chapter 7",
-            titles: ['"Verifying Invariants"'],
-            pdf: "/VCPS/VCPS%207.pdf",
-        },
-        {
-            label: "Chapter 8",
-            titles: ['"Abstractions and Compositional Reasoning"'],
-            pdf: "/VCPS/VCPS%208.pdf",
-        },
-        {
-            label: "Chapter 9",
-            titles: ['"Reachability Analysis"'],
-            pdf: "/VCPS/VCPS%209.pdf",
-        },
-    ];
+export default function Talks() {
+  return (
+    <>
+      <h1>Talks, Seminar Slides, and Theses</h1>
 
-    return (
-        <div className="container-custom pt-16 pb-12">
-            <h1 className="text-3xl font-serif font-bold text-black">Things</h1>
-            <div className="double-line-separator mb-12" />
+      <section className="mt-10">
+        <h2>Ph.D. Defense</h2>
+        <p>
+          <a
+            className="text"
+            href="https://docs.google.com/presentation/d/1w2aAPsw9pp3_g2LhY6R7q_HyjHYob2Cm/view"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Enhancing Safety and Energy-Efficiency in Advanced Air Mobility Through Trajectory Planning and Mission
+            Feasibility Assessment Strategies
+          </a>
+        </p>
+        <p>
+          <em>The George Washington University</em>
+        </p>
+      </section>
 
-            <div className="prose prose-lg text-black font-serif text-justify leading-relaxed mb-12">
-                <p>Talks, seminar slides, and theses.</p>
-            </div>
+      <section className="mt-14">
+        <h2>Talks</h2>
+        <ul className="space-y-4">
+          {talks.map((t) => (
+            <li key={t.title}>
+              <p>{t.title}</p>
+              <p>
+                <em>{t.where}</em>
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-            {/* PhD Defense */}
-            <section className="mb-16">
-                <h2 className="text-2xl font-serif font-bold text-black mb-2">Ph.D. Defense</h2>
-                <div className="double-line-separator mb-8" />
+      <section className="mt-14">
+        <h2>
+          Seminar: <em>Verifying Cyber-Physical Systems</em>
+        </h2>
+        <p className="mb-6">
+          I initiated, designed, and taught an informal seminar based on Prof. Sayan Mitra&rsquo;s book{' '}
+          <a
+            className="text"
+            href="https://mitpress.mit.edu/9780262044806/verifying-cyber-physical-systems/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <em>Verifying Cyber-Physical Systems</em>
+          </a>
+          . The group met monthly and was primarily intended for Ph.D. students interested in safety-critical
+          cyber-physical systems research.
+        </p>
+        <ul className="space-y-2">
+          {vcpsChapters.map((ch) => (
+            <li key={ch.pdf} className="sm:grid sm:grid-cols-[8.5rem_1fr]">
+              <span className="block">{ch.label}</span>
+              <a className="text" href={ch.pdf} target="_blank" rel="noopener noreferrer">
+                {ch.titles.join('; ')}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-                <div className="relative bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-300" />
-                    <div className="pl-6 p-4">
-                        <a
-                            href="https://docs.google.com/presentation/d/1w2aAPsw9pp3_g2LhY6R7q_HyjHYob2Cm/view"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-semibold font-serif text-black hover:text-green-800 hover:underline leading-snug"
-                        >
-                            Enhancing Safety and Energy-Efficiency in Advanced Air Mobility Through Trajectory Planning and Mission Feasibility Assessment Strategies
-                        </a>
-                        <p className="text-xs text-gray-500 mt-1 font-serif">Slides · The George Washington University</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* VCPS Seminar Slides */}
-            <section className="mb-16">
-                <h2 className="text-2xl font-serif font-bold text-black mb-2">
-                    Seminar Slides: <em>Verifying Cyber-Physical Systems</em>
-                </h2>
-                <div className="double-line-separator mb-8" />
-
-                <div className="prose prose-lg text-black font-serif text-justify leading-relaxed mb-8">
-                    <p>
-                        I initiated, designed, and taught an informal seminar based on Prof. Sayan Mitra&apos;s book{' '}
-                        <a
-                            href="https://mitpress.mit.edu/9780262044806/verifying-cyber-physical-systems/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-black hover:text-green-800 hover:underline italic"
-                        >
-                            Verifying Cyber-Physical Systems
-                        </a>
-                        . The group met monthly and was primarily intended for Ph.D. students interested in
-                        safety-critical cyber-physical systems research.
-                    </p>
-                </div>
-
-                <div className="space-y-3">
-                    {vcpsChapters.map((ch, i) => (
-                        <div
-                            key={i}
-                            className="relative bg-gray-50 border border-gray-200 rounded-lg overflow-hidden"
-                        >
-                            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-300" />
-                            <div className="pl-6 p-4">
-                                <span className="text-xs text-gray-500 font-serif uppercase tracking-wide">
-                                    {ch.label}
-                                </span>
-                                <p className="text-sm font-serif text-black mt-0.5">
-                                    {ch.pdf ? (
-                                        <a
-                                            href={ch.pdf}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="font-semibold text-black hover:text-green-800 hover:underline"
-                                        >
-                                            {ch.titles.join(' & ')}
-                                        </a>
-                                    ) : (
-                                        ch.titles.join(' & ')
-                                    )}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* B.Sc. Thesis */}
-            <section className="mb-16">
-                <h2 className="text-2xl font-serif font-bold text-black mb-2">B.Sc. Thesis</h2>
-                <div className="double-line-separator mb-8" />
-
-                <div className="relative bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-300" />
-                    <div className="pl-6 p-4">
-                        <a
-                            href="/pdf/bsc_thesis.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-semibold font-serif text-black hover:text-green-800 hover:underline leading-snug"
-                        >
-                            Design and Control of an Autonomous Forklift for EPHARM Pharmaceuticals
-                        </a>
-                        <p className="text-xs text-gray-500 mt-1 font-serif">Addis Ababa Science and Technology University</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
+      <section className="mt-14">
+        <h2>B.Sc. Thesis</h2>
+        <p>
+          <a className="text" href="/pdf/bsc_thesis.pdf" target="_blank" rel="noopener noreferrer">
+            Design and Control of an Autonomous Forklift for EPHARM Pharmaceuticals
+          </a>
+        </p>
+        <p>
+          <em>Addis Ababa Science and Technology University</em>
+        </p>
+      </section>
+    </>
+  );
 }
