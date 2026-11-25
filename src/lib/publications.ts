@@ -59,6 +59,7 @@ const AVIATION: Record<string, string> = {
 };
 const DASC: Record<string, string> = {
   '2024': 'San Diego, CA, Sep.',
+  '2026': 'Orlando, FL,',
 };
 
 function withPlace(name: string, place: string | undefined, year: string) {

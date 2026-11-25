@@ -1,25 +1,16 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono, Crimson_Pro } from 'next/font/google';
-import LayoutWrapper from '@/components/layout/LayoutWrapper';
+import { EB_Garamond, Source_Sans_3 } from 'next/font/google';
 import Script from 'next/script';
+import SiteHeader from '@/components/layout/SiteHeader';
+import SiteFooter from '@/components/layout/SiteFooter';
 import './globals.css';
 
-const inter = Inter({
+const garamond = EB_Garamond({ subsets: ['latin'], variable: '--font-garamond', display: 'swap' });
+const sourceSans = Source_Sans_3({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-source-sans',
   display: 'swap',
-});
-
-const crimsonPro = Crimson_Pro({
-  subsets: ['latin'],
-  variable: '--font-crimson-pro',
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
@@ -33,30 +24,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${crimsonPro.variable} ${jetbrainsMono.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${garamond.variable} ${sourceSans.variable}`}>
+      <body>
+        <div className="page">
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+        </div>
 
-
-      {/* Body uses Crimson Pro (Palatino-like), headings can use Inter via CSS */}
-      <body
-        className="min-h-screen bg-white antialiased font-[var(--font-crimson-pro)]"
-        suppressHydrationWarning
-      >
-
-        <LayoutWrapper>{children}</LayoutWrapper>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-DQ0G0KS5B8"
-          strategy="afterInteractive"
-        />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-DQ0G0KS5B8" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-DQ0G0KS5B8');
           `}
         </Script>
