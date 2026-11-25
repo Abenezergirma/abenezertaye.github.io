@@ -35,7 +35,7 @@ export default function Research() {
           <ul className="space-y-5">
             {project.papers.map((title) => (
               <li key={title}>
-                <Publication pub={findPub(title)} />
+                <Publication pub={findPub(title)} showCode={false} />
               </li>
             ))}
           </ul>

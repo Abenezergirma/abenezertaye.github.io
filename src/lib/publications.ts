@@ -14,6 +14,8 @@ const PAPER_PDFS: Record<string, string> = {
     'a-survey-of-security-challenges-and-solutions-for-uas-traffic-management-utm-and-small-unmanned-aerial-systems-suas-2026.pdf',
   'Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery':
     'energy-efficient-trajectory-planning-and-feasibility-assessment-framework-for-drone-package-delivery-2025.pdf',
+  'Energy-Aware Strategic Traffic Management for Urban Air Mobility':
+    'energy-aware-strategic-traffic-management-for-urban-air-mobility-2025.pdf',
   'Small UAS Landing Site Detection with ArUco Markers and Deep Learning Based Computer Vision':
     'small-uas-landing-site-detection-with-aruco-markers-and-deep-learning-based-computer-vision-2025.pdf',
   'Transformer or CNN? Benchmarking Real-Time Detection Transformer and YOLOv8 for Small UAS Autonomous Landing':

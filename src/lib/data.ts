@@ -12,6 +12,8 @@ export interface Publication {
   venue: string;
   year: string;
   url: string;
+  /** Show only the PDF link, not the publisher page. */
+  pdfOnly?: boolean;
   /** Public code link. */
   code?: string;
   bibtex: string;
@@ -58,7 +60,7 @@ export const publications: Publication[] = [
     venue: "AIAA Science and Technology Forum and Exposition (SciTech)",
     year: "2026",
     url: "https://arc.aiaa.org/doi/abs/10.2514/6.2026-2665",
-    code: "https://github.com/brycethebjorkman/uli-net-sim",
+    code: "https://github.com/brycethebjorkman/uli-net-sim/tree/spoofing-aware-trajectory-planning",
     bibtex: `@inproceedings{bjorkman2026remote,
   title={Remote ID Spoofing Attacks and Defenses},
   author={Bjorkman, Bryce and Zheng, Stanley and Coursey, Austin and Lemieux-Mack, Cailani and Gonzalez, Samuel and Diaz-Gonzalez, Abel and Dahle, Noah W and Koroma, Neils and Canady, Robert E and Koutsoukos, Xenofon and others},
@@ -123,8 +125,7 @@ export const publications: Publication[] = [
     venue: "Journal of Aerospace Information Systems (JAIS)",
     year: "2025",
     url: "https://arc.aiaa.org/doi/abs/10.2514/1.I011594",
-    // TODO: replace with the project repository once its link is final
-    code: "https://github.com/Abenezergirma",
+    code: "https://github.com/Abenezergirma/Chapter-2",
     bibtex: `@article{taye2025energy,
   title={Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery},
   author={Taye, Abenezer Girma and Wei, Peng},
@@ -205,6 +206,7 @@ export const publications: Publication[] = [
     venue: "36th International Conference on Principles of Diagnosis and Resilient Systems (DX 2025)",
     year: "2025",
     url: "https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.DX.2025.8",
+    pdfOnly: true,
     bibtex: `@inproceedings{taye2025safe,
   title={Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations},
   author={Taye, Abenezer and Coursey, Austin and Quinones-Grueiro, Marcos and Hu, Chao and Biswas, Gautam and Wei, Peng},
@@ -221,6 +223,7 @@ export const publications: Publication[] = [
     venue: "Journal of Aerospace Information Systems (JAIS), 21 (8), 641–650",
     year: "2024",
     url: "https://arc.aiaa.org/doi/abs/10.2514/1.I011381",
+    code: "https://github.com/Abenezergirma/Chapter-1",
     bibtex: `@article{taye2024safe,
   title={Safe and Scalable Real-Time Trajectory Planning Framework for Urban Air Mobility},
   author={Taye, Abenezer Girma and Valenti, Roberto and Rajhans, Akshay and Mavrommati, Anastasia and Mosterman, Pieter J and Wei, Peng},

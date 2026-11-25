@@ -5,7 +5,6 @@ const PUBLISHERS: [string, string][] = [
   ['arc.aiaa.org', 'AIAA'],
   ['ieeexplore.ieee.org', 'IEEE Xplore'],
   ['sciencedirect.com', 'ScienceDirect'],
-  ['dagstuhl.de', 'Dagstuhl'],
   ['arxiv.org', 'arXiv'],
 ];
 
@@ -33,12 +32,12 @@ function Authors({ list }: { list: string }) {
   );
 }
 
-export default function Publication({ pub }: { pub: Pub }) {
+export default function Publication({ pub, showCode = true }: { pub: Pub; showCode?: boolean }) {
   const pdf = paperPdf(pub.title);
   const links = [
     pdf && { href: pdf, label: 'PDF' },
-    { href: pub.url, label: publisher(pub.url) },
-    pub.code && { href: pub.code, label: 'Code' },
+    !pub.pdfOnly && { href: pub.url, label: publisher(pub.url) },
+    showCode && pub.code && { href: pub.code, label: 'Code' },
   ].filter(Boolean) as { href: string; label: string }[];
 
   return (
