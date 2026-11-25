@@ -1,4 +1,4 @@
-// Single source of truth for publications, research projects and talks.
+// Single source of truth for publications, research projects and seminar slides.
 // Pages read from here; edit content in this file only.
 
 export type PubType = 'journal' | 'conference' | 'preprint';
@@ -12,7 +12,7 @@ export interface Publication {
   venue: string;
   year: string;
   url: string;
-  /** Public code repository, only when the paper itself names one. */
+  /** Public code link. */
   code?: string;
   bibtex: string;
 }
@@ -20,10 +20,10 @@ export interface Publication {
 export const publications: Publication[] = [
   {
     id: "0",
-    type: "preprint",
+    type: "conference",
     title: "Remote ID Spoofing-Aware Trajectory Planning for Small Unmanned Aerial Systems",
     authors: "Jeremiah Webb, Bryce Bjorkman, Abel Diaz-Gonzalez, Austin Coursey, Noah W. Dahle, Cailani Lemieux-Mack, Filippos Fotiadis, Gautam Biswas, Bryan Ward, <strong>Abenezer Taye</strong>",
-    venue: "arXiv preprint",
+    venue: "AIAA/IEEE Digital Avionics Systems Conference (DASC)",
     year: "2026",
     url: "https://arxiv.org/abs/2607.19650",
     bibtex: `@article{webb2026remote,
@@ -87,7 +87,7 @@ export const publications: Publication[] = [
     id: "4",
     type: "conference",
     title: "A Survey of Security Challenges and Solutions for Advanced Air Mobility and eVTOL Aircraft",
-    authors: "Mahyar Ghazanfari, Iman Sharifi, Peng Wei, <strong>Abenezer Taye</strong>, Abel Diaz-Gonzalez, Austin Coursey, Bryce Bjorkman, Robert E. Canady, Bryan Ward, Gautam Biswas, Xenofon Koutsoukos",
+    authors: "Mahyar Ghazanfari, Iman Sharifi, Peng Wei, <strong>Abenezer Taye</strong>, Bryan Ward, Xenofon Koutsoukos, Gautam Biswas, Mahsa Ghasemi, Vijay Gupta, Hyeong Tae Kim, Maheed Ahmed, Ufuk Topcu, Filippos Fotiadis, Alfred Chen, Junchi Lu, Isaac Amundson, Saqib Hasan, Amir Shirkhodaie, Nischal Aryal, Amer Ibrahim, Abdul Kareem Ras, Heber Herencia-Zapana, Noah W. Dahle, Abel Diaz-Gonzalez, Austin Coursey, Bryce Bjorkman, Cailani Lemieux-Mack, Robert E. Canady",
     venue: "AIAA Science and Technology Forum and Exposition (SciTech)",
     year: "2026",
     url: "https://arc.aiaa.org/doi/abs/10.2514/6.2026-2891",
@@ -103,7 +103,7 @@ export const publications: Publication[] = [
     id: "5",
     type: "conference",
     title: "A Survey of Security Challenges and Solutions for UAS Traffic Management (UTM) and small Unmanned Aerial Systems (sUAS)",
-    authors: "Iman Sharifi, Mahyar Ghazanfari, <strong>Abenezer Taye</strong>, Peng Wei, Abel Diaz-Gonzalez, Austin Coursey, Bryce Bjorkman, Robert E. Canady, Bryan Ward, Gautam Biswas, Xenofon Koutsoukos",
+    authors: "Iman Sharifi, Mahyar Ghazanfari, <strong>Abenezer Taye</strong>, Peng Wei, Maheed Ahmed, Hyeong Tae Kim, Mahsa Ghasemi, Vijay Gupta, Noah W. Dahle, Robert E. Canady, Abel Diaz-Gonzalez, Austin Coursey, Bryce Bjorkman, Cailani Lemieux-Mack, Bryan Ward, Xenofon Koutsoukos, Gautam Biswas, Heber Herencia-Zapana, Saqib Hasan, Isaac Amundson, Filippos Fotiadis, Ufuk Topcu, Junchi Lu, Alfred Chen, Nischal Aryal, Amer Ibrahim, Abdul Kareem Ras, Amir Shirkhodaie",
     venue: "AIAA Science and Technology Forum and Exposition (SciTech)",
     year: "2026",
     url: "https://arc.aiaa.org/doi/abs/10.2514/6.2026-2892",
@@ -123,6 +123,8 @@ export const publications: Publication[] = [
     venue: "Journal of Aerospace Information Systems (JAIS)",
     year: "2025",
     url: "https://arc.aiaa.org/doi/abs/10.2514/1.I011594",
+    // TODO: replace with the project repository once its link is final
+    code: "https://github.com/Abenezergirma",
     bibtex: `@article{taye2025energy,
   title={Energy-Efficient Trajectory Planning and Feasibility Assessment Framework for Drone Package Delivery},
   author={Taye, Abenezer Girma and Wei, Peng},
@@ -507,16 +509,6 @@ export const selected: { title: string; image: string; width: number; height: nu
   { title: 'Energy-Aware Strategic Traffic Management for Urban Air Mobility', image: '/images/site/thumb-energy_aware.png', width: 560, height: 488 },
   { title: 'Using Large Language Models to Automate Flight Planning Under Wind Hazards', image: '/images/site/thumb-LLM_fig.png', width: 560, height: 144 },
   { title: 'Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility', image: '/images/site/thumb-energy_demand.png', width: 560, height: 521 },
-];
-
-/* Talks, as listed in the CV */
-export const talks: { title: string; where: string }[] = [
-  { title: 'Safe to Fly? Real-Time Flight Mission Feasibility Assessment for Drone Package Delivery Operations', where: 'DX 2025, Nashville, TN, Sep. 2025' },
-  { title: 'Energy-Aware Strategic Traffic Management for Urban Air Mobility', where: 'AIAA SciTech, Orlando, FL, Jan. 2025' },
-  { title: 'Energy-Efficient Trajectory Planning and Mission Feasibility Assessment Framework for Drone Package Delivery Operations', where: 'INFORMS Annual Meeting, Seattle, WA, Oct. 2024' },
-  { title: 'Energy Demand Analysis for eVTOL Charging Stations in Urban Air Mobility', where: 'AIAA Aviation, Las Vegas, NV, Jul. 2024' },
-  { title: 'Flight Mission Feasibility Assessment of Urban Air Mobility Operations Under Battery Energy Constraint', where: 'AIAA SciTech, Orlando, FL, Jan. 2024' },
-  { title: 'Reachability based Online Safety Verification for High-Density Urban Air Mobility Trajectory Planning', where: 'AIAA Aviation, Chicago, IL, Jun. 2022' },
 ];
 
 /* Seminar slides */

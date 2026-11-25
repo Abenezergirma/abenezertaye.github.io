@@ -203,6 +203,14 @@ hr {
   font-size: 15px;
   color: var(--muted);
 }
+.site-footer a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.site-footer a:hover {
+  color: #000;
+}
 
 @media (max-width: 700px) {
   body {

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { talks, vcpsChapters } from '@/lib/data';
+import { vcpsChapters } from '@/lib/data';
 
-export const metadata: Metadata = { title: 'Talks' };
+export const metadata: Metadata = { title: 'Things' };
 
-export default function Talks() {
+export default function Things() {
   return (
     <>
-      <h1>Talks, Seminar Slides, and Theses</h1>
+      <h1>Things</h1>
 
       <section className="mt-10">
         <h2>Ph.D. Defense</h2>
@@ -24,20 +24,6 @@ export default function Talks() {
         <p>
           <em>The George Washington University</em>
         </p>
-      </section>
-
-      <section className="mt-14">
-        <h2>Talks</h2>
-        <ul className="space-y-4">
-          {talks.map((t) => (
-            <li key={t.title}>
-              <p>{t.title}</p>
-              <p>
-                <em>{t.where}</em>
-              </p>
-            </li>
-          ))}
-        </ul>
       </section>
 
       <section className="mt-14">

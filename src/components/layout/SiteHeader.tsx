@@ -8,7 +8,7 @@ const nav = [
   { name: 'Home', href: '/' },
   { name: 'Research', href: '/research' },
   { name: 'Publications', href: '/publications' },
-  { name: 'Talks', href: '/things' },
+  { name: 'Things', href: '/things' },
   { name: 'Personal', href: '/personal' },
 ];
 

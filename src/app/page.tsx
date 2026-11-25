@@ -49,16 +49,6 @@ export default function Home() {
         </div>
       </section>
 
-      <figure className="mt-14">
-        <Image
-          src="/images/site/flight-test.jpg"
-          alt="A multirotor aircraft hovers over a field in front of a tent where the test team is standing"
-          width={1800}
-          height={872}
-        />
-        <figcaption>Flight test, July 2024.</figcaption>
-      </figure>
-
       <section className="mt-16">
         <h2>Selected Research</h2>
         <ul className="mt-8 space-y-10">
